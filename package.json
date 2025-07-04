@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-prod": "ng build --configuration production --base-href \"/7idLanding/\"",
+    "deploy": "npx angular-cli-ghpages --dir=dist/7idLandingPage/browser"
   },
   "prettier": {
     "overrides": [
