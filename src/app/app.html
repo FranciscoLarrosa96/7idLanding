@@ -1,0 +1,272 @@
+<!-- Header -->
+<header class="bg-background text-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-2" data-aos="fade-right">
+            <img src="assets/7id_logo_blanco.svg" alt="7iDeas Logo" class="w-44">
+        </a>
+
+        <!-- Navegación desktop -->
+        <nav class="hidden md:flex items-center gap-6 text-lg font-medium" data-aos="fade-left">
+            <a href="#inicio" class="hover:text-main transition"><i class="fas fa-home mr-1"></i>Inicio</a>
+            <a href="#nosotros" class="hover:text-main transition"><i class="fas fa-users mr-1"></i>Nosotros</a>
+            <a href="#servicios" class="hover:text-main transition"><i class="fas fa-briefcase mr-1"></i>Servicios</a>
+            <a href="#contacto" class="bg-main hover:bg-hover text-white px-4 py-2 rounded-full transition-all">
+                <i class="fas fa-envelope mr-2"></i>Contacto
+            </a>
+        </nav>
+
+        <!-- Botón hamburguesa -->
+        <button class="md:hidden text-2xl text-main" (click)="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Menú mobile con @if -->
+    @if (menuOpen()) {
+    <div id="mobileMenu" class="md:hidden flex flex-col gap-3 text-base font-medium px-6 pb-6" data-aos="fade-right">
+        <a href="#inicio" class="flex items-center gap-2 hover:text-main" (click)="toggleMenu()">
+            <i class="fas fa-home"></i>Inicio
+        </a>
+        <a href="#nosotros" class="flex items-center gap-2 hover:text-main" (click)="toggleMenu()">
+            <i class="fas fa-users"></i>Nosotros
+        </a>
+        <a href="#servicios" class="flex items-center gap-2 hover:text-main" (click)="toggleMenu()">
+            <i class="fas fa-briefcase"></i>Servicios
+        </a>
+        <a href="#contacto" class="bg-main text-white px-6 py-2 rounded-full font-semibold text-lg
+         shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757]
+         transition-all duration-300">
+            <i class="fas fa-envelope mr-2"></i>Contacto
+        </a>
+
+    </div>
+    }
+</header>
+
+<!-- Hero -->
+<section id="inicio" class="scroll-mt-32 relative bg-background text-white py-32 px-6">
+    <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+            Convertimos tus ideas en <span class="text-main">Soluciones Digitales</span>
+        </h1>
+    </div>
+</section>
+
+<!-- Línea divisoria animada -->
+<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+<!-- Nosotros -->
+<section id="nosotros" class="bg-white text-text py-24 px-6 scroll-mt-32">
+    <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4 text-main">Nosotros</h2>
+        <p class="text-zinc-700 text-lg max-w-3xl mx-auto">
+            Somos un equipo de profesionales que se dedica a desarrollar soluciones tecnológicas personalizadas para
+            organizaciones de todos los tamaños.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+        <!-- Por qué 7 Ideas -->
+        <div class="bg-zinc-100 p-8 rounded-xl shadow-md border border-zinc-200 hover:shadow-lg transition"
+            data-aos="zoom-in" data-aos-delay="100">
+            <div class="flex items-center gap-4 mb-4">
+                <i class="fas fa-lightbulb text-3xl text-main"></i>
+                <h3 class="text-2xl font-semibold text-main">¿Por qué 7 Ideas?</h3>
+            </div>
+            <p class="text-zinc-700 leading-relaxed">
+                Desde nuestros comienzos, en 2004, trabajamos con las últimas tecnologías de desarrollo de software. Las
+                relaciones con nuestros clientes son sólidas y duraderas, y somos una parte fundamental de su cadena de
+                valor.
+                <br><br>
+                Adoptamos la metodología ágil Scrum para trabajar de manera eficiente y colaborativa. Mediante ciclos
+                iterativos, nos adaptamos rápidamente a los cambios y logramos entregar productos de alta calidad en
+                plazos ajustados.
+            </p>
+        </div>
+
+        <!-- Nuestra filosofía -->
+        <div class="bg-zinc-100 p-8 rounded-xl shadow-md border border-zinc-200 hover:shadow-lg transition"
+            data-aos="zoom-in" data-aos-delay="200">
+            <div class="flex items-center gap-4 mb-4">
+                <i class="fas fa-seedling text-3xl text-main"></i>
+                <h3 class="text-2xl font-semibold text-main">Nuestra filosofía</h3>
+            </div>
+            <p class="text-zinc-700 leading-relaxed">
+                En 7 Ideas nos esforzamos por transformar ideas en soluciones de calidad. Nuestra visión es inspirar y
+                transformar, liderando la creación de oportunidades y soluciones sostenibles que impulsen un cambio
+                positivo en nuestros clientes.
+                <br><br>
+                Trabajamos todos los días para marcar la diferencia y acercarnos a un futuro lleno de posibilidades.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="tecnologias" class="bg-background text-white py-24 px-6 scroll-mt-32">
+    <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-white mb-12">Tecnologías que usamos</h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 justify-items-center">
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+                <img src="assets/tech/angular.svg" alt="Angular" class="w-14 h-14 mb-2" />
+                <span>Angular</span>
+            </div>
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="150">
+                <img src="assets/tech/nodejs.svg" alt="Node.js" class="w-14 h-14 mb-2" />
+                <span>Node.js</span>
+            </div>
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+                <img src="assets/tech/sql.svg" alt="SQL" class="w-14 h-14 mb-2" />
+                <span>SQL</span>
+            </div>
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="250">
+                <img src="assets/tech/springboot.svg" alt="Spring Boot" class="w-14 h-14 mb-2" />
+                <span>Spring Boot</span>
+            </div>
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
+                <img src="assets/tech/docker.svg" alt="Docker" class="w-14 h-14 mb-2" />
+                <span>Docker</span>
+            </div>
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="350">
+                <img src="assets/tech/jira.svg" alt="Jira" class="w-14 h-14 mb-2" />
+                <span>Jira</span>
+            </div>
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
+                <img src="assets/tech/java.svg" alt="Java" class="w-14 h-14 mb-2" />
+                <span>Java</span>
+            </div>
+            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="450">
+                <img src="assets/tech/nestjs.svg" alt="NestJS" class="w-14 h-14 mb-2" />
+                <span>NestJS</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Línea divisoria animada -->
+<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+<!-- Servicios -->
+<section class="bg-background text-white py-20 px-6" id="servicios">
+    <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-6 text-main">Servicios</h2>
+        <p class="text-white/80 mb-12">Esto es lo que podemos hacer por vos:</p>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition" data-aos="zoom-in"
+                data-aos-delay="100">
+                <i class="fas fa-code text-3xl mb-4 text-main"></i>
+                <h3 class="text-xl font-semibold mb-2">Desarrollo Web</h3>
+                <p class="text-sm text-white/70">Frontend + Backend + Hosting. Todo integrado.</p>
+            </div>
+            <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition" data-aos="zoom-in"
+                data-aos-delay="200">
+                <i class="fas fa-mobile-alt text-3xl mb-4 text-main"></i>
+                <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                <p class="text-sm text-white/70">Tu sitio adaptado a todos los dispositivos.</p>
+            </div>
+            <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition" data-aos="zoom-in"
+                data-aos-delay="300">
+                <i class="fas fa-cloud text-3xl mb-4 text-main"></i>
+                <h3 class="text-xl font-semibold mb-2">Infraestructura</h3>
+                <p class="text-sm text-white/70">Deploy, CI/CD, dockerización, escalabilidad.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Línea divisoria animada -->
+<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+<section id="contacto" class="bg-background text-white py-24 px-6 border-t border-white/10">
+    <div data-aos="fade-up" class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-main mb-4">¡Hablemos!</h2>
+        <p class="text-white/80">¿Tenés un proyecto en mente? Escribinos y lo hacemos realidad.</p>
+    </div>
+
+    <form class="max-w-2xl mx-auto space-y-6">
+        <!-- Nombre -->
+        <div data-aos="fade-up" data-aos-delay="100">
+            <label for="nombre" class="block text-sm font-semibold mb-1">Nombre</label>
+            <div
+                class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                <i class="fas fa-user text-main"></i>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo"
+                    class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div data-aos="fade-up" data-aos-delay="200">
+            <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+            <div
+                class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                <i class="fas fa-envelope text-main"></i>
+                <input type="email" id="email" name="email" placeholder="tucorreo@mail.com"
+                    class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
+            </div>
+        </div>
+
+        <!-- Mensaje -->
+        <div data-aos="fade-up" data-aos-delay="300">
+            <label for="mensaje" class="block text-sm font-semibold mb-1">Mensaje</label>
+            <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje..."
+                    class="bg-transparent w-full outline-none text-white placeholder:text-white/40 resize-none"
+                    required></textarea>
+            </div>
+        </div>
+
+        <!-- Botón -->
+        <div class="text-center pt-4" data-aos="zoom-in" data-aos-delay="400">
+            <button type="submit" class="bg-main hover:bg-hover text-white px-8 py-3 rounded-full text-lg font-semibold
+               shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757] transition-all">
+                <i class="fas fa-paper-plane mr-2"></i>Enviar mensaje
+            </button>
+        </div>
+    </form>
+</section>
+
+
+
+
+<footer class="bg-[#0b000c] text-white px-6 py-10">
+    <div data-aos="fade-up"
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center lg:text-left">
+
+        <!-- Logo + link -->
+        <a href="assets/7id_SOFTWARE_S.A.S_9001.pdf" target="_blank" class="flex flex-col items-center justify-center">
+            <img src="assets/iram_logo.svg" alt="Certificación IRAM" class="w-64 mx-auto">
+            <p class="text-lg mt-2">Siete Ideas Quality Policy</p>
+        </a>
+
+        <!-- Info de contacto -->
+        <div class="flex flex-col items-center lg:items-start justify-center gap-4 text-sm md:text-xl">
+            <div data-aos="fade-right" class="flex items-center gap-3">
+                <i class="fas fa-map-marker-alt text-main"></i>
+                <span>Constitución 424, Tandil</span>
+            </div>
+            <div data-aos="fade-left" class="flex items-center gap-3">
+                <i class="fas fa-phone-alt text-main"></i>
+                <a href="tel:+542494387687" class="hover:underline">(0249) 438-7687</a>
+            </div>
+            <div data-aos="fade-right" class="flex items-center gap-3">
+                <i class="fas fa-envelope text-main"></i>
+                <a href="mailto:info@sieteideas.com.ar" class="hover:underline">{{'info@sieteideas.com.ar'}}</a>
+            </div>
+        </div>
+
+        <!-- Mapa -->
+        <div data-aos="fade-right" class="w-full h-64 rounded overflow-hidden shadow-md">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.394131210715!2d-59.135459100000006!3d-37.33317679999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911fbda19f307d%3A0xced88161234568a3!2sConstituci%C3%B3n%20424%2C%20B7000%20Tandil%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1751635773959!5m2!1ses-419!2sar"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" class="w-full h-full">
+            </iframe>
+        </div>
+
+    </div>
+</footer>
