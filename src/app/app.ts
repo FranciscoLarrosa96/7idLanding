@@ -28,15 +28,21 @@ export class App implements OnInit {
     btn?.addEventListener('click', () => {
       menu?.classList.toggle('hidden');
     });
+    setTimeout(() => {
+      const video = document.querySelector('.videoBg') as HTMLVideoElement;
+      if (video) {
+        video.muted = true;
+        video.play().catch(() => console.log('🛑 No se pudo reproducir'));
+      }
+    }, 500);
   }
 
+  toggleMenu() {
+    console.log('menuOpen:', this.menuOpen());
 
-toggleMenu() {
-  console.log('menuOpen:', this.menuOpen());
-    
-  this.menuOpen.set(!this.menuOpen());
-  console.log('menuOpen after toggle:', this.menuOpen());
-  
-  
-}
+    this.menuOpen.set(!this.menuOpen());
+    console.log('menuOpen after toggle:', this.menuOpen());
+
+
+  }
 }
