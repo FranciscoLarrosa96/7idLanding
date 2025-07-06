@@ -388,7 +388,7 @@
     <form #formElement [formGroup]="contactForm" (ngSubmit)="sendEmail()" enctype="multipart/form-data"
         class="max-w-2xl mx-auto space-y-6">
         <!-- Nombre -->
-        <div data-aos="fade-right">
+        <div >
             <label for="nombre" class="block text-sm font-semibold mb-1">Nombre</label>
             <div
                 class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
@@ -399,7 +399,7 @@
         </div>
 
         <!-- Email -->
-        <div data-aos="fade-left">
+        <div >
             <label for="email" class="block text-sm font-semibold mb-1">Email</label>
             <div
                 class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
@@ -410,7 +410,7 @@
         </div>
 
         <!-- Mensaje -->
-        <div data-aos="fade-right">
+        <div>
             <label for="mensaje" class="block text-sm font-semibold mb-1">Mensaje</label>
             <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
                 <textarea id="mensaje" formControlName="mensaje" rows="5" placeholder="Escribí tu mensaje..."
@@ -420,7 +420,7 @@
         </div>
 
         <!-- Archivo (CV) -->
-        <div data-aos="fade-left">
+        <div>
             <label for="cv" class="block text-sm font-semibold mb-1">Adjuntar CV</label>
             <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
                 <input type="file" (change)="onFileSelected($event)"
@@ -430,7 +430,7 @@
         </div>
 
         <!-- Botón -->
-        <div data-aos="zoom-in" class="text-center pt-4">
+        <div class="text-center pt-4">
             <button type="submit"
                 class="bg-main hover:bg-hover text-white px-8 py-3 rounded-full text-lg font-semibold shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757] transition-all">
                 <i class="fas fa-paper-plane mr-2"></i>Enviar mensaje
