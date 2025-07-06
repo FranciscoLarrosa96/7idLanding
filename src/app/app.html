@@ -47,18 +47,28 @@
 </header>
 
 <!-- Hero -->
-<section id="inicio" class="scroll-mt-32 relative  text-white py-32 px-6 min-h-[100dvh] flex items-center">
-    <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
+<section id="inicio" class="scroll-mt-32 relative text-white py-32 px-6 min-h-[100dvh] flex items-center">
+    <!-- Overlay con gradiente -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/10 z-[-1]"></div>
+
+    <!-- Contenido -->
+    <div data-aos="fade-up" class="max-w-6xl mx-auto text-center z-10">
         <h1 class="text-4xl md:text-6xl font-bold leading-tight">
             Convertimos tus ideas en <span class="text-main">Soluciones Digitales</span>
         </h1>
     </div>
 
-    <video autoplay muted loop playsinline
-        class="videoBg absolute top-0 left-0 w-full h-full object-cover z-[-10] pointer-events-none">
+    <!-- Video de fondo -->
+    <video class="videoBg absolute inset-0 w-full h-full object-cover z-[-2]" autoplay muted loop playsinline>
+        <!-- Desktop -->
+        <source src="assets/tech/fondo4k.mp4" type="video/mp4" media="(min-width: 1024px)" />
+        <!-- Tablets y móviles -->
         <source src="assets/tech/fondo.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5 😢
     </video>
 </section>
+
+
 
 
 
