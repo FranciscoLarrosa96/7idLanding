@@ -210,6 +210,31 @@ export class App implements OnInit {
     });
   }
 
+  onParticlesLoaded(container: Container): void {
+  console.log('✅ Particles loaded');
+
+  const hero = document.getElementById('inicio');
+  if (!hero) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      const visible = entry.isIntersecting;
+      console.log(`🎯 Hero visible: ${visible}`);
+
+      if (visible) {
+        container.play();
+        console.log('▶️ Particles PLAY');
+      } else {
+        container.pause();
+        console.log('⏸️ Particles PAUSE');
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(hero);
+}
+
   toggleMenu() {
     this.menuOpen.set(!this.menuOpen());
   }
