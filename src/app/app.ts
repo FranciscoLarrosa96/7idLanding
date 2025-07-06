@@ -101,6 +101,88 @@ export class App implements OnInit {
       }
     }
   };
+  particlesOptionsGlow: ISourceOptions = {
+    background: {
+      color: {
+        value:
+          getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim() ||
+          '#0b000a'
+      }
+    },
+    fpsLimit: 60,
+    detectRetina: true,
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: 'bubble'
+        },
+        resize: true
+      },
+      modes: {
+        bubble: {
+          distance: 120,
+          size: 8,
+          duration: 2,
+          opacity: 1,
+          color:
+            getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim() ||
+            '#dd0e7c'
+        }
+      }
+    },
+    particles: {
+      number: {
+        value: 150,
+        density: {
+          enable: true,
+          area: 1000
+        }
+      },
+      color: {
+        value:
+          getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim() ||
+          '#dd0e7c'
+      },
+      links: {
+        enable: true,
+        distance: 140,
+        color:
+          getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim() ||
+          '#dd0e7c',
+        opacity: 0.35,
+        width: 1.1
+      },
+      collisions: {
+        enable: true
+      },
+      move: {
+        direction: 'none',
+        enable: true,
+        outModes: {
+          default: 'bounce'
+        },
+        speed: 1.4
+      },
+      opacity: {
+        value: 0.8
+      },
+      shape: {
+        type: 'circle'
+      },
+      size: {
+        value: { min: 2, max: 5 }
+      },
+      shadow: {
+        enable: true,
+        color:
+          getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim() ||
+          '#dd0e7c',
+        blur: 12
+      }
+    }
+  };
+
 
   particlesInit = this._particlesInit.bind(this);
 

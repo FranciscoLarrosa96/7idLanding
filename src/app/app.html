@@ -47,16 +47,22 @@
 </header>
 
 <!-- Hero -->
-<section id="inicio" class="bg-background scroll-mt-32 relative text-white py-32 px-6 min-h-[100dvh] flex items-center z-[-20]">
+<section id="inicio"
+    class="bg-background scroll-mt-32 relative text-white py-32 px-6 min-h-[100dvh] flex items-center z-[-20]">
     <!-- Partículas de fondo -->
     <ng-particles class="absolute inset-0 w-full h-full z-[-1]" #particlesRef [id]="'tsparticles'"
-        [options]="particlesOptions2" [particlesInit]="particlesInit">
+        [options]="particlesOptionsGlow" [particlesInit]="particlesInit">
     </ng-particles>
 
     <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold leading-tight text-text dark:text-white">
-            Convertimos tus ideas en <span class="text-main">Soluciones Digitales</span>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight text-text">
+            Convertimos tus ideas en
+            <span class="text-main glow-text">
+                Soluciones Digitales
+            </span>
         </h1>
+
+
     </div>
 </section>
 

@@ -8,3 +8,20 @@
   border: 0;
   border-radius: 10px;
 }
+
+.glow-text {
+  text-shadow: 0 0 5px #dd0e7c, 0 0 15px #dd0e7c80;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #dd0e7c, 0 0 15px #dd0e7c80;
+  }
+  50% {
+    text-shadow: 0 0 15px #dd0e7c, 0 0 30px #dd0e7c;
+  }
+}
+
+.glow-text {
+  animation: pulse-glow 2s infinite;
+}
