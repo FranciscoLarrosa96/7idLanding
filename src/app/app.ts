@@ -1,12 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, ElementRef, OnInit, signal, ViewChild } from '@angular/core';
 import * as AOS from 'aos';
 import { loadSlim } from 'tsparticles-slim';
 import type { Container, Engine, ISourceOptions } from 'tsparticles-engine';
 import { NgParticlesModule } from 'ng-particles';
+import emailjs from 'emailjs-com';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, NgParticlesModule],
+  imports: [CommonModule, NgParticlesModule, ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -190,6 +193,22 @@ export class App implements OnInit {
 
   particlesInit = this._particlesInit.bind(this);
   isMobile = window.innerWidth <= 768;
+  contactForm: FormGroup;
+  selectedFile: File | null = null;
+
+  @ViewChild('formElement') formElement!: ElementRef<HTMLFormElement>;
+
+  constructor(private fb: FormBuilder) {
+    this.contactForm = this.fb.group({
+      nombre: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mensaje: ['', Validators.required],
+    });
+  }
+
+
+
+
   ngOnInit(): void {
     AOS.init({
       duration: 800,
@@ -210,29 +229,29 @@ export class App implements OnInit {
   }
 
   onParticlesLoaded(container: Container): void {
-  console.log('✅ Particles loaded');
+    console.log('✅ Particles loaded');
 
-  const hero = document.getElementById('inicio');
-  if (!hero) return;
+    const hero = document.getElementById('inicio');
+    if (!hero) return;
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      const visible = entry.isIntersecting;
-      console.log(`🎯 Hero visible: ${visible}`);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const visible = entry.isIntersecting;
+        console.log(`🎯 Hero visible: ${visible}`);
 
-      if (visible) {
-        container.play();
-        console.log('▶️ Particles PLAY');
-      } else {
-        container.pause();
-        console.log('⏸️ Particles PAUSE');
-      }
-    },
-    { threshold: 0.2 }
-  );
+        if (visible) {
+          container.play();
+          console.log('▶️ Particles PLAY');
+        } else {
+          container.pause();
+          console.log('⏸️ Particles PAUSE');
+        }
+      },
+      { threshold: 0.2 }
+    );
 
-  observer.observe(hero);
-}
+    observer.observe(hero);
+  }
 
   toggleMenu() {
     this.menuOpen.set(!this.menuOpen());
@@ -252,7 +271,7 @@ export class App implements OnInit {
       background: {
         color: { value: background }
       },
-      detectRetina: true, 
+      detectRetina: true,
       particles: {
         number: {
           value: this.isMobile ? 120 : 200,
@@ -280,6 +299,39 @@ export class App implements OnInit {
         size: { value: { min: 2, max: this.isMobile ? 5 : 5 } }
       }
     };
+  }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files?.length) {
+      this.selectedFile = input.files[0];
+    }
+  }
+
+  /**
+   * Envia un correo electrónico utilizando EmailJS.
+   * @param event 
+   */
+
+  sendEmail(): void {
+    if (this.contactForm.invalid || !this.selectedFile) return;
+
+    const formData = new FormData(this.formElement.nativeElement);
+    formData.append('cv', this.selectedFile);
+for (const [key, value] of formData.entries()) {
+  console.log(`${key}:`, value);
+}
+
+    // emailjs
+    //   .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.formElement.nativeElement, 'YOUR_PUBLIC_KEY')
+    //   .then(() => {
+    //     console.log('✅ Enviado con éxito');
+    //     this.contactForm.reset();
+    //     this.selectedFile = null;
+    //   })
+    //   .catch((error) => {
+    //     console.error('❌ Error al enviar:', error);
+    //   });
   }
 
 }

@@ -385,47 +385,60 @@
         <p class="text-white/80">¿Tenés un proyecto en mente? Escribinos y lo hacemos realidad.</p>
     </div>
 
-    <form class="max-w-2xl mx-auto space-y-6">
+    <form #formElement [formGroup]="contactForm" (ngSubmit)="sendEmail()" enctype="multipart/form-data"
+        class="max-w-2xl mx-auto space-y-6">
         <!-- Nombre -->
-        <div data-aos="fade-up" data-aos-delay="100">
+        <div>
             <label for="nombre" class="block text-sm font-semibold mb-1">Nombre</label>
             <div
                 class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
                 <i class="fas fa-user text-main"></i>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo"
+                <input id="nombre" formControlName="nombre" type="text" placeholder="Tu nombre completo"
                     class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
             </div>
         </div>
 
         <!-- Email -->
-        <div data-aos="fade-up" data-aos-delay="200">
+        <div>
             <label for="email" class="block text-sm font-semibold mb-1">Email</label>
             <div
                 class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
                 <i class="fas fa-envelope text-main"></i>
-                <input type="email" id="email" name="email" placeholder="tucorreo@mail.com"
+                <input id="email" formControlName="email" type="email" placeholder="tucorreo@mail.com"
                     class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
             </div>
         </div>
 
         <!-- Mensaje -->
-        <div data-aos="fade-up" data-aos-delay="300">
+        <div>
             <label for="mensaje" class="block text-sm font-semibold mb-1">Mensaje</label>
             <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje..."
+                <textarea id="mensaje" formControlName="mensaje" rows="5" placeholder="Escribí tu mensaje..."
                     class="bg-transparent w-full outline-none text-white placeholder:text-white/40 resize-none"
                     required></textarea>
             </div>
         </div>
 
+        <!-- Archivo (CV) -->
+        <div>
+            <label for="cv" class="block text-sm font-semibold mb-1">Adjuntar CV</label>
+            <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                <input type="file" (change)="onFileSelected($event)"
+                    class="text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-main file:text-white hover:file:bg-hover"
+                    required />
+            </div>
+        </div>
+
         <!-- Botón -->
-        <div class="text-center pt-4" data-aos="zoom-in" data-aos-delay="400">
-            <button type="submit" class="bg-main hover:bg-hover text-white px-8 py-3 rounded-full text-lg font-semibold
-               shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757] transition-all">
+        <div class="text-center pt-4">
+            <button type="submit"
+                class="bg-main hover:bg-hover text-white px-8 py-3 rounded-full text-lg font-semibold shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757] transition-all">
                 <i class="fas fa-paper-plane mr-2"></i>Enviar mensaje
             </button>
         </div>
     </form>
+
+
 </section>
 
 
