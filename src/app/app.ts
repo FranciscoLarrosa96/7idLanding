@@ -12,6 +12,10 @@ import { NgParticlesModule } from 'ng-particles';
 })
 export class App implements OnInit {
   protected title = '7idLandingPage';
+  showGestionOnline: boolean = false;
+  showBackOffice: boolean = false;
+  showGestionate = false;
+  showFOL = false;
   menuOpen = signal(false);
   particlesOptions: ISourceOptions = {
     background: {
