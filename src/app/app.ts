@@ -115,26 +115,26 @@ export class App implements OnInit {
     },
     fpsLimit: 60,
     detectRetina: true,
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: 'bubble'
-        },
-        resize: true
-      },
-      modes: {
-        bubble: {
-          distance: 120,
-          size: 8,
-          duration: 2,
-          opacity: 1,
-          color:
-            getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim() ||
-            '#dd0e7c'
-        }
-      }
-    },
+    // interactivity: {
+    //   events: {
+    //     onHover: {
+    //       enable: true,
+    //       mode: 'bubble'
+    //     },
+    //     resize: true
+    //   },
+    //   modes: {
+    //     bubble: {
+    //       distance: 120,
+    //       size: 8,
+    //       duration: 2,
+    //       opacity: 1,
+    //       color:
+    //         getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim() ||
+    //         '#dd0e7c'
+    //     }
+    //   }
+    // },
     particles: {
       number: {
         value: 120,
@@ -190,7 +190,6 @@ export class App implements OnInit {
 
   particlesInit = this._particlesInit.bind(this);
   isMobile = window.innerWidth <= 768;
-
   ngOnInit(): void {
     AOS.init({
       duration: 800,
@@ -253,27 +252,10 @@ export class App implements OnInit {
       background: {
         color: { value: background }
       },
-      detectRetina: true,
-      interactivity: this.isMobile
-        ? {} // sin interacción en mobile
-        : {
-          events: {
-            onHover: { enable: true, mode: 'bubble' },
-            resize: true
-          },
-          modes: {
-            bubble: {
-              distance: 120,
-              size: 8,
-              duration: 2,
-              opacity: 1,
-              color: color
-            }
-          }
-        },
+      detectRetina: true, 
       particles: {
         number: {
-          value: this.isMobile ? 120 : 150,
+          value: this.isMobile ? 120 : 200,
           density: { enable: true, area: 1000 }
         },
         color: { value: color },
@@ -295,14 +277,7 @@ export class App implements OnInit {
         },
         opacity: { value: this.isMobile ? 0.7 : 0.8 },
         shape: { type: 'circle' },
-        size: { value: { min: 2, max: this.isMobile ? 5 : 5 } },
-        shadow: this.isMobile
-          ? { enable: false }
-          : {
-            enable: true,
-            color: color,
-            blur: 9
-          }
+        size: { value: { min: 2, max: this.isMobile ? 5 : 5 } }
       }
     };
   }
