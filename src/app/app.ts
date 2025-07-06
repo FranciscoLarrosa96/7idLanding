@@ -133,7 +133,7 @@ export class App implements OnInit {
     },
     particles: {
       number: {
-        value: 150,
+        value: 120,
         density: {
           enable: true,
           area: 1000
@@ -185,6 +185,7 @@ export class App implements OnInit {
 
 
   particlesInit = this._particlesInit.bind(this);
+  isMobile = window.innerWidth <= 768;
 
   ngOnInit(): void {
     AOS.init({
@@ -192,6 +193,8 @@ export class App implements OnInit {
       easing: 'ease-in-out',
       once: false,
     });
+
+    this.setParticlesOptions();
   }
 
   ngAfterViewInit() {
@@ -210,4 +213,69 @@ export class App implements OnInit {
   private async _particlesInit(engine: Engine): Promise<void> {
     await loadSlim(engine);
   }
+
+  setParticlesOptions() {
+    const color =
+      getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim() || '#dd0e7c';
+    const background =
+      getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim() || '#0b000a';
+
+    this.particlesOptionsGlow = {
+      background: {
+        color: { value: background }
+      },
+      detectRetina: true,
+      interactivity: this.isMobile
+        ? {} // sin interacción en mobile
+        : {
+          events: {
+            onHover: { enable: true, mode: 'bubble' },
+            resize: true
+          },
+          modes: {
+            bubble: {
+              distance: 120,
+              size: 8,
+              duration: 2,
+              opacity: 1,
+              color: color
+            }
+          }
+        },
+      particles: {
+        number: {
+          value: this.isMobile ? 120 : 150,
+          density: { enable: true, area: 1000 }
+        },
+        color: { value: color },
+        links: {
+          enable: true,
+          distance: 140,
+          color: color,
+          opacity: 0.35,
+          width: 1.1
+        },
+        collisions: {
+          enable: !this.isMobile
+        },
+        move: {
+          direction: 'none',
+          enable: true,
+          outModes: { default: 'bounce' },
+          speed: this.isMobile ? 0.8 : 1.4
+        },
+        opacity: { value: this.isMobile ? 0.7 : 0.8 },
+        shape: { type: 'circle' },
+        size: { value: { min: 2, max: this.isMobile ? 5 : 5 } },
+        shadow: this.isMobile
+          ? { enable: false }
+          : {
+            enable: true,
+            color: color,
+            blur: 9
+          }
+      }
+    };
+  }
+
 }
