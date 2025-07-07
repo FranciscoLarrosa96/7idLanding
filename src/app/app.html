@@ -45,412 +45,429 @@
     </div>
     }
 </header>
-
-<!-- Hero -->
-<section id="inicio" class="bg-background relative text-white py-32 px-6 min-h-[100dvh] flex items-center z-[-20]">
-    <!-- Partículas de fondo -->
-    <ng-particles class="absolute top-0 left-0 w-full h-full z-[-1]" style="height: 100%; max-height: 100dvh;"
-        #particlesRef [id]="'tsparticles'" [options]="particlesOptionsGlow" [particlesInit]="particlesInit"
-        (particlesLoaded)="onParticlesLoaded($event)"></ng-particles>
-
-
-    <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold leading-tight text-text">
-            Convertimos tus ideas en
-            <span class="text-main glow-text">
-                Soluciones Digitales
-            </span>
-        </h1>
-    </div>
-</section>
+<main class="scroll-smooth">
+    <!-- Hero -->
+    <section id="inicio" class="bg-background relative text-white py-32 px-6 min-h-[100dvh] flex items-center z-[-20]">
+        <!-- Partículas de fondo -->
+        <ng-particles class="absolute top-0 left-0 w-full h-full z-[-1]" style="height: 100%; max-height: 100dvh;"
+            #particlesRef [id]="'tsparticles'" [options]="particlesOptionsGlow" [particlesInit]="particlesInit"
+            (particlesLoaded)="onParticlesLoaded($event)"></ng-particles>
 
 
-<!-- Línea divisoria animada -->
-<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+        <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight text-text">
+                Convertimos tus ideas en
+                <span class="text-main glow-text">
+                    Soluciones Digitales
+                </span>
+            </h1>
+        </div>
+    </section>
 
-<!-- Sección Nosotros -->
-<section id="nosotros" class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32">
-    <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold mb-4 text-main">Nosotros</h2>
-        <p class="text-zinc-300 text-lg max-w-3xl mx-auto">
-            Somos un equipo de profesionales que se dedica a desarrollar soluciones tecnológicas personalizadas
-            para organizaciones de todos los tamaños.
-        </p>
-    </div>
 
-    <div class="grid md:grid-cols-2 gap-12">
-        <!-- Por qué 7 Ideas -->
-        <div class="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700 hover:shadow-xl transition-all duration-300"
-            data-aos="zoom-in" data-aos-delay="100">
-            <div class="flex items-center gap-4 mb-4">
-                <i class="fas fa-lightbulb text-3xl text-main"></i>
-                <h3 class="text-2xl font-semibold text-main">¿Por qué 7 Ideas?</h3>
-            </div>
-            <p class="text-zinc-300 leading-relaxed text-base">
-                Desde nuestros comienzos, en 2004, trabajamos con las últimas tecnologías de desarrollo de software. Las
-                relaciones con nuestros clientes son sólidas y duraderas, y somos una parte fundamental de su cadena de
-                valor.
-                <br /><br />
-                Adoptamos la metodología ágil Scrum para trabajar de manera eficiente y colaborativa. Mediante ciclos
-                iterativos,
-                nos adaptamos rápidamente a los cambios y logramos entregar productos de alta calidad en plazos
-                ajustados.
+    <!-- Línea divisoria animada -->
+    <div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32">
+        <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-4 text-main">Nosotros</h2>
+            <p class="text-zinc-300 text-lg max-w-3xl mx-auto">
+                Somos un equipo de profesionales que se dedica a desarrollar soluciones tecnológicas personalizadas
+                para organizaciones de todos los tamaños.
             </p>
         </div>
 
-        <!-- Nuestra filosofía -->
-        <div class="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700 hover:shadow-xl transition-all duration-300"
-            data-aos="zoom-in" data-aos-delay="200">
-            <div class="flex items-center gap-4 mb-4">
-                <i class="fas fa-seedling text-3xl text-main"></i>
-                <h3 class="text-2xl font-semibold text-main">Nuestra filosofía</h3>
-            </div>
-            <p class="text-zinc-300 leading-relaxed text-base">
-                En 7 Ideas nos esforzamos por transformar ideas en soluciones de calidad. Nuestra visión es inspirar y
-                transformar, liderando la creación de oportunidades y soluciones sostenibles que impulsen un cambio
-                positivo en
-                nuestros clientes.
-                <br /><br />
-                Trabajamos todos los días para marcar la diferencia y acercarnos a un futuro lleno de posibilidades.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section id="clientes" class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32">
-    <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold mb-4 text-main">Nuestros clientes</h2>
-        <p class="text-zinc-300 text-lg max-w-3xl mx-auto">
-            Las relaciones con nuestros clientes son sólidas y duraderas.<br />
-            Con orgullo, somos parte fundamental de su cadena de valor.
-        </p>
-    </div>
-
-    <!-- Cliente: La Anónima -->
-    <div class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto space-y-6 transition-all duration-300"
-        data-aos="fade-up">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-4">
-                <img src="assets/logos/la_anonima_logo.png" alt="La Anónima" class="h-16 w-16 object-contain" />
-                <div class="text-xl font-semibold">La Anónima</div>
-            </div>
-            <div class="text-right">
-                <p class="text-sm text-zinc-400">Desde</p>
-                <p class="text-3xl font-bold text-white">2003</p>
-            </div>
-        </div>
-
-        <!-- Casos de estudio -->
-        <div class="mt-8 space-y-6">
-            <h3 class="text-2xl font-semibold">Casos de estudio</h3>
-
-            <!-- Proyecto: Gestión Online -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
-                <button
-                    class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
-                    (click)="showGestionOnline = !showGestionOnline">
-                    Gestión Online
-                    <i [ngClass]="showGestionOnline ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-                </button>
-                <div *ngIf="showGestionOnline" class="p-6 space-y-4">
-                    <img data-aos="fade-right" src="assets/proyectos/la-anonima/gestion-online.png"
-                        class="rounded-xl shadow-md" />
-                    <p class="text-zinc-300 text-sm leading-relaxed">
-                        Es una web app responsive, desarrollada para la empresa La Anónima, que permite a los usuarios
-                        realizar diversos
-                        trámites de manera online. Entre las funciones destacadas se encuentran la gestión de tarjetas,
-                        préstamos, pagos,
-                        autogestión de datos y más. También ofrece recargas, resumen de deuda y trámites para DirecTV.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Proyecto: Back Office App -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
-                <button
-                    class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
-                    (click)="showBackOffice = !showBackOffice">
-                    Back Office App
-                    <i [ngClass]="showBackOffice ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-                </button>
-                <div *ngIf="showBackOffice" class="p-6 space-y-4">
-                    <img data-aos="fade-left" src="assets/proyectos/la-anonima/backoffice.png"
-                        class="rounded-xl shadow-md" />
-                    <p class="text-zinc-300 text-sm leading-relaxed">
-                        Aplicación web interna para procesos clave: alta/baja de productos, onboarding de usuarios,
-                        supervisión de
-                        contratos, automatización legal y métricas de scoring. Ayuda a simplificar tareas manuales y
-                        optimizar procesos
-                        con enfoque estratégico.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cliente: Grupo Fava -->
-    <div class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto mt-16 space-y-6 transition-all duration-300"
-        data-aos="fade-up">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-4">
-                <img src="assets/logos/fava_logo.png" alt="Grupo Fava" class="h-16 w-16 object-contain" />
-                <div class="text-xl font-semibold">Grupo Fava</div>
-            </div>
-            <div class="text-right">
-                <p class="text-sm text-zinc-400">Desde</p>
-                <p class="text-3xl font-bold text-white">2010</p>
-            </div>
-        </div>
-
-        <!-- Casos de estudio -->
-        <div class="mt-8 space-y-6">
-            <h3 class="text-2xl font-semibold">Casos de estudio</h3>
-
-            <!-- Proyecto: Gestionate -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
-                <button
-                    class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
-                    (click)="showGestionate = !showGestionate">
-                    Gestionate
-                    <i [ngClass]="showGestionate ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-                </button>
-                <div *ngIf="showGestionate" class="p-6 space-y-4">
-                    <img data-aos="fade-left" src="assets/proyectos/fava/gestionate.png" class="rounded-xl shadow-md" />
-                    <p class="text-zinc-300 text-sm leading-relaxed">
-                        Aplicación desarrollada para el uso interno de las empresas que integran el Grupo Fava (solo
-                        versión desktop).
-                        Permite la administración de los recursos humanos, mediante la gestión de novedades como
-                        licencias, vacaciones y
-                        solicitudes. Facilita la liquidación de sueldos con información centralizada. Su mayor ventaja
-                        es la
-                        automatización y digitalización de tareas manuales en RRHH, para más de 500 empleados.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Proyecto: FOL -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
-                <button
-                    class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
-                    (click)="showFOL = !showFOL">
-                    Favacard Online | FOL
-                    <i [ngClass]="showFOL ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-                </button>
-                <div *ngIf="showFOL" class="p-6 space-y-4">
-                    <img data-aos="fade-right" src="assets/proyectos/fava/fol.png" class="rounded-xl shadow-md" />
-                    <p class="text-zinc-300 text-sm leading-relaxed">
-                        Aplicación desarrollada para la empresa Favacard, parte del Grupo Fava (desktop y mobile).
-                        Permite realizar
-                        trámites online como gestión de tarjetas Favacard y Cabal, pagos de consumos, solicitud de
-                        préstamos, entre otras
-                        opciones.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<!-- Línea divisoria animada -->
-<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
-
-<section id="tecnologias" class="bg-background text-white py-24 px-6 scroll-mt-32">
-    <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
-        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white text-center mb-16 relative inline-block after:block after:absolute after:w-2/3 after:h-1 after:bg-main after:-bottom-4 after:left-1/2 after:-translate-x-1/2 after:rounded-full after:shadow-[0_0_20px_#dd0e7c]"
-            data-aos="fade-up">
-            Tecnologías que usamos
-        </h2>
-
-
-
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 justify-items-center">
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
-                <img src="assets/tech/angular.svg" alt="Angular" class="w-14 h-14 mb-2" />
-                <span>Angular</span>
-            </div>
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="150">
-                <img src="assets/tech/nodejs.svg" alt="Node.js" class="w-14 h-14 mb-2" />
-                <span>Node.js</span>
-            </div>
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/tech/sql.svg" alt="SQL" class="w-14 h-14 mb-2" />
-                <span>SQL</span>
-            </div>
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="250">
-                <img src="assets/tech/spring.svg" alt="Spring Boot" class="w-14 h-14 mb-2" />
-                <span>Spring Boot</span>
-            </div>
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/tech/docker.svg" alt="Docker" class="w-14 h-14 mb-2" />
-                <span>Docker</span>
-            </div>
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="350">
-                <img src="assets/tech/jira.svg" alt="Jira" class="w-14 h-14 mb-2" />
-                <span>Jira</span>
-            </div>
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
-                <img src="assets/tech/java.svg" alt="Java" class="w-14 h-14 mb-2" />
-                <span>Java</span>
-            </div>
-            <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="450">
-                <img src="assets/tech/nestjs.svg" alt="NestJS" class="w-14 h-14 mb-2" />
-                <span>NestJS</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- Línea divisoria animada -->
-<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
-
-<!-- Servicios -->
-<section class="bg-background text-white py-20 px-6" id="servicios">
-    <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
-        <h2
-            class="text-3xl sm:text-4xl md:text-5xl font-bold text-white relative inline-block after:block after:absolute after:w-2/3 after:h-1 after:bg-main after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:rounded-full after:shadow-[0_0_20px_#dd0e7c] mb-6">
-            Servicios
-        </h2>
-
-        <p class="text-white/80 mb-12">Esto es lo que podemos hacer por vos:</p>
-        <div class="grid md:grid-cols-3 gap-8 text-left text-white/90">
-
-            <!-- Card 1: Desarrollo Web -->
-            <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition group"
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Por qué 7 Ideas -->
+            <div class="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700 hover:shadow-xl transition-all duration-300"
                 data-aos="zoom-in" data-aos-delay="100">
-                <div class="flex items-center gap-3 mb-4">
-                    <i class="fas fa-code text-3xl text-main group-hover:scale-110 transition"></i>
-                    <h3 class="text-xl font-semibold">Desarrollo Web</h3>
+                <div class="flex items-center gap-4 mb-4">
+                    <i class="fas fa-lightbulb text-3xl text-main"></i>
+                    <h3 class="text-2xl font-semibold text-main">¿Por qué 7 Ideas?</h3>
                 </div>
-                <ul class="space-y-2 pl-1 text-sm text-white/70">
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Frontend +
-                        Backend</li>
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Integración &
-                        automatización</li>
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Consultoría
-                        personalizada</li>
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Soporte
-                        continuo</li>
-                </ul>
+                <p class="text-zinc-300 leading-relaxed text-base">
+                    Desde nuestros comienzos, en 2004, trabajamos con las últimas tecnologías de desarrollo de software.
+                    Las
+                    relaciones con nuestros clientes son sólidas y duraderas, y somos una parte fundamental de su cadena
+                    de
+                    valor.
+                    <br /><br />
+                    Adoptamos la metodología ágil Scrum para trabajar de manera eficiente y colaborativa. Mediante
+                    ciclos
+                    iterativos,
+                    nos adaptamos rápidamente a los cambios y logramos entregar productos de alta calidad en plazos
+                    ajustados.
+                </p>
             </div>
 
-            <!-- Card 2: Responsive Design -->
-            <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition group"
+            <!-- Nuestra filosofía -->
+            <div class="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700 hover:shadow-xl transition-all duration-300"
                 data-aos="zoom-in" data-aos-delay="200">
-                <div class="flex items-center gap-3 mb-4">
-                    <i class="fas fa-mobile-alt text-3xl text-main group-hover:scale-110 transition"></i>
-                    <h3 class="text-xl font-semibold">Responsive Design</h3>
+                <div class="flex items-center gap-4 mb-4">
+                    <i class="fas fa-seedling text-3xl text-main"></i>
+                    <h3 class="text-2xl font-semibold text-main">Nuestra filosofía</h3>
                 </div>
-                <ul class="space-y-2 pl-1 text-sm text-white/70">
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> UX/UI para
-                        todos los dispositivos</li>
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Navegación
-                        optimizada</li>
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Adaptación a
-                        tablets y móviles</li>
-                </ul>
+                <p class="text-zinc-300 leading-relaxed text-base">
+                    En 7 Ideas nos esforzamos por transformar ideas en soluciones de calidad. Nuestra visión es inspirar
+                    y
+                    transformar, liderando la creación de oportunidades y soluciones sostenibles que impulsen un cambio
+                    positivo en
+                    nuestros clientes.
+                    <br /><br />
+                    Trabajamos todos los días para marcar la diferencia y acercarnos a un futuro lleno de posibilidades.
+                </p>
             </div>
+        </div>
+    </section>
 
-            <!-- Card 3: Infraestructura -->
-            <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition group"
-                data-aos="zoom-in" data-aos-delay="300">
-                <div class="flex items-center gap-3 mb-4">
-                    <i class="fas fa-cloud text-3xl text-main group-hover:scale-110 transition"></i>
-                    <h3 class="text-xl font-semibold">Infraestructura</h3>
+    <section id="clientes" class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32">
+        <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-4 text-main">Nuestros clientes</h2>
+            <p class="text-zinc-300 text-lg max-w-3xl mx-auto">
+                Las relaciones con nuestros clientes son sólidas y duraderas.<br />
+                Con orgullo, somos parte fundamental de su cadena de valor.
+            </p>
+        </div>
+
+        <!-- Cliente: La Anónima -->
+        <div class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto space-y-6 transition-all duration-300"
+            data-aos="fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <img src="assets/logos/la_anonima_logo.png" alt="La Anónima" class="h-16 w-16 object-contain" />
+                    <div class="text-xl font-semibold">La Anónima</div>
                 </div>
-                <ul class="space-y-2 pl-1 text-sm text-white/70">
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> CI/CD & Deploy
-                    </li>
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Dockerización
-                        de proyectos</li>
-                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Escalabilidad y
-                        monitoreo</li>
-                </ul>
+                <div class="text-right">
+                    <p class="text-sm text-zinc-400">Desde</p>
+                    <p class="text-3xl font-bold text-white">2003</p>
+                </div>
             </div>
 
-        </div>
+            <!-- Casos de estudio -->
+            <div class="mt-8 space-y-6">
+                <h3 class="text-2xl font-semibold">Casos de estudio</h3>
 
-    </div>
-</section>
+                <!-- Proyecto: Gestión Online -->
+                <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+                    <button
+                        class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+                        (click)="showGestionOnline = !showGestionOnline">
+                        Gestión Online
+                        <i [ngClass]="showGestionOnline ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div *ngIf="showGestionOnline" class="p-6 space-y-4">
+                        <img data-aos="fade-right" src="assets/proyectos/la-anonima/gestion-online.png"
+                            class="rounded-xl shadow-md" />
+                        <p class="text-zinc-300 text-sm leading-relaxed">
+                            Es una web app responsive, desarrollada para la empresa La Anónima, que permite a los
+                            usuarios
+                            realizar diversos
+                            trámites de manera online. Entre las funciones destacadas se encuentran la gestión de
+                            tarjetas,
+                            préstamos, pagos,
+                            autogestión de datos y más. También ofrece recargas, resumen de deuda y trámites para
+                            DirecTV.
+                        </p>
+                    </div>
+                </div>
 
-<!-- Línea divisoria animada -->
-<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
-
-<section id="contacto" class="bg-background text-white py-24 px-6 border-t border-white/10">
-    <div data-aos="fade-up" class="max-w-3xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-main mb-4">¡Hablemos!</h2>
-        <p class="text-white/80">¿Tenés un proyecto en mente? Escribinos y lo hacemos realidad.</p>
-    </div>
-
-    <form #formElement [formGroup]="contactForm" (ngSubmit)="sendEmail()" enctype="multipart/form-data"
-        class="max-w-2xl mx-auto space-y-6">
-        <!-- Nombre -->
-        <div >
-            <label for="nombre" class="block text-sm font-semibold mb-1">Nombre</label>
-            <div
-                class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
-                <i class="fas fa-user text-main"></i>
-                <input id="nombre" formControlName="nombre" type="text" placeholder="Tu nombre completo"
-                    class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
-            </div>
-        </div>
-
-        <!-- Email -->
-        <div >
-            <label for="email" class="block text-sm font-semibold mb-1">Email</label>
-            <div
-                class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
-                <i class="fas fa-envelope text-main"></i>
-                <input id="email" formControlName="email" type="email" placeholder="tucorreo@mail.com"
-                    class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
-            </div>
-        </div>
-
-        <!-- Mensaje -->
-        <div>
-            <label for="mensaje" class="block text-sm font-semibold mb-1">Mensaje</label>
-            <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
-                <textarea id="mensaje" formControlName="mensaje" rows="5" placeholder="Escribí tu mensaje..."
-                    class="bg-transparent w-full outline-none text-white placeholder:text-white/40 resize-none"
-                    required></textarea>
-            </div>
-        </div>
-
-        <!-- Archivo (CV) -->
-        <div>
-            <label for="cv" class="block text-sm font-semibold mb-1">Adjuntar CV</label>
-            <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
-                <input type="file" (change)="onFileSelected($event)"
-                    class="text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-main file:text-white hover:file:bg-hover"
-                    required />
+                <!-- Proyecto: Back Office App -->
+                <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+                    <button
+                        class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+                        (click)="showBackOffice = !showBackOffice">
+                        Back Office App
+                        <i [ngClass]="showBackOffice ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div *ngIf="showBackOffice" class="p-6 space-y-4">
+                        <img data-aos="fade-left" src="assets/proyectos/la-anonima/backoffice.png"
+                            class="rounded-xl shadow-md" />
+                        <p class="text-zinc-300 text-sm leading-relaxed">
+                            Aplicación web interna para procesos clave: alta/baja de productos, onboarding de usuarios,
+                            supervisión de
+                            contratos, automatización legal y métricas de scoring. Ayuda a simplificar tareas manuales y
+                            optimizar procesos
+                            con enfoque estratégico.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Botón -->
-        <div class="text-center pt-4">
-            <button type="submit"
-                class="bg-main hover:bg-hover text-white px-8 py-3 rounded-full text-lg font-semibold shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757] transition-all">
-                <i class="fas fa-paper-plane mr-2"></i>Enviar mensaje
-            </button>
+        <!-- Cliente: Grupo Fava -->
+        <div class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto mt-16 space-y-6 transition-all duration-300"
+            data-aos="fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <img src="assets/logos/fava_logo.png" alt="Grupo Fava" class="h-16 w-16 object-contain" />
+                    <div class="text-xl font-semibold">Grupo Fava</div>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-zinc-400">Desde</p>
+                    <p class="text-3xl font-bold text-white">2010</p>
+                </div>
+            </div>
+
+            <!-- Casos de estudio -->
+            <div class="mt-8 space-y-6">
+                <h3 class="text-2xl font-semibold">Casos de estudio</h3>
+
+                <!-- Proyecto: Gestionate -->
+                <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+                    <button
+                        class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+                        (click)="showGestionate = !showGestionate">
+                        Gestionate
+                        <i [ngClass]="showGestionate ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div *ngIf="showGestionate" class="p-6 space-y-4">
+                        <img data-aos="fade-left" src="assets/proyectos/fava/gestionate.png"
+                            class="rounded-xl shadow-md" />
+                        <p class="text-zinc-300 text-sm leading-relaxed">
+                            Aplicación desarrollada para el uso interno de las empresas que integran el Grupo Fava (solo
+                            versión desktop).
+                            Permite la administración de los recursos humanos, mediante la gestión de novedades como
+                            licencias, vacaciones y
+                            solicitudes. Facilita la liquidación de sueldos con información centralizada. Su mayor
+                            ventaja
+                            es la
+                            automatización y digitalización de tareas manuales en RRHH, para más de 500 empleados.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Proyecto: FOL -->
+                <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+                    <button
+                        class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+                        (click)="showFOL = !showFOL">
+                        Favacard Online | FOL
+                        <i [ngClass]="showFOL ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div *ngIf="showFOL" class="p-6 space-y-4">
+                        <img data-aos="fade-right" src="assets/proyectos/fava/fol.png" class="rounded-xl shadow-md" />
+                        <p class="text-zinc-300 text-sm leading-relaxed">
+                            Aplicación desarrollada para la empresa Favacard, parte del Grupo Fava (desktop y mobile).
+                            Permite realizar
+                            trámites online como gestión de tarjetas Favacard y Cabal, pagos de consumos, solicitud de
+                            préstamos, entre otras
+                            opciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
+
+    </section>
+
+    <!-- Línea divisoria animada -->
+    <div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+    <section id="tecnologias" class="bg-background text-white py-24 px-6 scroll-mt-32">
+        <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white text-center mb-16 relative inline-block after:block after:absolute after:w-2/3 after:h-1 after:bg-main after:-bottom-4 after:left-1/2 after:-translate-x-1/2 after:rounded-full after:shadow-[0_0_20px_#dd0e7c]"
+                data-aos="fade-up">
+                Tecnologías que usamos
+            </h2>
 
 
-</section>
 
 
-<!-- Línea divisoria animada -->
-<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 justify-items-center">
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/tech/angular.svg" alt="Angular" class="w-14 h-14 mb-2" />
+                    <span>Angular</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="150">
+                    <img src="assets/tech/nodejs.svg" alt="Node.js" class="w-14 h-14 mb-2" />
+                    <span>Node.js</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/tech/sql.svg" alt="SQL" class="w-14 h-14 mb-2" />
+                    <span>SQL</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="250">
+                    <img src="assets/tech/spring.svg" alt="Spring Boot" class="w-14 h-14 mb-2" />
+                    <span>Spring Boot</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/tech/docker.svg" alt="Docker" class="w-14 h-14 mb-2" />
+                    <span>Docker</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="350">
+                    <img src="assets/tech/jira.svg" alt="Jira" class="w-14 h-14 mb-2" />
+                    <span>Jira</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="assets/tech/java.svg" alt="Java" class="w-14 h-14 mb-2" />
+                    <span>Java</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="450">
+                    <img src="assets/tech/nestjs.svg" alt="NestJS" class="w-14 h-14 mb-2" />
+                    <span>NestJS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Línea divisoria animada -->
+    <div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+    <!-- Servicios -->
+    <section class="bg-background text-white py-20 px-6" id="servicios">
+        <div data-aos="fade-up" class="max-w-6xl mx-auto text-center">
+            <h2
+                class="text-3xl sm:text-4xl md:text-5xl font-bold text-white relative inline-block after:block after:absolute after:w-2/3 after:h-1 after:bg-main after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:rounded-full after:shadow-[0_0_20px_#dd0e7c] mb-6">
+                Servicios
+            </h2>
+
+            <p class="text-white/80 mb-12">Esto es lo que podemos hacer por vos:</p>
+            <div class="grid md:grid-cols-3 gap-8 text-left text-white/90">
+
+                <!-- Card 1: Desarrollo Web -->
+                <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition group"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-code text-3xl text-main group-hover:scale-110 transition"></i>
+                        <h3 class="text-xl font-semibold">Desarrollo Web</h3>
+                    </div>
+                    <ul class="space-y-2 pl-1 text-sm text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Frontend +
+                            Backend</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Integración
+                            &
+                            automatización</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Consultoría
+                            personalizada</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Soporte
+                            continuo</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Responsive Design -->
+                <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition group"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-mobile-alt text-3xl text-main group-hover:scale-110 transition"></i>
+                        <h3 class="text-xl font-semibold">Responsive Design</h3>
+                    </div>
+                    <ul class="space-y-2 pl-1 text-sm text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> UX/UI para
+                            todos los dispositivos</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Navegación
+                            optimizada</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> Adaptación
+                            a
+                            tablets y móviles</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Infraestructura -->
+                <div class="bg-zinc-900 p-6 rounded-xl border border-border hover:shadow-lg transition group"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-cloud text-3xl text-main group-hover:scale-110 transition"></i>
+                        <h3 class="text-xl font-semibold">Infraestructura</h3>
+                    </div>
+                    <ul class="space-y-2 pl-1 text-sm text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span> CI/CD &
+                            Deploy
+                        </li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span>
+                            Dockerización
+                            de proyectos</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-main rounded-sm"></span>
+                            Escalabilidad y
+                            monitoreo</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Línea divisoria animada -->
+    <div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+    <section id="contacto" class="bg-background text-white py-24 px-6 border-t border-white/10">
+        <div data-aos="fade-up" class="max-w-3xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-main mb-4">¡Hablemos!</h2>
+            <p class="text-white/80">¿Tenés un proyecto en mente? Escribinos y lo hacemos realidad.</p>
+        </div>
+
+        <form #formElement [formGroup]="contactForm" (ngSubmit)="sendEmail()" enctype="multipart/form-data"
+            class="max-w-2xl mx-auto space-y-6">
+            <!-- Nombre -->
+            <div>
+                <label for="nombre" class="block text-sm font-semibold mb-1">Nombre</label>
+                <div
+                    class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                    <i class="fas fa-user text-main"></i>
+                    <input id="nombre" formControlName="nombre" type="text" placeholder="Tu nombre completo"
+                        class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+                <div
+                    class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                    <i class="fas fa-envelope text-main"></i>
+                    <input id="email" formControlName="email" type="email" placeholder="tucorreo@mail.com"
+                        class="bg-transparent w-full outline-none text-white placeholder:text-white/40" required />
+                </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div>
+                <label for="mensaje" class="block text-sm font-semibold mb-1">Mensaje</label>
+                <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                    <textarea id="mensaje" formControlName="mensaje" rows="5" placeholder="Escribí tu mensaje..."
+                        class="bg-transparent w-full outline-none text-white placeholder:text-white/40 resize-none"
+                        required></textarea>
+                </div>
+            </div>
+
+            <!-- Archivo (CV) -->
+            <div>
+                <label for="cv" class="block text-sm font-semibold mb-1">Adjuntar CV</label>
+                <div class="bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main">
+                    <input type="file" (change)="onFileSelected($event)"
+                        class="text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-main file:text-white hover:file:bg-hover"
+                        required />
+                </div>
+            </div>
+
+            <!-- Botón -->
+            <div class="text-center pt-4">
+                <button type="submit"
+                    class="bg-main hover:bg-hover text-white px-8 py-3 rounded-full text-lg font-semibold shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757] transition-all">
+                    <i class="fas fa-paper-plane mr-2"></i>Enviar mensaje
+                </button>
+            </div>
+        </form>
+
+
+    </section>
+
+
+    <!-- Línea divisoria animada -->
+    <div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+</main>
+
 
 <footer class="bg-[#0b000c] text-white px-6 py-10 min-h-[336px]">
     <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center lg:text-left">
 
         <!-- Logo + link -->
-        <a data-aos="zoom-in" href="assets/7id_SOFTWARE_S.A.S_9001.pdf" target="_blank" class="flex flex-col items-center justify-center">
+        <a data-aos="zoom-in" href="assets/7id_SOFTWARE_S.A.S_9001.pdf" target="_blank"
+            class="flex flex-col items-center justify-center">
             <img src="assets/iram_logo.svg" alt="Certificación IRAM" class="w-64 mx-auto">
             <p class="text-lg mt-2">Siete Ideas Quality Policy</p>
         </a>
