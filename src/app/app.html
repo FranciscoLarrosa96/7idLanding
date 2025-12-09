@@ -6,15 +6,30 @@
       class="hidden md:flex items-center gap-6 text-lg font-medium"
       data-aos="zoom-in"
     >
-      <a href="#inicio" class="hover:text-main transition"
-        ><i class="fas fa-home mr-1"></i>Inicio</a
+      <a
+        href="#inicio"
+        [class.text-main]="activeSection() === 'inicio'"
+        [class.font-bold]="activeSection() === 'inicio'"
+        class="hover:text-main transition"
       >
-      <a href="#nosotros" class="hover:text-main transition"
-        ><i class="fas fa-users mr-1"></i>Nosotros</a
+        <i class="fas fa-home mr-1"></i>Inicio
+      </a>
+      <a
+        href="#nosotros"
+        [class.text-main]="activeSection() === 'nosotros'"
+        [class.font-bold]="activeSection() === 'nosotros'"
+        class="hover:text-main transition"
       >
-      <a href="#servicios" class="hover:text-main transition"
-        ><i class="fas fa-briefcase mr-1"></i>Servicios</a
+        <i class="fas fa-users mr-1"></i>Nosotros
+      </a>
+      <a
+        href="#servicios"
+        [class.text-main]="activeSection() === 'servicios'"
+        [class.font-bold]="activeSection() === 'servicios'"
+        class="hover:text-main transition"
       >
+        <i class="fas fa-briefcase mr-1"></i>Servicios
+      </a>
       <a
         href="#contacto"
         class="bg-main hover:bg-hover text-white px-4 py-2 rounded-full transition-all"
@@ -38,6 +53,8 @@
   >
     <a
       href="#inicio"
+      [class.text-main]="activeSection() === 'inicio'"
+      [class.font-bold]="activeSection() === 'inicio'"
       class="flex items-center gap-2 hover:text-main"
       (click)="toggleMenu()"
     >
@@ -45,6 +62,8 @@
     </a>
     <a
       href="#nosotros"
+      [class.text-main]="activeSection() === 'nosotros'"
+      [class.font-bold]="activeSection() === 'nosotros'"
       class="flex items-center gap-2 hover:text-main"
       (click)="toggleMenu()"
     >
@@ -52,6 +71,8 @@
     </a>
     <a
       href="#servicios"
+      [class.text-main]="activeSection() === 'servicios'"
+      [class.font-bold]="activeSection() === 'servicios'"
       class="flex items-center gap-2 hover:text-main"
       (click)="toggleMenu()"
     >
@@ -67,6 +88,22 @@
   </div>
   }
 </header>
+
+<!-- Animación de transición con logo -->
+@if (showTransition()) {
+<div
+  class="fixed inset-0 z-[100] bg-background flex items-center justify-center transition-all duration-500 animate-fade-in"
+>
+  <div class="animate-pulse-scale">
+    <img
+      src="assets/7id_logo_blanco.svg"
+      alt="7iDeas Logo"
+      class="w-64 md:w-96"
+    />
+  </div>
+</div>
+}
+
 <main class="scroll-smooth">
   <!-- Hero -->
   <section

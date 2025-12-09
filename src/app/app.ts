@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
+  afterNextRender,
   Component,
   ElementRef,
   OnInit,
@@ -30,6 +31,8 @@ export class App implements OnInit {
   showGestionate = false;
   showFOL = false;
   menuOpen = signal(false);
+  activeSection = signal('inicio');
+  showTransition = signal(false);
   particlesOptions: ISourceOptions = {
     background: {
       color: { value: '#f9fafb' }, // Si el fondo de partículas va claro
@@ -229,6 +232,17 @@ export class App implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       mensaje: ['', Validators.required],
     });
+
+    // ✨ Forma moderna de Angular 19+ para ejecutar código después del render
+    afterNextRender(() => {
+      this.setupActiveSection();
+
+      const btn = document.getElementById('menuToggle');
+      const menu = document.getElementById('mobileMenu');
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+    });
   }
 
   ngOnInit(): void {
@@ -242,6 +256,36 @@ export class App implements OnInit {
     this.setupSmoothScroll();
   }
 
+  setupActiveSection(): void {
+    // Esperar un poco para asegurar que el DOM esté listo
+    const sections = document.querySelectorAll('section[id]');
+
+    if (sections.length === 0) {
+      console.warn('No se encontraron secciones con id');
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log('Sección activa:', entry.target.id);
+            this.activeSection.set(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -50% 0px',
+      }
+    );
+
+    sections.forEach((section) => {
+      console.log('Observando sección:', section.id);
+      observer.observe(section);
+    });
+  }
+
   setupSmoothScroll(): void {
     document.addEventListener('click', (e: Event) => {
       const target = e.target as HTMLElement;
@@ -251,27 +295,28 @@ export class App implements OnInit {
         e.preventDefault();
         const href = link.getAttribute('href');
         if (href && href.startsWith('#')) {
-          const element = document.querySelector(href);
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
-            if (this.menuOpen()) {
-              this.menuOpen.set(false);
+          // Mostrar animación de transición
+          this.showTransition.set(true);
+
+          setTimeout(() => {
+            const element = document.querySelector(href);
+            if (element) {
+              element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+              if (this.menuOpen()) {
+                this.menuOpen.set(false);
+              }
+
+              // Ocultar animación después del scroll
+              setTimeout(() => {
+                this.showTransition.set(false);
+              }, 800);
             }
-          }
+          }, 400);
         }
       }
-    });
-  }
-
-  ngAfterViewInit() {
-    const btn = document.getElementById('menuToggle');
-    const menu = document.getElementById('mobileMenu');
-
-    btn?.addEventListener('click', () => {
-      menu?.classList.toggle('hidden');
     });
   }
 
