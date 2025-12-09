@@ -10,7 +10,6 @@ import * as AOS from 'aos';
 import { loadSlim } from 'tsparticles-slim';
 import type { Container, Engine, ISourceOptions } from 'tsparticles-engine';
 import { NgParticlesModule } from 'ng-particles';
-import emailjs from 'emailjs-com';
 import {
   FormBuilder,
   FormGroup,

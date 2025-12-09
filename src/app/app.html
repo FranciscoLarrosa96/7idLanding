@@ -315,15 +315,13 @@
               "
             ></i>
           </button>
-          <div
-            *ngIf="showGestionate"
-            class="p-6 space-y-4"
-            data-aos="fade-left"
-          >
+          @if(showGestionate){
+          <div class="p-6 space-y-4" data-aos="fade-left">
             <img
               src="assets/proyectos/fava/gestionate.png"
               class="rounded-xl shadow-md w-full h-auto object-cover"
               loading="lazy"
+              alt="Gestionate - Grupo Fava"
             />
             <p class="text-zinc-300 text-sm leading-relaxed">
               Aplicación desarrollada para el uso interno de las empresas que
@@ -335,6 +333,7 @@
               en RRHH, para más de 500 empleados.
             </p>
           </div>
+          }
         </div>
 
         <!-- Proyecto: FOL -->
@@ -350,11 +349,13 @@
               [ngClass]="showFOL ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
             ></i>
           </button>
-          <div *ngIf="showFOL" class="p-6 space-y-4" data-aos="fade-right">
+          @if(showFOL){
+          <div class="p-6 space-y-4" data-aos="fade-right">
             <img
               src="assets/proyectos/fava/fol.png"
               class="rounded-xl shadow-md w-full h-auto object-cover"
               loading="lazy"
+              alt="FOL - Favacard Online - Grupo Fava"
             />
             <p class="text-zinc-300 text-sm leading-relaxed">
               Aplicación desarrollada para la empresa Favacard, parte del Grupo
@@ -363,6 +364,7 @@
               de préstamos, entre otras opciones.
             </p>
           </div>
+          }
         </div>
       </div>
     </div>
