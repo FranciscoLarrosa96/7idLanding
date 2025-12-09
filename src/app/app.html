@@ -5,42 +5,52 @@
     <nav
       class="hidden md:flex items-center gap-6 text-lg font-medium"
       data-aos="zoom-in"
+      aria-label="Navegación principal"
     >
       <a
         href="#inicio"
         [class.text-main]="activeSection() === 'inicio'"
         [class.font-bold]="activeSection() === 'inicio'"
         class="hover:text-main transition"
+        aria-label="Ir a la sección de inicio"
       >
-        <i class="fas fa-home mr-1"></i>Inicio
+        <i class="fas fa-home mr-1" aria-hidden="true"></i>Inicio
       </a>
       <a
         href="#nosotros"
         [class.text-main]="activeSection() === 'nosotros'"
         [class.font-bold]="activeSection() === 'nosotros'"
         class="hover:text-main transition"
+        aria-label="Ir a la sección nosotros"
       >
-        <i class="fas fa-users mr-1"></i>Nosotros
+        <i class="fas fa-users mr-1" aria-hidden="true"></i>Nosotros
       </a>
       <a
         href="#servicios"
         [class.text-main]="activeSection() === 'servicios'"
         [class.font-bold]="activeSection() === 'servicios'"
         class="hover:text-main transition"
+        aria-label="Ir a la sección servicios"
       >
-        <i class="fas fa-briefcase mr-1"></i>Servicios
+        <i class="fas fa-briefcase mr-1" aria-hidden="true"></i>Servicios
       </a>
       <a
         href="#contacto"
         class="bg-main hover:bg-hover text-white px-4 py-2 rounded-full transition-all"
+        aria-label="Ir a la sección de contacto"
       >
-        <i class="fas fa-envelope mr-2"></i>Contacto
+        <i class="fas fa-envelope mr-2" aria-hidden="true"></i>Contacto
       </a>
     </nav>
 
     <!-- Botón hamburguesa -->
-    <button class="md:hidden text-2xl text-main" (click)="toggleMenu()">
-      <i class="fas fa-bars"></i>
+    <button
+      class="md:hidden text-2xl text-main"
+      (click)="toggleMenu()"
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
+    >
+      <i class="fas fa-bars" aria-hidden="true"></i>
     </button>
   </div>
 
@@ -126,8 +136,10 @@
       <div class="mb-8">
         <img
           src="assets/7id_logo_blanco.svg"
-          alt="7iDeas Logo"
+          alt="7 Ideas - Logo de la empresa de desarrollo de software y soluciones digitales"
           class="w-[40rem] mx-auto"
+          width="640"
+          height="160"
         />
       </div>
       <h1 class="text-4xl md:text-6xl font-bold leading-tight text-text">
@@ -223,10 +235,12 @@
         <div class="flex items-center gap-4">
           <img
             src="assets/logos/la_anonima_logo.png"
-            alt="La Anónima"
+            alt="Logo de La Anónima - Cliente de 7 Ideas"
             class="h-16 w-16 object-contain"
+            width="64"
+            height="64"
           />
-          <div class="text-xl font-semibold">La Anónima</div>
+          <h3 class="text-xl font-semibold">La Anónima</h3>
         </div>
         <div class="text-right">
           <p class="text-sm text-zinc-400">Desde</p>
@@ -322,10 +336,12 @@
         <div class="flex items-center gap-4">
           <img
             src="assets/logos/fava_logo.png"
-            alt="Grupo Fava"
+            alt="Logo de Grupo Fava - Cliente de 7 Ideas"
             class="h-16 w-16 object-contain"
+            width="64"
+            height="64"
           />
-          <div class="text-xl font-semibold">Grupo Fava</div>
+          <h3 class="text-xl font-semibold">Grupo Fava</h3>
         </div>
         <div class="text-right">
           <p class="text-sm text-zinc-400">Desde</p>
@@ -434,8 +450,10 @@
         >
           <img
             src="assets/tech/angular.svg"
-            alt="Angular"
+            alt="Framework Angular - Tecnología utilizada por 7 Ideas"
             class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
           />
           <span>Angular</span>
         </div>
@@ -446,8 +464,10 @@
         >
           <img
             src="assets/tech/nodejs.svg"
-            alt="Node.js"
+            alt="Node.js - Tecnología utilizada por 7 Ideas"
             class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
           />
           <span>Node.js</span>
         </div>
@@ -456,7 +476,13 @@
           data-aos="zoom-in"
           data-aos-delay="200"
         >
-          <img src="assets/tech/sql.svg" alt="SQL" class="w-14 h-14 mb-2" />
+          <img
+            src="assets/tech/sql.svg"
+            alt="SQL Database - Tecnología utilizada por 7 Ideas"
+            class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
+          />
           <span>SQL</span>
         </div>
         <div
@@ -466,8 +492,10 @@
         >
           <img
             src="assets/tech/spring.svg"
-            alt="Spring Boot"
+            alt="Spring Boot - Tecnología utilizada por 7 Ideas"
             class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
           />
           <span>Spring Boot</span>
         </div>
@@ -478,8 +506,10 @@
         >
           <img
             src="assets/tech/docker.svg"
-            alt="Docker"
+            alt="Docker - Tecnología utilizada por 7 Ideas"
             class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
           />
           <span>Docker</span>
         </div>
@@ -488,7 +518,13 @@
           data-aos="zoom-in"
           data-aos-delay="350"
         >
-          <img src="assets/tech/jira.svg" alt="Jira" class="w-14 h-14 mb-2" />
+          <img
+            src="assets/tech/jira.svg"
+            alt="Jira - Herramienta de gestión de proyectos utilizada por 7 Ideas"
+            class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
+          />
           <span>Jira</span>
         </div>
         <div
@@ -496,7 +532,13 @@
           data-aos="zoom-in"
           data-aos-delay="400"
         >
-          <img src="assets/tech/java.svg" alt="Java" class="w-14 h-14 mb-2" />
+          <img
+            src="assets/tech/java.svg"
+            alt="Java - Tecnología utilizada por 7 Ideas"
+            class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
+          />
           <span>Java</span>
         </div>
         <div
@@ -506,8 +548,10 @@
         >
           <img
             src="assets/tech/nestjs.svg"
-            alt="NestJS"
+            alt="NestJS - Framework Node.js utilizado por 7 Ideas"
             class="w-14 h-14 mb-2"
+            width="56"
+            height="56"
           />
           <span>NestJS</span>
         </div>
@@ -652,14 +696,16 @@
         <div
           class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main"
         >
-          <i class="fas fa-user text-main"></i>
+          <i class="fas fa-user text-main" aria-hidden="true"></i>
           <input
             id="nombre"
             formControlName="nombre"
             type="text"
             placeholder="Tu nombre completo"
+            autocomplete="name"
             class="bg-transparent w-full outline-none text-white placeholder:text-white/40"
             required
+            aria-label="Ingresá tu nombre completo"
           />
         </div>
       </div>
@@ -672,14 +718,16 @@
         <div
           class="flex items-center gap-2 bg-zinc-900 rounded-lg px-4 py-2 border border-border focus-within:ring-2 ring-main"
         >
-          <i class="fas fa-envelope text-main"></i>
+          <i class="fas fa-envelope text-main" aria-hidden="true"></i>
           <input
             id="email"
             formControlName="email"
             type="email"
             placeholder="tucorreo@mail.com"
+            autocomplete="email"
             class="bg-transparent w-full outline-none text-white placeholder:text-white/40"
             required
+            aria-label="Ingresá tu correo electrónico"
           />
         </div>
       </div>
@@ -753,17 +801,23 @@
       <a
         href="assets/7id_SOFTWARE_S.A.S_9001.pdf"
         target="_blank"
+        rel="noopener noreferrer"
         class="flex flex-col items-center justify-center"
+        aria-label="Ver certificación IRAM ISO 9001 de 7 Ideas"
       >
         <img
           src="assets/iram_logo.svg"
-          alt="Certificación IRAM"
+          alt="Certificación IRAM ISO 9001 - 7 Ideas Software"
           class="w-64 mx-auto"
+          width="256"
+          height="100"
         />
       </a>
       <a
         href="https://docs.google.com/document/d/1lev_oaMELhonwblxj5Y7dU2HasNjYz5DLEuualgAp_c/edit?tab=t.hbe78fa4i76l"
         target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Leer política ambiental de 7 Ideas"
       >
         <p class="text-lg mt-2">Siete Ideas Environmental Policy</p>
       </a>
@@ -792,12 +846,14 @@
         }}</a>
       </div>
       <!-- Linkedin -->
-      <div data-aos="zoom-in" class="flex items-center gap-3">
-        <i class="fab fa-linkedin text-main"></i>
+      <div class="flex items-center gap-3">
+        <i class="fab fa-linkedin text-main" aria-hidden="true"></i>
         <a
           href="https://www.linkedin.com/company/siete-ideas/posts/?feedView=all"
           target="_blank"
+          rel="noopener noreferrer"
           class="hover:underline"
+          aria-label="Visitar perfil de LinkedIn de 7 Ideas"
           >Siete Ideas</a
         >
       </div>

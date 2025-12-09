@@ -25,7 +25,7 @@ import {
   styleUrl: './app.scss',
 })
 export class App implements OnInit {
-  protected title = '7idLandingPage';
+  protected title = '7 Ideas - Soluciones Digitales y Desarrollo de Software';
   showGestionOnline: boolean = false;
   showBackOffice: boolean = false;
   showGestionate = false;
