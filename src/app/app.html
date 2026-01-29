@@ -231,7 +231,7 @@
 
       <!-- Foto Grupal -->
       <div
-        class="relative max-w-5xl mx-auto"
+        class="relative max-w-5xl mx-auto mb-16"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -245,7 +245,7 @@
           <img
             src="assets/img/nosotros_desktop.jpg"
             alt="Equipo 7iDeas"
-            class="hidden md:block w-full h-auto object-cover mb-12"
+            class="hidden md:block w-full h-auto object-cover"
           />
 
           <!-- Imagen Mobile (visible en móvil) -->
@@ -259,71 +259,68 @@
           <div
             class="absolute inset-0 bg-gradient-to-t from-[#0b000a]/80 via-transparent to-transparent pointer-events-none"
           ></div>
-          <!-- Carousel Container -->
-          <div
-            #carouselContainer
-            class="relative w-full h-[500px] flex items-center justify-center overflow-visible cursor-grab active:cursor-grabbing select-none pb-12"
-            data-aos="fade-up"
-            (mousedown)="onDragStart($event)"
-            (mousemove)="onDragMove($event)"
-            (mouseup)="onDragEnd($event)"
-            (mouseleave)="onDragEnd($event)"
-            (touchstart)="onTouchStart($event)"
-            (touchmove)="onTouchMove($event)"
-            (touchend)="onTouchEnd($event)"
-          >
-            <!-- Cards Carousel -->
-            <div class="carousel-container pointer-events-none">
-              @for (card of getVisibleCards(); track card.index) {
-                <div
-                  class="carousel-card pointer-events-auto"
-                  [class.card-center]="card.position === 0"
-                  [class.card-side-1]="
-                    card.position === 1 || card.position === -1
-                  "
-                  [class.card-side-2]="
-                    card.position === 2 || card.position === -2
-                  "
-                  [attr.data-position]="card.position"
-                  (click)="goToSlide(card.index)"
-                >
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img
-                        [src]="card.member.image"
-                        [alt]="card.member.name"
-                        class="w-full h-full object-cover"
-                        draggable="false"
-                      />
-                    </div>
-                    <div class="flip-card-back">
-                      <h3 class="text-xl font-bold text-white mb-2">
-                        {{ card.member.name }}
-                      </h3>
-                      <p class="text-white text-base font-semibold">
-                        {{ card.member.role }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              }
-            </div>
+        </div>
+      </div>
 
-            <!-- Indicators -->
+      <!-- Carousel Container -->
+      <div
+        #carouselContainer
+        class="relative w-full h-[550px] flex items-center justify-center overflow-visible cursor-grab active:cursor-grabbing select-none py-12"
+        data-aos="fade-up"
+        (mousedown)="onDragStart($event)"
+        (mousemove)="onDragMove($event)"
+        (mouseup)="onDragEnd($event)"
+        (mouseleave)="onDragEnd($event)"
+        (touchstart)="onTouchStart($event)"
+        (touchmove)="onTouchMove($event)"
+        (touchend)="onTouchEnd($event)"
+      >
+        <!-- Cards Carousel -->
+        <div class="carousel-container pointer-events-none">
+          @for (card of getVisibleCards(); track card.index) {
             <div
-              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
+              class="carousel-card pointer-events-auto"
+              [class.card-center]="card.position === 0"
+              [class.card-side-1]="card.position === 1 || card.position === -1"
+              [class.card-side-2]="card.position === 2 || card.position === -2"
+              [attr.data-position]="card.position"
+              (click)="goToSlide(card.index)"
             >
-              @for (member of teamMembers; track $index) {
-                <button
-                  (click)="goToSlide($index)"
-                  [class.bg-main]="currentIndex() === $index"
-                  [class.bg-zinc-500]="currentIndex() !== $index"
-                  class="w-2 h-2 rounded-full transition-all hover:scale-125"
-                  [attr.aria-label]="'Ir a ' + member.name"
-                ></button>
-              }
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    [src]="card.member.image"
+                    [alt]="card.member.name"
+                    class="w-full h-full object-cover"
+                    draggable="false"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="text-xl font-bold text-white mb-2">
+                    {{ card.member.name }}
+                  </h3>
+                  <p class="text-white text-base font-semibold">
+                    {{ card.member.role }}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          }
+        </div>
+
+        <!-- Indicators -->
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
+        >
+          @for (member of teamMembers; track $index) {
+            <button
+              (click)="goToSlide($index)"
+              [class.bg-main]="currentIndex() === $index"
+              [class.bg-zinc-500]="currentIndex() !== $index"
+              class="w-2 h-2 rounded-full transition-all hover:scale-125"
+              [attr.aria-label]="'Ir a ' + member.name"
+            ></button>
+          }
         </div>
       </div>
     </div>

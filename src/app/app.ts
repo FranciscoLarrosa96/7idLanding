@@ -461,10 +461,10 @@ export class App implements OnInit {
   getVisibleCards() {
     const totalCards = this.teamMembers.length;
     const currentIdx = this.currentIndex();
-    const visibleCount = 5; // Mostrar 5 cards (2 izq, centro, 2 der)
+    const visibleCount = 3; // Mostrar 3 cards (1 izq, centro, 1 der)
 
     const result = [];
-    for (let i = -2; i <= 2; i++) {
+    for (let i = -1; i <= 1; i++) {
       const index = (currentIdx + i + totalCards) % totalCards;
       result.push({
         member: this.teamMembers[index],
