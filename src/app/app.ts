@@ -269,7 +269,6 @@ export class App implements OnInit {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log('Sección activa:', entry.target.id);
             this.activeSection.set(entry.target.id);
           }
         });
@@ -281,7 +280,6 @@ export class App implements OnInit {
     );
 
     sections.forEach((section) => {
-      console.log('Observando sección:', section.id);
       observer.observe(section);
     });
   }
@@ -321,22 +319,17 @@ export class App implements OnInit {
   }
 
   onParticlesLoaded(container: Container): void {
-    console.log('✅ Particles loaded');
-
     const hero = document.getElementById('inicio');
     if (!hero) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         const visible = entry.isIntersecting;
-        console.log(`🎯 Hero visible: ${visible}`);
 
         if (visible) {
           container.play();
-          console.log('▶️ Particles PLAY');
         } else {
           container.pause();
-          console.log('⏸️ Particles PAUSE');
         }
       },
       { threshold: 0.2 },
@@ -415,13 +408,12 @@ export class App implements OnInit {
     const formData = new FormData(this.formElement.nativeElement);
     formData.append('cv', this.selectedFile);
     for (const [key, value] of formData.entries()) {
-      // console.log(`${key}:`, value);
     }
 
     // emailjs
     //   .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.formElement.nativeElement, 'YOUR_PUBLIC_KEY')
     //   .then(() => {
-    //     console.log('✅ Enviado con éxito');
+
     //     this.contactForm.reset();
     //     this.selectedFile = null;
     //   })
