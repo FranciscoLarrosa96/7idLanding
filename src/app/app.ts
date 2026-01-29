@@ -38,6 +38,14 @@ export class App implements OnInit {
 
   // Carousel del equipo
   currentIndex = signal(0);
+  isDragging = false;
+  startX = 0;
+  currentX = 0;
+  dragThreshold = 50; // Píxeles mínimos para cambiar de slide
+
+  @ViewChild('carouselContainer')
+  carouselContainer!: ElementRef<HTMLDivElement>;
+
   teamMembers = [
     {
       name: 'Juan Pérez',
@@ -466,7 +474,68 @@ export class App implements OnInit {
     }
     return result;
   }
+  // Drag handlers para mouse
+  onDragStart(event: MouseEvent) {
+    this.isDragging = true;
+    this.startX = event.clientX;
+    this.currentX = event.clientX;
+    event.preventDefault();
+  }
 
+  onDragMove(event: MouseEvent) {
+    if (!this.isDragging) return;
+    this.currentX = event.clientX;
+  }
+
+  onDragEnd(event: MouseEvent) {
+    if (!this.isDragging) return;
+
+    const deltaX = this.currentX - this.startX;
+
+    if (Math.abs(deltaX) > this.dragThreshold) {
+      if (deltaX > 0) {
+        // Arrastró hacia la derecha = slide anterior
+        this.prevSlide();
+      } else {
+        // Arrastró hacia la izquierda = slide siguiente
+        this.nextSlide();
+      }
+    }
+
+    this.isDragging = false;
+    this.startX = 0;
+    this.currentX = 0;
+  }
+
+  // Touch handlers para móviles
+  onTouchStart(event: TouchEvent) {
+    this.isDragging = true;
+    this.startX = event.touches[0].clientX;
+    this.currentX = event.touches[0].clientX;
+  }
+
+  onTouchMove(event: TouchEvent) {
+    if (!this.isDragging) return;
+    this.currentX = event.touches[0].clientX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    if (!this.isDragging) return;
+
+    const deltaX = this.currentX - this.startX;
+
+    if (Math.abs(deltaX) > this.dragThreshold) {
+      if (deltaX > 0) {
+        this.prevSlide();
+      } else {
+        this.nextSlide();
+      }
+    }
+
+    this.isDragging = false;
+    this.startX = 0;
+    this.currentX = 0;
+  }
   private async _particlesInit(engine: Engine): Promise<void> {
     await loadSlim(engine);
   }
