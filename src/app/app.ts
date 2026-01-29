@@ -30,6 +30,8 @@ export class App implements OnInit {
   showBackOffice: boolean = false;
   showGestionate = false;
   showFOL = false;
+  showCOT1 = false;
+  showCOT2 = false;
   menuOpen = signal(false);
   activeSection = signal('inicio');
   showTransition = signal(false);

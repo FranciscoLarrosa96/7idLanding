@@ -1,3 +1,17 @@
+// Mejora visual del fondo con degradado sutil
+body {
+  background: linear-gradient(
+    180deg,
+    #0b000a 0%,
+    #12000d 25%,
+    #1a0011 50%,
+    #150010 75%,
+    #0b000a 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 .map-container {
   width: clamp(250px, 40vw, 400px);
 }
@@ -8,3 +22,4 @@
   border: 0;
   border-radius: 10px;
 }
+

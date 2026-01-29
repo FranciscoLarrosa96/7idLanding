@@ -219,7 +219,7 @@
     class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32"
   >
     <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
-      <h2 class="text-4xl font-bold mb-4 text-main">Nuestros clientes</h2>
+      <h2 class="text-4xl font-bold mb-4 text-main">Casos de Éxito</h2>
       <p class="text-zinc-300 text-lg max-w-3xl mx-auto">
         Las relaciones con nuestros clientes son sólidas y duraderas.<br />
         Con orgullo, somos parte fundamental de su cadena de valor.
@@ -345,7 +345,7 @@
         </div>
         <div class="text-right">
           <p class="text-sm text-zinc-400">Desde</p>
-          <p class="text-3xl font-bold text-white">2010</p>
+          <p class="text-3xl font-bold text-white">2016</p>
         </div>
       </div>
 
@@ -415,6 +415,111 @@
               Fava (desktop y mobile). Permite realizar trámites online como
               gestión de tarjetas Favacard y Cabal, pagos de consumos, solicitud
               de préstamos, entre otras opciones.
+            </p>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Cliente: Clínica de Ojos Tandil -->
+    <div
+      class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto mt-16 space-y-6 transition-all duration-300"
+      data-aos="fade-up"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4">
+          <img
+            src="assets/logos/clinica_ojo_logo.svg"
+            alt="Logo de Clínica de Ojos Tandil - Cliente de 7 Ideas"
+            class="h-16 w-16 object-contain"
+            width="64"
+            height="64"
+          />
+          <h3 class="text-xl font-semibold">Clínica de Ojos Tandil</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-zinc-400">Desde</p>
+          <p class="text-3xl font-bold text-white">2024</p>
+        </div>
+      </div>
+
+      <!-- Casos de estudio -->
+      <div class="mt-8 space-y-6">
+        <h3 class="text-2xl font-semibold">Casos de estudio</h3>
+
+        <!-- Proyecto: Partner tecnológico -->
+        <div
+          class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700"
+        >
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showCOT1 = !showCOT1"
+          >
+            Partner tecnológico de COT
+            <i
+              [ngClass]="
+                showCOT1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'
+              "
+            ></i>
+          </button>
+          @if(showCOT1){
+          <div class="p-6 space-y-4" data-aos="fade-left">
+            <img
+              src="assets/proyectos/cot/cot_1.avif"
+              class="rounded-xl shadow-md w-full h-auto object-cover"
+              loading="lazy"
+              alt="Partner tecnológico de COT - Clínica de Ojos Tandil"
+            />
+            <p class="text-zinc-300 text-sm leading-relaxed">
+              Brindamos un servicio integral de gestión, evolución y
+              acompañamiento tecnológico, alineando la operación diaria con la
+              estrategia de la clínica. Actuamos como socios tecnológicos,
+              combinando visión de negocio y conocimiento técnico para que la
+              tecnología acompañe y potencie el crecimiento de COT. Mantenemos
+              una comunicación permanente con la dirección, traduciendo lo
+              técnico en impacto operativo y estratégico, y acompañando la toma
+              de decisiones de la alta dirección.
+            </p>
+          </div>
+          }
+        </div>
+
+        <!-- Proyecto: Nuestro alcance -->
+        <div
+          class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700"
+        >
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showCOT2 = !showCOT2"
+          >
+            Nuestro alcance incluye
+            <i
+              [ngClass]="
+                showCOT2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'
+              "
+            ></i>
+          </button>
+          @if(showCOT2){
+          <div class="p-6 space-y-4" data-aos="fade-right">
+            <img
+              src="assets/proyectos/cot/cot_2.avif"
+              class="rounded-xl shadow-md w-full h-auto object-cover"
+              loading="lazy"
+              alt="Nuestro alcance - Clínica de Ojos Tandil"
+            />
+            <p class="text-zinc-300 text-sm leading-relaxed">
+              El mantenimiento y evolución del sistema de gestión de turnos e
+              historias clínicas; el análisis, diseño y propuesta de nuevos
+              sistemas y tecnologías que aporten valor al negocio; la
+              coordinación y gestión del equipo de sistemas; la gestión del
+              mantenimiento tecnológico de equipos oftalmológicos e
+              infraestructura asociada; la consultoría IT estratégica; la
+              co-creación de soluciones adaptadas a las necesidades reales de la
+              clínica; la implementación de metodologías ágiles; la gestión de
+              incidentes y soporte para minimizar interrupciones operativas; y la
+              administración de entornos Cloud, garantizando seguridad,
+              disponibilidad y escalabilidad.
             </p>
           </div>
           }
