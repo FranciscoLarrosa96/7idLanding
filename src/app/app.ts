@@ -275,7 +275,7 @@ export class App implements OnInit {
         });
       },
       {
-        threshold: 0.3,
+        threshold: 0.1,
         rootMargin: '-100px 0px -50% 0px',
       },
     );
