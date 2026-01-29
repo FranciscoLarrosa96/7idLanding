@@ -56,62 +56,62 @@
 
   <!-- Menú mobile con @if -->
   @if (menuOpen()) {
-  <div
-    id="mobileMenu"
-    class="md:hidden flex flex-col gap-3 text-base font-medium px-6 pb-6"
-    data-aos="fade-right"
-  >
-    <a
-      href="#inicio"
-      [class.text-main]="activeSection() === 'inicio'"
-      [class.font-bold]="activeSection() === 'inicio'"
-      class="flex items-center gap-2 hover:text-main"
-      (click)="toggleMenu()"
+    <div
+      id="mobileMenu"
+      class="md:hidden flex flex-col gap-3 text-base font-medium px-6 pb-6"
+      data-aos="fade-right"
     >
-      <i class="fas fa-home"></i>Inicio
-    </a>
-    <a
-      href="#nosotros"
-      [class.text-main]="activeSection() === 'nosotros'"
-      [class.font-bold]="activeSection() === 'nosotros'"
-      class="flex items-center gap-2 hover:text-main"
-      (click)="toggleMenu()"
-    >
-      <i class="fas fa-users"></i>Nosotros
-    </a>
-    <a
-      href="#servicios"
-      [class.text-main]="activeSection() === 'servicios'"
-      [class.font-bold]="activeSection() === 'servicios'"
-      class="flex items-center gap-2 hover:text-main"
-      (click)="toggleMenu()"
-    >
-      <i class="fas fa-briefcase"></i>Servicios
-    </a>
-    <a
-      href="#contacto"
-      class="flex items-center justify-center gap-2 bg-main hover:bg-hover text-white px-4 py-2 rounded-full w-full sm:w-fit mt-2 shadow-[0_0_10px_#ff1f43] hover:shadow-[0_0_15px_#ff4757] transition-all"
-      (click)="toggleMenu()"
-    >
-      <i class="fas fa-envelope"></i> Contacto
-    </a>
-  </div>
+      <a
+        href="#inicio"
+        [class.text-main]="activeSection() === 'inicio'"
+        [class.font-bold]="activeSection() === 'inicio'"
+        class="flex items-center gap-2 hover:text-main"
+        (click)="toggleMenu()"
+      >
+        <i class="fas fa-home"></i>Inicio
+      </a>
+      <a
+        href="#nosotros"
+        [class.text-main]="activeSection() === 'nosotros'"
+        [class.font-bold]="activeSection() === 'nosotros'"
+        class="flex items-center gap-2 hover:text-main"
+        (click)="toggleMenu()"
+      >
+        <i class="fas fa-users"></i>Nosotros
+      </a>
+      <a
+        href="#servicios"
+        [class.text-main]="activeSection() === 'servicios'"
+        [class.font-bold]="activeSection() === 'servicios'"
+        class="flex items-center gap-2 hover:text-main"
+        (click)="toggleMenu()"
+      >
+        <i class="fas fa-briefcase"></i>Servicios
+      </a>
+      <a
+        href="#contacto"
+        class="flex items-center justify-center gap-2 bg-main hover:bg-hover text-white px-4 py-2 rounded-full w-full sm:w-fit mt-2 shadow-[0_0_10px_#ff1f43] hover:shadow-[0_0_15px_#ff4757] transition-all"
+        (click)="toggleMenu()"
+      >
+        <i class="fas fa-envelope"></i> Contacto
+      </a>
+    </div>
   }
 </header>
 
 <!-- Animación de transición con logo -->
 @if (showTransition()) {
-<div
-  class="fixed inset-0 z-[100] bg-background flex items-center justify-center transition-all duration-500 animate-fade-in"
->
-  <div class="animate-pulse-scale">
-    <img
-      src="assets/7id_logo_blanco.svg"
-      alt="7iDeas Logo"
-      class="w-64 md:w-96"
-    />
+  <div
+    class="fixed inset-0 z-[100] bg-background flex items-center justify-center transition-all duration-500 animate-fade-in"
+  >
+    <div class="animate-pulse-scale">
+      <img
+        src="assets/7id_logo_blanco.svg"
+        alt="7iDeas Logo"
+        class="w-64 md:w-96"
+      />
+    </div>
   </div>
-</div>
 }
 
 <main class="scroll-smooth">
@@ -215,15 +215,24 @@
 
     <!-- Equipo -->
     <div class="max-w-7xl mx-auto mt-24">
-      <h2 class="text-4xl font-bold mb-4 text-main text-center" data-aos="fade-up">Nuestro Equipo</h2>
-      <p class="text-zinc-300 text-lg max-w-3xl mx-auto text-center mb-12" data-aos="fade-up" data-aos-delay="100">
+      <h2
+        class="text-4xl font-bold mb-4 text-main text-center"
+        data-aos="fade-up"
+      >
+        Nuestro Equipo
+      </h2>
+      <p
+        class="text-zinc-300 text-lg max-w-3xl mx-auto text-center mb-12"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         Conocé a las personas que hacen posible cada proyecto
       </p>
 
       <!-- Carousel Container -->
-      <div 
+      <div
         #carouselContainer
-        class="relative w-full h-[500px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing select-none" 
+        class="relative w-full h-[500px] flex items-center justify-center overflow-visible cursor-grab active:cursor-grabbing select-none pb-12"
         data-aos="fade-up"
         (mousedown)="onDragStart($event)"
         (mousemove)="onDragMove($event)"
@@ -236,7 +245,7 @@
         <!-- Cards Carousel -->
         <div class="carousel-container pointer-events-none">
           @for (card of getVisibleCards(); track card.index) {
-            <div 
+            <div
               class="carousel-card pointer-events-auto"
               [class.card-center]="card.position === 0"
               [class.card-side-1]="card.position === 1 || card.position === -1"
@@ -246,11 +255,20 @@
             >
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <img [src]="card.member.image" [alt]="card.member.name" class="w-full h-full object-cover" draggable="false" />
+                  <img
+                    [src]="card.member.image"
+                    [alt]="card.member.name"
+                    class="w-full h-full object-cover"
+                    draggable="false"
+                  />
                 </div>
                 <div class="flip-card-back">
-                  <h3 class="text-xl font-bold text-white mb-2">{{ card.member.name }}</h3>
-                  <p class="text-white text-base font-semibold">{{ card.member.role }}</p>
+                  <h3 class="text-xl font-bold text-white mb-2">
+                    {{ card.member.name }}
+                  </h3>
+                  <p class="text-white text-base font-semibold">
+                    {{ card.member.role }}
+                  </p>
                 </div>
               </div>
             </div>
@@ -258,7 +276,9 @@
         </div>
 
         <!-- Indicators -->
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
+        >
           @for (member of teamMembers; track $index) {
             <button
               (click)="goToSlide($index)"
@@ -427,24 +447,24 @@
               "
             ></i>
           </button>
-          @if(showGestionate){
-          <div class="p-6 space-y-4" data-aos="fade-left">
-            <img
-              src="assets/proyectos/fava/gestionate.png"
-              class="rounded-xl shadow-md w-full h-auto object-cover"
-              loading="lazy"
-              alt="Gestionate - Grupo Fava"
-            />
-            <p class="text-zinc-300 text-sm leading-relaxed">
-              Aplicación desarrollada para el uso interno de las empresas que
-              integran el Grupo Fava (solo versión desktop). Permite la
-              administración de los recursos humanos, mediante la gestión de
-              novedades como licencias, vacaciones y solicitudes. Facilita la
-              liquidación de sueldos con información centralizada. Su mayor
-              ventaja es la automatización y digitalización de tareas manuales
-              en RRHH, para más de 500 empleados.
-            </p>
-          </div>
+          @if (showGestionate) {
+            <div class="p-6 space-y-4" data-aos="fade-left">
+              <img
+                src="assets/proyectos/fava/gestionate.png"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="Gestionate - Grupo Fava"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                Aplicación desarrollada para el uso interno de las empresas que
+                integran el Grupo Fava (solo versión desktop). Permite la
+                administración de los recursos humanos, mediante la gestión de
+                novedades como licencias, vacaciones y solicitudes. Facilita la
+                liquidación de sueldos con información centralizada. Su mayor
+                ventaja es la automatización y digitalización de tareas manuales
+                en RRHH, para más de 500 empleados.
+              </p>
+            </div>
           }
         </div>
 
@@ -461,21 +481,21 @@
               [ngClass]="showFOL ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
             ></i>
           </button>
-          @if(showFOL){
-          <div class="p-6 space-y-4" data-aos="fade-right">
-            <img
-              src="assets/proyectos/fava/fol.png"
-              class="rounded-xl shadow-md w-full h-auto object-cover"
-              loading="lazy"
-              alt="FOL - Favacard Online - Grupo Fava"
-            />
-            <p class="text-zinc-300 text-sm leading-relaxed">
-              Aplicación desarrollada para la empresa Favacard, parte del Grupo
-              Fava (desktop y mobile). Permite realizar trámites online como
-              gestión de tarjetas Favacard y Cabal, pagos de consumos, solicitud
-              de préstamos, entre otras opciones.
-            </p>
-          </div>
+          @if (showFOL) {
+            <div class="p-6 space-y-4" data-aos="fade-right">
+              <img
+                src="assets/proyectos/fava/fol.png"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="FOL - Favacard Online - Grupo Fava"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                Aplicación desarrollada para la empresa Favacard, parte del
+                Grupo Fava (desktop y mobile). Permite realizar trámites online
+                como gestión de tarjetas Favacard y Cabal, pagos de consumos,
+                solicitud de préstamos, entre otras opciones.
+              </p>
+            </div>
           }
         </div>
       </div>
@@ -517,30 +537,28 @@
           >
             Partner tecnológico de COT
             <i
-              [ngClass]="
-                showCOT1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'
-              "
+              [ngClass]="showCOT1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
             ></i>
           </button>
-          @if(showCOT1){
-          <div class="p-6 space-y-4" data-aos="fade-left">
-            <img
-              src="assets/proyectos/cot/cot_1.avif"
-              class="rounded-xl shadow-md w-full h-auto object-cover"
-              loading="lazy"
-              alt="Partner tecnológico de COT - Clínica de Ojos Tandil"
-            />
-            <p class="text-zinc-300 text-sm leading-relaxed">
-              Brindamos un servicio integral de gestión, evolución y
-              acompañamiento tecnológico, alineando la operación diaria con la
-              estrategia de la clínica. Actuamos como socios tecnológicos,
-              combinando visión de negocio y conocimiento técnico para que la
-              tecnología acompañe y potencie el crecimiento de COT. Mantenemos
-              una comunicación permanente con la dirección, traduciendo lo
-              técnico en impacto operativo y estratégico, y acompañando la toma
-              de decisiones de la alta dirección.
-            </p>
-          </div>
+          @if (showCOT1) {
+            <div class="p-6 space-y-4" data-aos="fade-left">
+              <img
+                src="assets/proyectos/cot/cot_1.avif"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="Partner tecnológico de COT - Clínica de Ojos Tandil"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                Brindamos un servicio integral de gestión, evolución y
+                acompañamiento tecnológico, alineando la operación diaria con la
+                estrategia de la clínica. Actuamos como socios tecnológicos,
+                combinando visión de negocio y conocimiento técnico para que la
+                tecnología acompañe y potencie el crecimiento de COT. Mantenemos
+                una comunicación permanente con la dirección, traduciendo lo
+                técnico en impacto operativo y estratégico, y acompañando la
+                toma de decisiones de la alta dirección.
+              </p>
+            </div>
           }
         </div>
 
@@ -554,33 +572,31 @@
           >
             Nuestro alcance incluye
             <i
-              [ngClass]="
-                showCOT2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'
-              "
+              [ngClass]="showCOT2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
             ></i>
           </button>
-          @if(showCOT2){
-          <div class="p-6 space-y-4" data-aos="fade-right">
-            <img
-              src="assets/proyectos/cot/cot_2.avif"
-              class="rounded-xl shadow-md w-full h-auto object-cover"
-              loading="lazy"
-              alt="Nuestro alcance - Clínica de Ojos Tandil"
-            />
-            <p class="text-zinc-300 text-sm leading-relaxed">
-              El mantenimiento y evolución del sistema de gestión de turnos e
-              historias clínicas; el análisis, diseño y propuesta de nuevos
-              sistemas y tecnologías que aporten valor al negocio; la
-              coordinación y gestión del equipo de sistemas; la gestión del
-              mantenimiento tecnológico de equipos oftalmológicos e
-              infraestructura asociada; la consultoría IT estratégica; la
-              co-creación de soluciones adaptadas a las necesidades reales de la
-              clínica; la implementación de metodologías ágiles; la gestión de
-              incidentes y soporte para minimizar interrupciones operativas; y la
-              administración de entornos Cloud, garantizando seguridad,
-              disponibilidad y escalabilidad.
-            </p>
-          </div>
+          @if (showCOT2) {
+            <div class="p-6 space-y-4" data-aos="fade-right">
+              <img
+                src="assets/proyectos/cot/cot_2.avif"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="Nuestro alcance - Clínica de Ojos Tandil"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                El mantenimiento y evolución del sistema de gestión de turnos e
+                historias clínicas; el análisis, diseño y propuesta de nuevos
+                sistemas y tecnologías que aporten valor al negocio; la
+                coordinación y gestión del equipo de sistemas; la gestión del
+                mantenimiento tecnológico de equipos oftalmológicos e
+                infraestructura asociada; la consultoría IT estratégica; la
+                co-creación de soluciones adaptadas a las necesidades reales de
+                la clínica; la implementación de metodologías ágiles; la gestión
+                de incidentes y soporte para minimizar interrupciones
+                operativas; y la administración de entornos Cloud, garantizando
+                seguridad, disponibilidad y escalabilidad.
+              </p>
+            </div>
           }
         </div>
       </div>
@@ -785,7 +801,10 @@
   ></div>
 
   <!-- Servicios -->
-  <section class="bg-background text-white py-24 px-6 scroll-mt-32" id="servicios">
+  <section
+    class="bg-background text-white py-24 px-6 scroll-mt-32"
+    id="servicios"
+  >
     <div data-aos="fade-up" class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2
@@ -805,50 +824,52 @@
         data-aos-delay="100"
       >
         <div class="mx-auto max-w-4xl">
-            <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
-              <i class="fas fa-laptop-code text-4xl text-main"></i>
-              <h3 class="text-2xl md:text-3xl font-bold text-white">
-                Servicios de Desarrollo de Software
-              </h3>
-            </div>
-            <p class="text-white/80 text-base md:text-lg leading-relaxed mb-6 text-center md:text-left">
-              Software Factory, aplicamos toda nuestra experiencia para avanzar
-              con desarrollos de software, gestionando el avance del proyecto y
-              manteniendo el know how ante la rotación de recursos.
+          <div
+            class="flex items-center gap-3 mb-4 justify-center md:justify-start"
+          >
+            <i class="fas fa-laptop-code text-4xl text-main"></i>
+            <h3 class="text-2xl md:text-3xl font-bold text-white">
+              Servicios de Desarrollo de Software
+            </h3>
+          </div>
+          <p
+            class="text-white/80 text-base md:text-lg leading-relaxed mb-6 text-center md:text-left"
+          >
+            Software Factory, aplicamos toda nuestra experiencia para avanzar
+            con desarrollos de software, gestionando el avance del proyecto y
+            manteniendo el know how ante la rotación de recursos.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Desarrollo web</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Integración y automatización</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>UX/UI</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>QA Testing</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Soporte</span>
+            </li>
+          </ul>
+          <div class="bg-black/40 border-2 border-main/40 rounded-xl p-6 mt-6">
+            <p class="text-main font-semibold text-lg mb-2">
+              ¿Tenés algún proyecto para desarrollar?
             </p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Desarrollo web</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Integración y automatización</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>UX/UI</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>QA Testing</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Soporte</span>
-              </li>
-            </ul>
-            <div
-              class="bg-black/40 border-2 border-main/40 rounded-xl p-6 mt-6"
-            >
-              <p class="text-main font-semibold text-lg mb-2">
-                ¿Tenés algún proyecto para desarrollar?
-              </p>
-              <p class="text-white/80 text-sm leading-relaxed">
-                Contactate con nosotros así te podemos asesorar para evaluar
-                las mejores opciones para llevar a cabo tu proyecto
-              </p>
-            </div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Contactate con nosotros así te podemos asesorar para evaluar las
+              mejores opciones para llevar a cabo tu proyecto
+            </p>
+          </div>
         </div>
       </div>
 
@@ -859,54 +880,56 @@
         data-aos-delay="200"
       >
         <div class="mx-auto max-w-4xl">
-            <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
-              <i class="fas fa-cogs text-4xl text-main"></i>
-              <h3 class="text-2xl md:text-3xl font-bold text-white">
-                Servicios de Gerenciamiento Tecnológico
-              </h3>
-            </div>
-            <p class="text-white/80 text-base md:text-lg leading-relaxed mb-6 text-center md:text-left">
-              Conducimos el área de sistemas o trabajamos codo a codo con el
-              gerente. No reinventamos la rueda, implementamos con otros
-              proveedores soluciones económicamente sustentables.
+          <div
+            class="flex items-center gap-3 mb-4 justify-center md:justify-start"
+          >
+            <i class="fas fa-cogs text-4xl text-main"></i>
+            <h3 class="text-2xl md:text-3xl font-bold text-white">
+              Servicios de Gerenciamiento Tecnológico
+            </h3>
+          </div>
+          <p
+            class="text-white/80 text-base md:text-lg leading-relaxed mb-6 text-center md:text-left"
+          >
+            Conducimos el área de sistemas o trabajamos codo a codo con el
+            gerente. No reinventamos la rueda, implementamos con otros
+            proveedores soluciones económicamente sustentables.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Desarrollos propios</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Integraciones</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Implementaciones</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Hoja de ruta IT</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Gestión de puntos de dolor IT</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Gestión de infraestructura IT</span>
+            </li>
+          </ul>
+          <div class="bg-black/40 border-2 border-main/40 rounded-xl p-6 mt-6">
+            <p class="text-main font-semibold text-lg mb-2">
+              ¿Necesitas gerenciar tu área IT o mejorar tus soluciones?
             </p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Desarrollos propios</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Integraciones</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Implementaciones</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Hoja de ruta IT</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Gestión de puntos de dolor IT</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Gestión de infraestructura IT</span>
-              </li>
-            </ul>
-            <div
-              class="bg-black/40 border-2 border-main/40 rounded-xl p-6 mt-6"
-            >
-              <p class="text-main font-semibold text-lg mb-2">
-                ¿Necesitas gerenciar tu área IT o mejorar tus soluciones?
-              </p>
-              <p class="text-white/80 text-sm leading-relaxed">
-                Contactate con nosotros, vas a encontrar un aliado tecnológico
-                que organice y resuelva las necesidades de tu empresa
-              </p>
-            </div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Contactate con nosotros, vas a encontrar un aliado tecnológico que
+              organice y resuelva las necesidades de tu empresa
+            </p>
+          </div>
         </div>
       </div>
 
@@ -917,47 +940,49 @@
         data-aos-delay="300"
       >
         <div class="mx-auto max-w-4xl">
-            <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
-              <i class="fas fa-rocket text-4xl text-main"></i>
-              <h3 class="text-2xl md:text-3xl font-bold text-white">
-                Servicios de Innovación Tecnológica
-              </h3>
-            </div>
-            <p class="text-white/80 text-base md:text-lg leading-relaxed mb-6 text-center md:text-left">
-              Ayudamos a las empresas a la adopción de tecnologías innovadoras.
+          <div
+            class="flex items-center gap-3 mb-4 justify-center md:justify-start"
+          >
+            <i class="fas fa-rocket text-4xl text-main"></i>
+            <h3 class="text-2xl md:text-3xl font-bold text-white">
+              Servicios de Innovación Tecnológica
+            </h3>
+          </div>
+          <p
+            class="text-white/80 text-base md:text-lg leading-relaxed mb-6 text-center md:text-left"
+          >
+            Ayudamos a las empresas a la adopción de tecnologías innovadoras.
+          </p>
+          <ul class="grid grid-cols-1 gap-3 mb-8">
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Uso de IA corporativo</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Nuevo paradigma de marketing con IA (ex SEO)</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span>Automatizaciones con IA</span>
+            </li>
+            <li class="flex items-center gap-3 text-white">
+              <i class="fas fa-check-circle text-main text-lg"></i>
+              <span
+                >Trackeo inmutable, tokenización, descentralización y soluciones
+                cripto</span
+              >
+            </li>
+          </ul>
+          <div class="bg-black/40 border-2 border-main/40 rounded-xl p-6 mt-6">
+            <p class="text-main font-semibold text-lg mb-2">
+              ¿Problemas para seguir el ritmo de la innovación?
             </p>
-            <ul class="grid grid-cols-1 gap-3 mb-8">
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Uso de IA corporativo</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Nuevo paradigma de marketing con IA (ex SEO)</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span>Automatizaciones con IA</span>
-              </li>
-              <li class="flex items-center gap-3 text-white">
-                <i class="fas fa-check-circle text-main text-lg"></i>
-                <span
-                  >Trackeo inmutable, tokenización, descentralización y
-                  soluciones cripto</span
-                >
-              </li>
-            </ul>
-            <div
-              class="bg-black/40 border-2 border-main/40 rounded-xl p-6 mt-6"
-            >
-              <p class="text-main font-semibold text-lg mb-2">
-                ¿Problemas para seguir el ritmo de la innovación?
-              </p>
-              <p class="text-white/80 text-sm leading-relaxed">
-                Contactate con nosotros, vas a encontrar un aliado tecnológico
-                que acelere tus tiempos para incorporar innovaciones
-              </p>
-            </div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Contactate con nosotros, vas a encontrar un aliado tecnológico que
+              acelere tus tiempos para incorporar innovaciones
+            </p>
+          </div>
         </div>
       </div>
     </div>
