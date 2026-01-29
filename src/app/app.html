@@ -229,65 +229,101 @@
         Conocé a las personas que hacen posible cada proyecto
       </p>
 
-      <!-- Carousel Container -->
+      <!-- Foto Grupal -->
       <div
-        #carouselContainer
-        class="relative w-full h-[500px] flex items-center justify-center overflow-visible cursor-grab active:cursor-grabbing select-none pb-12"
+        class="relative max-w-5xl mx-auto"
         data-aos="fade-up"
-        (mousedown)="onDragStart($event)"
-        (mousemove)="onDragMove($event)"
-        (mouseup)="onDragEnd($event)"
-        (mouseleave)="onDragEnd($event)"
-        (touchstart)="onTouchStart($event)"
-        (touchmove)="onTouchMove($event)"
-        (touchend)="onTouchEnd($event)"
+        data-aos-delay="200"
       >
-        <!-- Cards Carousel -->
-        <div class="carousel-container pointer-events-none">
-          @for (card of getVisibleCards(); track card.index) {
-            <div
-              class="carousel-card pointer-events-auto"
-              [class.card-center]="card.position === 0"
-              [class.card-side-1]="card.position === 1 || card.position === -1"
-              [class.card-side-2]="card.position === 2 || card.position === -2"
-              [attr.data-position]="card.position"
-              (click)="goToSlide(card.index)"
-            >
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img
-                    [src]="card.member.image"
-                    [alt]="card.member.name"
-                    class="w-full h-full object-cover"
-                    draggable="false"
-                  />
-                </div>
-                <div class="flip-card-back">
-                  <h3 class="text-xl font-bold text-white mb-2">
-                    {{ card.member.name }}
-                  </h3>
-                  <p class="text-white text-base font-semibold">
-                    {{ card.member.role }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          }
-        </div>
-
-        <!-- Indicators -->
+        <!-- Efecto Glow de fondo -->
         <div
-          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
-        >
-          @for (member of teamMembers; track $index) {
-            <button
-              (click)="goToSlide($index)"
-              [class.bg-main]="currentIndex() === $index"
-              [class.bg-zinc-500]="currentIndex() !== $index"
-              class="w-2 h-2 rounded-full transition-all hover:scale-125"
-              [attr.aria-label]="'Ir a ' + member.name"
-            ></button>
-          }
+          class="absolute inset-0 bg-main/30 blur-[80px] rounded-full scale-95 -z-10"
+        ></div>
+
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <!-- Imagen Desktop (oculta en móvil) -->
+          <img
+            src="assets/img/nosotros_desktop.jpg"
+            alt="Equipo 7iDeas"
+            class="hidden md:block w-full h-auto object-cover mb-12"
+          />
+
+          <!-- Imagen Mobile (visible en móvil) -->
+          <img
+            src="assets/img/nosotros_mobile.jpg"
+            alt="Equipo 7iDeas"
+            class="block md:hidden w-full h-auto object-cover"
+          />
+
+          <!-- Overlay con gradiente sutil -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#0b000a]/80 via-transparent to-transparent pointer-events-none"
+          ></div>
+          <!-- Carousel Container -->
+          <div
+            #carouselContainer
+            class="relative w-full h-[500px] flex items-center justify-center overflow-visible cursor-grab active:cursor-grabbing select-none pb-12"
+            data-aos="fade-up"
+            (mousedown)="onDragStart($event)"
+            (mousemove)="onDragMove($event)"
+            (mouseup)="onDragEnd($event)"
+            (mouseleave)="onDragEnd($event)"
+            (touchstart)="onTouchStart($event)"
+            (touchmove)="onTouchMove($event)"
+            (touchend)="onTouchEnd($event)"
+          >
+            <!-- Cards Carousel -->
+            <div class="carousel-container pointer-events-none">
+              @for (card of getVisibleCards(); track card.index) {
+                <div
+                  class="carousel-card pointer-events-auto"
+                  [class.card-center]="card.position === 0"
+                  [class.card-side-1]="
+                    card.position === 1 || card.position === -1
+                  "
+                  [class.card-side-2]="
+                    card.position === 2 || card.position === -2
+                  "
+                  [attr.data-position]="card.position"
+                  (click)="goToSlide(card.index)"
+                >
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img
+                        [src]="card.member.image"
+                        [alt]="card.member.name"
+                        class="w-full h-full object-cover"
+                        draggable="false"
+                      />
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="text-xl font-bold text-white mb-2">
+                        {{ card.member.name }}
+                      </h3>
+                      <p class="text-white text-base font-semibold">
+                        {{ card.member.role }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+
+            <!-- Indicators -->
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
+            >
+              @for (member of teamMembers; track $index) {
+                <button
+                  (click)="goToSlide($index)"
+                  [class.bg-main]="currentIndex() === $index"
+                  [class.bg-zinc-500]="currentIndex() !== $index"
+                  class="w-2 h-2 rounded-full transition-all hover:scale-125"
+                  [attr.aria-label]="'Ir a ' + member.name"
+                ></button>
+              }
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -362,7 +398,6 @@
                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"
               ></div>
             </div>
-
             <div class="flex flex-col justify-center space-y-4">
               <h4 class="text-xl font-bold text-white">Gestión Online</h4>
               <p class="text-zinc-300 leading-relaxed">
