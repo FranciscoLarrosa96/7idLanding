@@ -35,6 +35,97 @@ export class App implements OnInit {
   menuOpen = signal(false);
   activeSection = signal('inicio');
   showTransition = signal(false);
+
+  // Carousel del equipo
+  currentIndex = signal(0);
+  teamMembers = [
+    {
+      name: 'Juan Pérez',
+      role: 'Desarrollador Full Stack',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'María González',
+      role: 'UX/UI Designer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Carlos López',
+      role: 'Backend Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Ana Martínez',
+      role: 'Frontend Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Diego Silva',
+      role: 'DevOps Engineer',
+      image: 'assets/preview7id.avif',
+    },
+    { name: 'Laura Rojas', role: 'QA Tester', image: 'assets/preview7id.avif' },
+    {
+      name: 'Roberto Díaz',
+      role: 'Project Manager',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Sofía Herrera',
+      role: 'Scrum Master',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Martín Vega',
+      role: 'Mobile Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Paula Castro',
+      role: 'Data Analyst',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Andrés Moreno',
+      role: 'Solutions Architect',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Valentina Torres',
+      role: 'Tech Lead',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Gabriel Ruiz',
+      role: 'Cloud Engineer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Camila Flores',
+      role: 'Business Analyst',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Nicolás Ríos',
+      role: 'Security Specialist',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Lucía Navarro',
+      role: 'Product Owner',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Fernando Sosa',
+      role: 'AI Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Daniela Medina',
+      role: 'Support Engineer',
+      image: 'assets/preview7id.avif',
+    },
+  ];
   particlesOptions: ISourceOptions = {
     background: {
       color: { value: '#f9fafb' }, // Si el fondo de partículas va claro
@@ -342,6 +433,38 @@ export class App implements OnInit {
 
   toggleMenu() {
     this.menuOpen.set(!this.menuOpen());
+  }
+
+  nextSlide() {
+    this.currentIndex.set((this.currentIndex() + 1) % this.teamMembers.length);
+  }
+
+  prevSlide() {
+    this.currentIndex.set(
+      (this.currentIndex() - 1 + this.teamMembers.length) %
+        this.teamMembers.length,
+    );
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex.set(index);
+  }
+
+  getVisibleCards() {
+    const totalCards = this.teamMembers.length;
+    const currentIdx = this.currentIndex();
+    const visibleCount = 5; // Mostrar 5 cards (2 izq, centro, 2 der)
+
+    const result = [];
+    for (let i = -2; i <= 2; i++) {
+      const index = (currentIdx + i + totalCards) % totalCards;
+      result.push({
+        member: this.teamMembers[index],
+        position: i,
+        index: index,
+      });
+    }
+    return result;
   }
 
   private async _particlesInit(engine: Engine): Promise<void> {
