@@ -229,36 +229,65 @@
         Conocé a las personas que hacen posible cada proyecto
       </p>
 
-      <!-- Foto Grupal -->
+      <!-- Carousel Container -->
       <div
-        class="relative max-w-5xl mx-auto"
+        #carouselContainer
+        class="relative w-full h-[500px] flex items-center justify-center overflow-visible cursor-grab active:cursor-grabbing select-none pb-12"
         data-aos="fade-up"
-        data-aos-delay="200"
+        (mousedown)="onDragStart($event)"
+        (mousemove)="onDragMove($event)"
+        (mouseup)="onDragEnd($event)"
+        (mouseleave)="onDragEnd($event)"
+        (touchstart)="onTouchStart($event)"
+        (touchmove)="onTouchMove($event)"
+        (touchend)="onTouchEnd($event)"
       >
-        <!-- Efecto Glow de fondo -->
+        <!-- Cards Carousel -->
+        <div class="carousel-container pointer-events-none">
+          @for (card of getVisibleCards(); track card.index) {
+            <div
+              class="carousel-card pointer-events-auto"
+              [class.card-center]="card.position === 0"
+              [class.card-side-1]="card.position === 1 || card.position === -1"
+              [class.card-side-2]="card.position === 2 || card.position === -2"
+              [attr.data-position]="card.position"
+              (click)="goToSlide(card.index)"
+            >
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    [src]="card.member.image"
+                    [alt]="card.member.name"
+                    class="w-full h-full object-cover"
+                    draggable="false"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="text-xl font-bold text-white mb-2">
+                    {{ card.member.name }}
+                  </h3>
+                  <p class="text-white text-base font-semibold">
+                    {{ card.member.role }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Indicators -->
         <div
-          class="absolute inset-0 bg-main/30 blur-[80px] rounded-full scale-95 -z-10"
-        ></div>
-
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-          <!-- Imagen Desktop (oculta en móvil) -->
-          <img
-            src="assets/img/nosotros_desktop.jpg"
-            alt="Equipo 7iDeas"
-            class="hidden md:block w-full h-auto object-cover"
-          />
-
-          <!-- Imagen Mobile (visible en móvil) -->
-          <img
-            src="assets/img/nosotros_mobile.jpg"
-            alt="Equipo 7iDeas"
-            class="block md:hidden w-full h-auto object-cover"
-          />
-
-          <!-- Overlay con gradiente sutil -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#0b000a]/80 via-transparent to-transparent pointer-events-none"
-          ></div>
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
+        >
+          @for (member of teamMembers; track $index) {
+            <button
+              (click)="goToSlide($index)"
+              [class.bg-main]="currentIndex() === $index"
+              [class.bg-zinc-500]="currentIndex() !== $index"
+              class="w-2 h-2 rounded-full transition-all hover:scale-125"
+              [attr.aria-label]="'Ir a ' + member.name"
+            ></button>
+          }
         </div>
       </div>
     </div>
@@ -464,45 +493,22 @@
             ></i>
           </button>
           @if (showGestionate) {
-            <div class="grid md:grid-cols-2 gap-6 p-6" data-aos="fade-up">
-              <div class="relative rounded-xl overflow-hidden group">
-                <img
-                  src="assets/proyectos/fava/gestionate.png"
-                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                  alt="Gestionate - Grupo Fava"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"
-                ></div>
-              </div>
-
-              <div class="flex flex-col justify-center space-y-4">
-                <h4 class="text-xl font-bold text-white">Gestionate</h4>
-                <p class="text-zinc-300 leading-relaxed">
-                  Aplicación desarrollada para el uso interno de las empresas
-                  que integran el Grupo Fava (solo versión desktop). Permite la
-                  administración de los recursos humanos, mediante la gestión de
-                  novedades como licencias, vacaciones y solicitudes. Facilita
-                  la liquidación de sueldos con información centralizada. Su
-                  mayor ventaja es la automatización y digitalización de tareas
-                  manuales en RRHH, para más de 500 empleados.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >RRHH</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Desktop</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >500+ Usuarios</span
-                  >
-                </div>
-              </div>
+            <div class="p-6 space-y-4" data-aos="fade-left">
+              <img
+                src="assets/proyectos/fava/gestionate.png"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="Gestionate - Grupo Fava"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                Aplicación desarrollada para el uso interno de las empresas que
+                integran el Grupo Fava (solo versión desktop). Permite la
+                administración de los recursos humanos, mediante la gestión de
+                novedades como licencias, vacaciones y solicitudes. Facilita la
+                liquidación de sueldos con información centralizada. Su mayor
+                ventaja es la automatización y digitalización de tareas manuales
+                en RRHH, para más de 500 empleados.
+              </p>
             </div>
           }
         </div>
@@ -521,44 +527,19 @@
             ></i>
           </button>
           @if (showFOL) {
-            <div class="grid md:grid-cols-2 gap-6 p-6" data-aos="fade-up">
-              <div class="relative rounded-xl overflow-hidden group">
-                <img
-                  src="assets/proyectos/fava/fol.png"
-                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                  alt="FOL - Favacard Online - Grupo Fava"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"
-                ></div>
-              </div>
-
-              <div class="flex flex-col justify-center space-y-4">
-                <h4 class="text-xl font-bold text-white">
-                  Favacard Online | FOL
-                </h4>
-                <p class="text-zinc-300 leading-relaxed">
-                  Aplicación desarrollada para la empresa Favacard, parte del
-                  Grupo Fava (desktop y mobile). Permite realizar trámites
-                  online como gestión de tarjetas Favacard y Cabal, pagos de
-                  consumos, solicitud de préstamos, entre otras opciones.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Mobile & Desktop</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Tarjetas</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Préstamos</span
-                  >
-                </div>
-              </div>
+            <div class="p-6 space-y-4" data-aos="fade-right">
+              <img
+                src="assets/proyectos/fava/fol.png"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="FOL - Favacard Online - Grupo Fava"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                Aplicación desarrollada para la empresa Favacard, parte del
+                Grupo Fava (desktop y mobile). Permite realizar trámites online
+                como gestión de tarjetas Favacard y Cabal, pagos de consumos,
+                solicitud de préstamos, entre otras opciones.
+              </p>
             </div>
           }
         </div>
@@ -605,49 +586,23 @@
             ></i>
           </button>
           @if (showCOT1) {
-            <div class="grid md:grid-cols-2 gap-6 p-6" data-aos="fade-up">
-              <div class="relative rounded-xl overflow-hidden group">
-                <img
-                  src="assets/proyectos/cot/cot_1.avif"
-                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                  alt="Partner tecnológico de COT - Clínica de Ojos Tandil"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"
-                ></div>
-              </div>
-
-              <div class="flex flex-col justify-center space-y-4">
-                <h4 class="text-xl font-bold text-white">
-                  Partner tecnológico de COT
-                </h4>
-                <p class="text-zinc-300 leading-relaxed">
-                  Brindamos un servicio integral de gestión, evolución y
-                  acompañamiento tecnológico, alineando la operación diaria con
-                  la estrategia de la clínica. Actuamos como socios
-                  tecnológicos, combinando visión de negocio y conocimiento
-                  técnico para que la tecnología acompañe y potencie el
-                  crecimiento de COT. Mantenemos una comunicación permanente con
-                  la dirección, traduciendo lo técnico en impacto operativo y
-                  estratégico, y acompañando la toma de decisiones de la alta
-                  dirección.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Partner</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Estrategia</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Consultoría</span
-                  >
-                </div>
-              </div>
+            <div class="p-6 space-y-4" data-aos="fade-left">
+              <img
+                src="assets/proyectos/cot/cot_1.avif"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="Partner tecnológico de COT - Clínica de Ojos Tandil"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                Brindamos un servicio integral de gestión, evolución y
+                acompañamiento tecnológico, alineando la operación diaria con la
+                estrategia de la clínica. Actuamos como socios tecnológicos,
+                combinando visión de negocio y conocimiento técnico para que la
+                tecnología acompañe y potencie el crecimiento de COT. Mantenemos
+                una comunicación permanente con la dirección, traduciendo lo
+                técnico en impacto operativo y estratégico, y acompañando la
+                toma de decisiones de la alta dirección.
+              </p>
             </div>
           }
         </div>
@@ -666,51 +621,26 @@
             ></i>
           </button>
           @if (showCOT2) {
-            <div class="grid md:grid-cols-2 gap-6 p-6" data-aos="fade-up">
-              <div class="relative rounded-xl overflow-hidden group">
-                <img
-                  src="assets/proyectos/cot/cot_2.avif"
-                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                  alt="Nuestro alcance - Clínica de Ojos Tandil"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"
-                ></div>
-              </div>
-
-              <div class="flex flex-col justify-center space-y-4">
-                <h4 class="text-xl font-bold text-white">
-                  Nuestro alcance incluye
-                </h4>
-                <p class="text-zinc-300 leading-relaxed">
-                  El mantenimiento y evolución del sistema de gestión de turnos
-                  e historias clínicas; el análisis, diseño y propuesta de
-                  nuevos sistemas y tecnologías que aporten valor al negocio; la
-                  coordinación y gestión del equipo de sistemas; la gestión del
-                  mantenimiento tecnológico de equipos oftalmológicos e
-                  infraestructura asociada; la consultoría IT estratégica; la
-                  co-creación de soluciones adaptadas a las necesidades reales
-                  de la clínica; la implementación de metodologías ágiles; la
-                  gestión de incidentes y soporte para minimizar interrupciones
-                  operativas; y la administración de entornos Cloud,
-                  garantizando seguridad, disponibilidad y escalabilidad.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Turnos & HCE</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Cloud</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-main/20 text-main text-xs rounded-full"
-                    >Soporte</span
-                  >
-                </div>
-              </div>
+            <div class="p-6 space-y-4" data-aos="fade-right">
+              <img
+                src="assets/proyectos/cot/cot_2.avif"
+                class="rounded-xl shadow-md w-full h-auto object-cover"
+                loading="lazy"
+                alt="Nuestro alcance - Clínica de Ojos Tandil"
+              />
+              <p class="text-zinc-300 text-sm leading-relaxed">
+                El mantenimiento y evolución del sistema de gestión de turnos e
+                historias clínicas; el análisis, diseño y propuesta de nuevos
+                sistemas y tecnologías que aporten valor al negocio; la
+                coordinación y gestión del equipo de sistemas; la gestión del
+                mantenimiento tecnológico de equipos oftalmológicos e
+                infraestructura asociada; la consultoría IT estratégica; la
+                co-creación de soluciones adaptadas a las necesidades reales de
+                la clínica; la implementación de metodologías ágiles; la gestión
+                de incidentes y soporte para minimizar interrupciones
+                operativas; y la administración de entornos Cloud, garantizando
+                seguridad, disponibilidad y escalabilidad.
+              </p>
             </div>
           }
         </div>

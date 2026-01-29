@@ -23,13 +23,103 @@ body {
   border-radius: 10px;
 }
 
+// ========================================
+// Carousel de Equipo con Efecto de Profundidad
+// ========================================
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.carousel-card {
+  position: absolute;
+  width: 280px;
+  height: 400px;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  user-select: none;
+  -webkit-user-drag: none;
+  
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+  
+  // Card Central (posición 0)
+  &.card-center {
+    transform: translateX(0) scale(1.15) translateZ(0);
+    z-index: 10;
+    opacity: 1;
+    filter: blur(0);
+    
+    .flip-card-inner {
+      box-shadow: 0 20px 60px rgba(221, 14, 124, 0.5);
+    }
+  }
+  
+  // Cards laterales nivel 1 (posición -1 y 1)
+  &.card-side-1 {
+    opacity: 0.7;
+    filter: blur(1px);
+    z-index: 5;
+    
+    &[data-position="1"] {
+      transform: translateX(320px) scale(0.85) rotateY(-25deg);
+    }
+    
+    &[data-position="-1"] {
+      transform: translateX(-320px) scale(0.85) rotateY(25deg);
+    }
+    
+    .flip-card-inner {
+      box-shadow: 0 10px 30px rgba(221, 14, 124, 0.2);
+    }
+  }
+  
+  // Cards laterales nivel 2 (posición -2 y 2)
+  &.card-side-2 {
+    opacity: 0.3;
+    filter: blur(2px);
+    z-index: 1;
+    pointer-events: none;
+    
+    &[data-position="2"] {
+      transform: translateX(580px) scale(0.65) rotateY(-35deg);
+    }
+    
+    &[data-position="-2"] {
+      transform: translateX(-580px) scale(0.65) rotateY(35deg);
+    }
+    
+    .flip-card-inner {
+      box-shadow: 0 5px 15px rgba(221, 14, 124, 0.1);
+    }
+  }
+  
+  &:hover {
+    &.card-center {
+      transform: translateX(0) scale(1.2) translateZ(10px);
+    }
+  }
+}
+
 // Efecto Flip 3D para cards de equipo
 .flip-card {
   background-color: transparent;
   width: 100%;
-  aspect-ratio: 3/4;
+  height: 100%;
   perspective: 1000px;
-  cursor: pointer;
 }
 
 .flip-card-inner {
@@ -37,11 +127,12 @@ body {
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform 0.8s, box-shadow 0.6s;
   transform-style: preserve-3d;
+  border-radius: 1rem;
 }
 
-.flip-card:hover .flip-card-inner {
+.carousel-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -52,19 +143,21 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 
 .flip-card-front {
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   border: 2px solid #3a3a3a;
-  box-shadow: 0 8px 16px rgba(221, 14, 124, 0.15);
   transition: all 0.3s ease;
-}
-
-.flip-card:hover .flip-card-front {
-  box-shadow: 0 12px 24px rgba(221, 14, 124, 0.3);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
 }
 
 .flip-card-back {
@@ -74,18 +167,102 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(221, 14, 124, 0.4);
+  
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+  }
 }
 
-.flip-card-back h3 {
-  font-size: clamp(0.875rem, 2vw, 1.125rem);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+// Responsive para tablets y móviles
+@media (max-width: 1024px) {
+  .carousel-card {
+    width: 220px;
+    height: 320px;
+    
+    &.card-center {
+      transform: translateX(0) scale(1.1) translateZ(0);
+    }
+    
+    &.card-side-1 {
+      &[data-position="1"] {
+        transform: translateX(250px) scale(0.8) rotateY(-20deg);
+      }
+      
+      &[data-position="-1"] {
+        transform: translateX(-250px) scale(0.8) rotateY(20deg);
+      }
+    }
+    
+    &.card-side-2 {
+      opacity: 0.15;
+      
+      &[data-position="2"] {
+        transform: translateX(450px) scale(0.6) rotateY(-30deg);
+      }
+      
+      &[data-position="-2"] {
+        transform: translateX(-450px) scale(0.6) rotateY(30deg);
+      }
+    }
+  }
 }
 
-.flip-card-back p {
-  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 600;
+@media (max-width: 768px) {
+  .carousel-card {
+    width: 200px;
+    height: 280px;
+    
+    &.card-center {
+      transform: translateX(0) scale(1) translateZ(0);
+    }
+    
+    &.card-side-1 {
+      opacity: 0.5;
+      
+      &[data-position="1"] {
+        transform: translateX(210px) scale(0.75) rotateY(-15deg);
+      }
+      
+      &[data-position="-1"] {
+        transform: translateX(-210px) scale(0.75) rotateY(15deg);
+      }
+    }
+    
+    &.card-side-2 {
+      opacity: 0;
+      pointer-events: none;
+      
+      &[data-position="2"] {
+        transform: translateX(350px) scale(0.5) rotateY(-25deg);
+      }
+      
+      &[data-position="-2"] {
+        transform: translateX(-350px) scale(0.5) rotateY(25deg);
+      }
+    }
+    
+    .flip-card-back {
+      h3 {
+        font-size: 1rem;
+      }
+      
+      p {
+        font-size: 0.875rem;
+      }
+    }
+  }
 }
+

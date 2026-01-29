@@ -35,6 +35,105 @@ export class App implements OnInit {
   menuOpen = signal(false);
   activeSection = signal('inicio');
   showTransition = signal(false);
+
+  // Carousel del equipo
+  currentIndex = signal(0);
+  isDragging = false;
+  startX = 0;
+  currentX = 0;
+  dragThreshold = 50; // Píxeles mínimos para cambiar de slide
+
+  @ViewChild('carouselContainer')
+  carouselContainer!: ElementRef<HTMLDivElement>;
+
+  teamMembers = [
+    {
+      name: 'Juan Pérez',
+      role: 'Desarrollador Full Stack',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'María González',
+      role: 'UX/UI Designer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Carlos López',
+      role: 'Backend Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Ana Martínez',
+      role: 'Frontend Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Diego Silva',
+      role: 'DevOps Engineer',
+      image: 'assets/preview7id.avif',
+    },
+    { name: 'Laura Rojas', role: 'QA Tester', image: 'assets/preview7id.avif' },
+    {
+      name: 'Roberto Díaz',
+      role: 'Project Manager',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Sofía Herrera',
+      role: 'Scrum Master',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Martín Vega',
+      role: 'Mobile Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Paula Castro',
+      role: 'Data Analyst',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Andrés Moreno',
+      role: 'Solutions Architect',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Valentina Torres',
+      role: 'Tech Lead',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Gabriel Ruiz',
+      role: 'Cloud Engineer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Camila Flores',
+      role: 'Business Analyst',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Nicolás Ríos',
+      role: 'Security Specialist',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Lucía Navarro',
+      role: 'Product Owner',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Fernando Sosa',
+      role: 'AI Developer',
+      image: 'assets/preview7id.avif',
+    },
+    {
+      name: 'Daniela Medina',
+      role: 'Support Engineer',
+      image: 'assets/preview7id.avif',
+    },
+  ];
   particlesOptions: ISourceOptions = {
     background: {
       color: { value: '#f9fafb' }, // Si el fondo de partículas va claro
@@ -344,6 +443,99 @@ export class App implements OnInit {
     this.menuOpen.set(!this.menuOpen());
   }
 
+  nextSlide() {
+    this.currentIndex.set((this.currentIndex() + 1) % this.teamMembers.length);
+  }
+
+  prevSlide() {
+    this.currentIndex.set(
+      (this.currentIndex() - 1 + this.teamMembers.length) %
+        this.teamMembers.length,
+    );
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex.set(index);
+  }
+
+  getVisibleCards() {
+    const totalCards = this.teamMembers.length;
+    const currentIdx = this.currentIndex();
+    const visibleCount = 5; // Mostrar 5 cards (2 izq, centro, 2 der)
+
+    const result = [];
+    for (let i = -2; i <= 2; i++) {
+      const index = (currentIdx + i + totalCards) % totalCards;
+      result.push({
+        member: this.teamMembers[index],
+        position: i,
+        index: index,
+      });
+    }
+    return result;
+  }
+  // Drag handlers para mouse
+  onDragStart(event: MouseEvent) {
+    this.isDragging = true;
+    this.startX = event.clientX;
+    this.currentX = event.clientX;
+    event.preventDefault();
+  }
+
+  onDragMove(event: MouseEvent) {
+    if (!this.isDragging) return;
+    this.currentX = event.clientX;
+  }
+
+  onDragEnd(event: MouseEvent) {
+    if (!this.isDragging) return;
+
+    const deltaX = this.currentX - this.startX;
+
+    if (Math.abs(deltaX) > this.dragThreshold) {
+      if (deltaX > 0) {
+        // Arrastró hacia la derecha = slide anterior
+        this.prevSlide();
+      } else {
+        // Arrastró hacia la izquierda = slide siguiente
+        this.nextSlide();
+      }
+    }
+
+    this.isDragging = false;
+    this.startX = 0;
+    this.currentX = 0;
+  }
+
+  // Touch handlers para móviles
+  onTouchStart(event: TouchEvent) {
+    this.isDragging = true;
+    this.startX = event.touches[0].clientX;
+    this.currentX = event.touches[0].clientX;
+  }
+
+  onTouchMove(event: TouchEvent) {
+    if (!this.isDragging) return;
+    this.currentX = event.touches[0].clientX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    if (!this.isDragging) return;
+
+    const deltaX = this.currentX - this.startX;
+
+    if (Math.abs(deltaX) > this.dragThreshold) {
+      if (deltaX > 0) {
+        this.prevSlide();
+      } else {
+        this.nextSlide();
+      }
+    }
+
+    this.isDragging = false;
+    this.startX = 0;
+    this.currentX = 0;
+  }
   private async _particlesInit(engine: Engine): Promise<void> {
     await loadSlim(engine);
   }
