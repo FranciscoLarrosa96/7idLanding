@@ -277,7 +277,7 @@ export class App implements OnInit {
       {
         threshold: 0.3,
         rootMargin: '-100px 0px -50% 0px',
-      }
+      },
     );
 
     sections.forEach((section) => {
@@ -339,7 +339,7 @@ export class App implements OnInit {
           console.log('⏸️ Particles PAUSE');
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(hero);
@@ -415,7 +415,7 @@ export class App implements OnInit {
     const formData = new FormData(this.formElement.nativeElement);
     formData.append('cv', this.selectedFile);
     for (const [key, value] of formData.entries()) {
-      console.log(`${key}:`, value);
+      // console.log(`${key}:`, value);
     }
 
     // emailjs
