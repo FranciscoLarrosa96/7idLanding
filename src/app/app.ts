@@ -36,6 +36,37 @@ export class App implements OnInit {
   activeSection = signal('inicio');
   showTransition = signal(false);
 
+  // Estadísticas animadas
+  linesOfCode = signal(0);
+  projectsCompleted = signal(0);
+  yearsOfExperience = signal(0);
+  happyClients = signal(0);
+  coffeeCups = signal(0);
+  bugsFixed = signal(0);
+  deployments = signal(0);
+  pizzaSlices = signal(0);
+
+  // Fecha base para cálculos incrementales (29 enero 2026)
+  private baseDate = new Date('2026-01-29');
+
+  private getDaysSinceBase(): number {
+    const now = new Date();
+    const diffTime = Math.abs(now.getTime() - this.baseDate.getTime());
+    return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  }
+
+  private getTargetLinesOfCode(): number {
+    // Base: 3.2M + 20 líneas por día = 0.00002M por día
+    const days = this.getDaysSinceBase();
+    return 3.2 + days * 0.00002;
+  }
+
+  private getTargetCoffeeCups(): number {
+    // Base: 8.5K + 8 cafés por día = 0.008K por día
+    const days = this.getDaysSinceBase();
+    return 8.5 + days * 0.008;
+  }
+
   // Carousel del equipo
   currentIndex = signal(0);
   isDragging = false;
@@ -48,91 +79,95 @@ export class App implements OnInit {
 
   teamMembers = [
     {
-      name: 'Juan Pérez',
-      role: 'Desarrollador Full Stack',
-      image: 'assets/preview7id.avif',
+      name: 'Christian Roig',
+      role: 'CEO & Founder',
+      image: 'assets/img/colaboradores/christian.avif',
     },
     {
-      name: 'María González',
-      role: 'UX/UI Designer',
-      image: 'assets/preview7id.avif',
+      name: 'Lucia Lopez Cerecedo',
+      role: 'Responsable de Talento',
+      image: 'assets/img/colaboradores/lucia.avif',
     },
     {
-      name: 'Carlos López',
-      role: 'Backend Developer',
-      image: 'assets/preview7id.avif',
+      name: 'Kevin Martinez',
+      role: 'Fullstack Developer',
+      image: 'assets/img/colaboradores/kevin.avif',
     },
     {
-      name: 'Ana Martínez',
-      role: 'Frontend Developer',
-      image: 'assets/preview7id.avif',
+      name: 'Maria Emilia Tunesi',
+      role: 'QA & Requirements Analyst',
+      image: 'assets/img/colaboradores/emilia.avif',
     },
     {
-      name: 'Diego Silva',
-      role: 'DevOps Engineer',
-      image: 'assets/preview7id.avif',
+      name: 'Juan Segundo Aramburu',
+      role: 'QA Tester',
+      image: 'assets/img/colaboradores/juanse.avif',
     },
-    { name: 'Laura Rojas', role: 'QA Tester', image: 'assets/preview7id.avif' },
     {
-      name: 'Roberto Díaz',
+      name: 'Santiago Tapia',
+      role: 'Requeriments Analyst',
+      image: 'assets/img/colaboradores/santi.avif',
+    },
+    {
+      name: 'Santiago Diaz Pace',
       role: 'Project Manager',
-      image: 'assets/preview7id.avif',
+      image: 'assets/img/colaboradores/santiago.avif',
     },
     {
-      name: 'Sofía Herrera',
-      role: 'Scrum Master',
-      image: 'assets/preview7id.avif',
+      name: 'Francisco Larrosa',
+      role: 'Front End Developer',
+      image: 'assets/img/colaboradores/fran.avif',
     },
     {
-      name: 'Martín Vega',
-      role: 'Mobile Developer',
-      image: 'assets/preview7id.avif',
+      name: 'Eliseo Villa',
+      role: 'Backend Developer',
+      image: 'assets/img/colaboradores/eliseo.avif',
     },
     {
-      name: 'Paula Castro',
-      role: 'Data Analyst',
-      image: 'assets/preview7id.avif',
+      name: 'Bernardino Bonisconti',
+      role: 'Project Manager',
+      image: 'assets/img/colaboradores/bernardino.avif',
     },
     {
-      name: 'Andrés Moreno',
-      role: 'Solutions Architect',
-      image: 'assets/preview7id.avif',
+      name: 'Joaquin Barbieri',
+      role: 'Backend Developer',
+      image: 'assets/img/colaboradores/joaquin.avif',
     },
     {
-      name: 'Valentina Torres',
-      role: 'Tech Lead',
-      image: 'assets/preview7id.avif',
+      name: 'Ludmila Alvares',
+      role: 'Administrative & Comercial',
+      image: 'assets/img/colaboradores/ludmila.avif',
     },
     {
-      name: 'Gabriel Ruiz',
-      role: 'Cloud Engineer',
-      image: 'assets/preview7id.avif',
+      name: 'Juan Diego Grela',
+      role: 'Backend Developer',
+      image: 'assets/img/colaboradores/juan.avif',
     },
-    {
-      name: 'Camila Flores',
-      role: 'Business Analyst',
-      image: 'assets/preview7id.avif',
-    },
-    {
-      name: 'Nicolás Ríos',
-      role: 'Security Specialist',
-      image: 'assets/preview7id.avif',
-    },
-    {
-      name: 'Lucía Navarro',
-      role: 'Product Owner',
-      image: 'assets/preview7id.avif',
-    },
-    {
-      name: 'Fernando Sosa',
-      role: 'AI Developer',
-      image: 'assets/preview7id.avif',
-    },
-    {
-      name: 'Daniela Medina',
-      role: 'Support Engineer',
-      image: 'assets/preview7id.avif',
-    },
+    // {
+    //   name: 'Camila Flores',
+    //   role: 'Business Analyst',
+    //   image: 'assets/preview7id.avif',
+    // },
+    // {
+    //   name: 'Nicolás Ríos',
+    //   role: 'Security Specialist',
+    //   image: 'assets/preview7id.avif',
+    // },
+    // {
+    //   name: 'Lucía Navarro',
+    //   role: 'Product Owner',
+    //   image: 'assets/preview7id.avif',
+    // },
+    // {
+    //   name: 'Fernando Sosa',
+    //   role: 'AI Developer',
+    //   image: 'assets/preview7id.avif',
+    // },
+    // {
+    //   name: 'Daniela Medina',
+    //   role: 'Support Engineer',
+    //   image: 'assets/preview7id.avif',
+    // },
   ];
   particlesOptions: ISourceOptions = {
     background: {
@@ -417,6 +452,71 @@ export class App implements OnInit {
         }
       }
     });
+
+    // Animar estadísticas cuando sean visibles
+    this.setupStatsAnimation();
+  }
+
+  setupStatsAnimation(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.animateStats();
+            observer.disconnect(); // Solo animar una vez
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    // Esperar a que el DOM esté listo
+    setTimeout(() => {
+      const statsSection = document.getElementById('estadisticas');
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+    }, 1000);
+  }
+
+  animateStats(): void {
+    // Función para animar un número
+    const animateValue = (
+      start: number,
+      end: number,
+      duration: number,
+      callback: (value: number) => void,
+    ) => {
+      const startTime = performance.now();
+      const step = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease out effect
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(start + (end - start) * easeOut * 10) / 10;
+
+        callback(current);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+      requestAnimationFrame(step);
+    };
+
+    // Animar cada estadística (duraciones más lentas)
+    const targetLines = this.getTargetLinesOfCode();
+    const targetCoffee = this.getTargetCoffeeCups();
+
+    animateValue(0, targetLines, 3500, (val) => this.linesOfCode.set(val));
+    animateValue(0, 50, 3500, (val) => this.projectsCompleted.set(val));
+    animateValue(0, 22, 3500, (val) => this.yearsOfExperience.set(val));
+    animateValue(0, 30, 3500, (val) => this.happyClients.set(val));
+    animateValue(0, targetCoffee, 4000, (val) => this.coffeeCups.set(val));
+    animateValue(0, 12.3, 4000, (val) => this.bugsFixed.set(val));
+    animateValue(0, 3.2, 4000, (val) => this.deployments.set(val));
+    animateValue(0, 4.7, 4000, (val) => this.pizzaSlices.set(val));
   }
 
   onParticlesLoaded(container: Container): void {
@@ -441,6 +541,28 @@ export class App implements OnInit {
 
   toggleMenu() {
     this.menuOpen.set(!this.menuOpen());
+  }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      this.showTransition.set(true);
+
+      setTimeout(() => {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+
+        if (this.menuOpen()) {
+          this.menuOpen.set(false);
+        }
+
+        setTimeout(() => {
+          this.showTransition.set(false);
+        }, 800);
+      }, 100);
+    }
   }
 
   nextSlide() {
