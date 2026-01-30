@@ -391,9 +391,9 @@
 
   <section
     id="clientes"
-    class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32"
+    class="cases-gradient-bg text-white py-24 px-6 scroll-mt-32 relative overflow-hidden"
   >
-    <div class="max-w-7xl mx-auto text-center mb-16" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto text-center mb-16 relative z-10" data-aos="fade-up">
       <h2 class="text-4xl md:text-5xl font-bold mb-4">
         <span class="text-main">Casos</span> de Éxito
       </h2>
@@ -402,6 +402,7 @@
       </p>
     </div>
 
+    <div class="relative z-10">
     <!-- Cliente: La Anónima -->
     <div
       class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto space-y-6 transition-all duration-300"
@@ -1133,6 +1134,7 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- Línea divisoria animada -->
@@ -1298,10 +1300,30 @@
 
   <!-- Capabilities -->
   <section
-    class="bg-background text-white py-24 px-6 scroll-mt-32"
+    class="capabilities-video-bg text-white py-24 px-6 scroll-mt-32 relative overflow-hidden"
     id="servicios"
   >
-    <div data-aos="fade-up" class="max-w-7xl mx-auto">
+    <!-- Video de fondo -->
+    <video
+      #capabilitiesVideo
+      class="capabilities-background-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      disablepictureinpicture
+      disableremoteplayback
+      poster="assets/videos/backgroundVideo-img3.jpg"
+    >
+      <source src="assets/videos/backgroundVideo3.webm" type="video/webm" />
+      <source src="assets/videos/backgroundVideo3.mp4" type="video/mp4" />
+    </video>
+    
+    <!-- Overlay rojo -->
+    <div class="capabilities-video-overlay"></div>
+
+    <div data-aos="fade-up" class="max-w-7xl mx-auto relative z-10">
       <div class="text-center mb-16">
         <h2
           class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4"
@@ -1689,11 +1711,6 @@
         <!-- Efectos de fondo -->
         <!-- Grid pattern background -->
         <div class="cta-modern-grid"></div>
-        
-        <!-- Gradient orbs -->
-        <div class="cta-modern-orb cta-modern-orb-1"></div>
-        <div class="cta-modern-orb cta-modern-orb-2"></div>
-        <div class="cta-modern-orb cta-modern-orb-3"></div>
 
         <div class="relative z-10">
           <!-- Badge moderno con animación -->
@@ -1707,7 +1724,7 @@
             ¿Tenés un <span class="cta-gradient-text">desafío tecnológico</span>?
           </h3>
           
-          <p class="text-white text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+          <p class="cta-subtitle text-white text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
             Analizamos tu proyecto <span class="text-white font-semibold">sin cargo</span> y te presentamos una propuesta personalizada en <span class="text-main font-semibold">48hs</span>
           </p>
 

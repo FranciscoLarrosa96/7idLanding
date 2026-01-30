@@ -84,6 +84,9 @@ export class App implements OnInit {
   @ViewChild('ctaVideo')
   ctaVideo!: ElementRef<HTMLVideoElement>;
 
+  @ViewChild('capabilitiesVideo')
+  capabilitiesVideo!: ElementRef<HTMLVideoElement>;
+
   teamMembers = [
     {
       name: 'Christian Roig',
@@ -484,11 +487,31 @@ export class App implements OnInit {
         attemptPlay(video, 'CTA video');
       }
 
+      if (this.capabilitiesVideo?.nativeElement) {
+        const video = this.capabilitiesVideo.nativeElement;
+
+        // Intentar reproducir cuando el video esté listo
+        video.addEventListener(
+          'loadeddata',
+          () => attemptPlay(video, 'Capabilities video'),
+          { once: true },
+        );
+        video.addEventListener(
+          'canplay',
+          () => attemptPlay(video, 'Capabilities video'),
+          { once: true },
+        );
+
+        // Intentar inmediatamente
+        attemptPlay(video, 'Capabilities video');
+      }
+
       // Estrategia adicional: cuando la página sea visible
       if (document.visibilityState === 'visible') {
         setTimeout(() => {
           this.heroVideo?.nativeElement?.play().catch(() => {});
           this.ctaVideo?.nativeElement?.play().catch(() => {});
+          this.capabilitiesVideo?.nativeElement?.play().catch(() => {});
         }, 300);
       }
     }, 100);
