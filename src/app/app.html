@@ -122,11 +122,15 @@
   >
     <!-- Video de fondo -->
     <video
+      #heroVideo
       class="hero-background-video"
       autoplay
       loop
       muted
       playsinline
+      preload="auto"
+      disablepictureinpicture
+      disableremoteplayback
       poster="assets/videos/backgroundVideo-img2.jpg"
     >
       <source src="assets/videos/backgroundVideo2.webm" type="video/webm" />
@@ -1664,11 +1668,15 @@
       >
         <!-- Video de fondo -->
         <video
+          #ctaVideo
           class="cta-background-video"
           autoplay
           loop
           muted
           playsinline
+          preload="auto"
+          disablepictureinpicture
+          disableremoteplayback
           poster="assets/videos/backgroundVideo-img.jpg"
         >
           <source src="assets/videos/backgroundVideo.webm" type="video/webm" />

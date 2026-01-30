@@ -78,6 +78,12 @@ export class App implements OnInit {
   @ViewChild('carouselContainer')
   carouselContainer!: ElementRef<HTMLDivElement>;
 
+  @ViewChild('heroVideo')
+  heroVideo!: ElementRef<HTMLVideoElement>;
+
+  @ViewChild('ctaVideo')
+  ctaVideo!: ElementRef<HTMLVideoElement>;
+
   teamMembers = [
     {
       name: 'Christian Roig',
@@ -373,6 +379,7 @@ export class App implements OnInit {
     // ✨ Forma moderna de Angular 19+ para ejecutar código después del render
     afterNextRender(() => {
       this.setupActiveSection();
+      this.ensureVideosPlay();
 
       const btn = document.getElementById('menuToggle');
       const menu = document.getElementById('mobileMenu');
@@ -391,6 +398,100 @@ export class App implements OnInit {
 
     this.setParticlesOptions();
     this.setupSmoothScroll();
+  }
+
+  ensureVideosPlay(): void {
+    // Forzar reproducción de videos de fondo con múltiples estrategias
+    const attemptPlay = (video: HTMLVideoElement, name: string) => {
+      video.play().catch((error) => {
+        console.log(`${name} autoplay blocked, esperando interacción...`);
+
+        // Estrategia 1: Intentar con cualquier movimiento del mouse
+        const onMouseMove = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('mousemove', onMouseMove);
+        };
+        document.addEventListener('mousemove', onMouseMove, {
+          once: true,
+          passive: true,
+        });
+
+        // Estrategia 2: Intentar con scroll
+        const onScroll = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('scroll', onScroll);
+        };
+        document.addEventListener('scroll', onScroll, {
+          once: true,
+          passive: true,
+        });
+
+        // Estrategia 3: Intentar con click (fallback)
+        const onClick = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('click', onClick);
+        };
+        document.addEventListener('click', onClick, { once: true });
+
+        // Estrategia 4: Intentar con touchstart para móviles
+        const onTouch = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('touchstart', onTouch);
+        };
+        document.addEventListener('touchstart', onTouch, {
+          once: true,
+          passive: true,
+        });
+      });
+    };
+
+    setTimeout(() => {
+      if (this.heroVideo?.nativeElement) {
+        const video = this.heroVideo.nativeElement;
+
+        // Intentar reproducir cuando el video esté listo
+        video.addEventListener(
+          'loadeddata',
+          () => attemptPlay(video, 'Hero video'),
+          { once: true },
+        );
+        video.addEventListener(
+          'canplay',
+          () => attemptPlay(video, 'Hero video'),
+          { once: true },
+        );
+
+        // Intentar inmediatamente
+        attemptPlay(video, 'Hero video');
+      }
+
+      if (this.ctaVideo?.nativeElement) {
+        const video = this.ctaVideo.nativeElement;
+
+        // Intentar reproducir cuando el video esté listo
+        video.addEventListener(
+          'loadeddata',
+          () => attemptPlay(video, 'CTA video'),
+          { once: true },
+        );
+        video.addEventListener(
+          'canplay',
+          () => attemptPlay(video, 'CTA video'),
+          { once: true },
+        );
+
+        // Intentar inmediatamente
+        attemptPlay(video, 'CTA video');
+      }
+
+      // Estrategia adicional: cuando la página sea visible
+      if (document.visibilityState === 'visible') {
+        setTimeout(() => {
+          this.heroVideo?.nativeElement?.play().catch(() => {});
+          this.ctaVideo?.nativeElement?.play().catch(() => {});
+        }, 300);
+      }
+    }, 100);
   }
 
   setupActiveSection(): void {
