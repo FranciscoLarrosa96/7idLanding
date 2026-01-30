@@ -144,11 +144,11 @@ export class App implements OnInit {
       role: 'Backend Developer',
       image: 'assets/img/colaboradores/juan.avif',
     },
-    // {
-    //   name: 'Camila Flores',
-    //   role: 'Business Analyst',
-    //   image: 'assets/preview7id.avif',
-    // },
+    {
+      name: 'Luca Mendoza',
+      role: 'Frontend Developer',
+      image: 'assets/img/colaboradores/luca.avif',
+    },
     // {
     //   name: 'Nicolás Ríos',
     //   role: 'Security Specialist',
