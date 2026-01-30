@@ -1171,7 +1171,7 @@
               <span class="tech-name">Angular</span>
             </div>
             <div class="tech-card">
-              <img src="assets/tech/angular.svg" alt="TypeScript" class="tech-logo" />
+              <img src="assets/tech/TypeScript.svg" alt="TypeScript" class="tech-logo" />
               <span class="tech-name">TypeScript</span>
             </div>
             <div class="tech-card">
@@ -1198,7 +1198,7 @@
               <span class="tech-name">Angular</span>
             </div>
             <div class="tech-card">
-              <img src="assets/tech/angular.svg" alt="TypeScript" class="tech-logo" />
+              <img src="assets/tech/TypeScript.svg" alt="TypeScript" class="tech-logo" />
               <span class="tech-name">TypeScript</span>
             </div>
             <div class="tech-card">
@@ -1543,11 +1543,11 @@
 
       <!-- Nueva Sección: Estadísticas Divertidas -->
       <div id="estadisticas" class="mt-24 mb-24" data-aos="fade-up">
-        <div class="text-center mb-12">
-          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">
             Números que nos <span class="text-main">definen</span>
-          </h3>
-          <p class="text-zinc-400 text-lg">
+          </h2>
+          <p class="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto">
             Algunas métricas (y otras no tan serias) de nuestro día a día
           </p>
         </div>
@@ -1555,153 +1555,137 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <!-- Líneas de código -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="0"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-code text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ linesOfCode() }}M+
               </div>
-              <p class="text-zinc-400 text-sm">Líneas de código</p>
+              <p class="stats-label">Líneas de código</p>
             </div>
           </div>
 
           <!-- Proyectos -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-project-diagram text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ projectsCompleted() }}+
               </div>
-              <p class="text-zinc-400 text-sm">Proyectos completados</p>
+              <p class="stats-label">Proyectos completados</p>
             </div>
           </div>
 
           <!-- Años experiencia -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-calendar-check text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ yearsOfExperience() }}+
               </div>
-              <p class="text-zinc-400 text-sm">Años de experiencia</p>
+              <p class="stats-label">Años de experiencia</p>
             </div>
           </div>
 
           <!-- Clientes -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="300"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-handshake text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ happyClients() }}+
               </div>
-              <p class="text-zinc-400 text-sm">Clientes satisfechos</p>
+              <p class="stats-label">Clientes satisfechos</p>
             </div>
           </div>
 
           <!-- Cafés tomados -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="400"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-mug-hot text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ coffeeCups() }}K+
               </div>
-              <p class="text-zinc-400 text-sm">Cafés servidos</p>
+              <p class="stats-label">Cafés servidos</p>
             </div>
           </div>
 
           <!-- Bugs resueltos -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="500"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-bug text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ bugsFixed() }}K+
               </div>
-              <p class="text-zinc-400 text-sm">Bugs resueltos</p>
+              <p class="stats-label">Bugs resueltos</p>
             </div>
           </div>
 
           <!-- Deploys -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="600"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-rocket text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ deployments() }}K+
               </div>
-              <p class="text-zinc-400 text-sm">Deploys exitosos</p>
+              <p class="stats-label">Deploys exitosos</p>
             </div>
           </div>
 
           <!-- Pizza slices -->
           <div
-            class="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-main/50 transition-all hover:scale-105"
-            data-aos="zoom-in"
+            class="stats-card"
+            data-aos="fade-up"
             data-aos-delay="700"
           >
-            <div class="text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-main/20 to-main/5 rounded-2xl flex items-center justify-center"
-              >
+            <div class="stats-card-inner">
+              <div class="stats-icon-wrapper">
                 <i class="fas fa-pizza-slice text-3xl text-main"></i>
               </div>
-              <div class="text-4xl md:text-5xl font-bold text-main mb-2">
+              <div class="stats-number">
                 {{ pizzaSlices() }}K+
               </div>
-              <p class="text-zinc-400 text-sm">Porciones de pizza</p>
+              <p class="stats-label">Porciones de pizza</p>
             </div>
           </div>
         </div>
