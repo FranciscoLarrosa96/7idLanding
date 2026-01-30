@@ -69,6 +69,7 @@ export class App implements OnInit {
 
   // Carousel del equipo
   currentIndex = signal(0);
+  flippedCards = signal<Set<number>>(new Set()); // Trackear cards flippeadas en mobile
   isDragging = false;
   startX = 0;
   currentX = 0;
@@ -583,18 +584,49 @@ export class App implements OnInit {
   getVisibleCards() {
     const totalCards = this.teamMembers.length;
     const currentIdx = this.currentIndex();
-    const visibleCount = 3; // Mostrar 3 cards (1 izq, centro, 1 der)
+    const isMobile = window.innerWidth <= 768;
 
     const result = [];
-    for (let i = -1; i <= 1; i++) {
-      const index = (currentIdx + i + totalCards) % totalCards;
+
+    if (isMobile) {
+      // En mobile solo mostrar la card central
       result.push({
-        member: this.teamMembers[index],
-        position: i,
-        index: index,
+        member: this.teamMembers[currentIdx],
+        position: 0,
+        index: currentIdx,
       });
+    } else {
+      // En desktop mostrar 3 cards (1 izq, centro, 1 der)
+      for (let i = -1; i <= 1; i++) {
+        const index = (currentIdx + i + totalCards) % totalCards;
+        result.push({
+          member: this.teamMembers[index],
+          position: i,
+          index: index,
+        });
+      }
     }
     return result;
+  }
+
+  toggleCardFlip(index: number, event: Event) {
+    // Solo en mobile
+    if (window.innerWidth > 768) return;
+
+    event.stopPropagation();
+    const flipped = new Set(this.flippedCards());
+
+    if (flipped.has(index)) {
+      flipped.delete(index);
+    } else {
+      flipped.add(index);
+    }
+
+    this.flippedCards.set(flipped);
+  }
+
+  isCardFlipped(index: number): boolean {
+    return this.flippedCards().has(index);
   }
   // Drag handlers para mouse
   onDragStart(event: MouseEvent) {

@@ -332,8 +332,9 @@
               [class.card-center]="card.position === 0"
               [class.card-side-1]="card.position === 1 || card.position === -1"
               [class.card-side-2]="card.position === 2 || card.position === -2"
+              [class.mobile-flipped]="isCardFlipped(card.index)"
               [attr.data-position]="card.position"
-              (click)="goToSlide(card.index)"
+              (click)="card.position === 0 ? toggleCardFlip(card.index, $event) : goToSlide(card.index)"
             >
               <div class="flip-card-inner">
                 <div class="flip-card-front">

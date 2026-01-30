@@ -273,29 +273,15 @@ body {
       transform: translateX(0) scale(1) translateZ(0);
     }
 
-    &.card-side-1 {
-      opacity: 0.5;
-
-      &[data-position="1"] {
-        transform: translateX(210px) scale(0.75) rotateY(-15deg);
-      }
-
-      &[data-position="-1"] {
-        transform: translateX(-210px) scale(0.75) rotateY(15deg);
-      }
+    // Ocultar completamente las cards laterales en mobile
+    &.card-side-1,
+    &.card-side-2 {
+      display: none;
     }
 
-    &.card-side-2 {
-      opacity: 0;
-      pointer-events: none;
-
-      &[data-position="2"] {
-        transform: translateX(350px) scale(0.5) rotateY(-25deg);
-      }
-
-      &[data-position="-2"] {
-        transform: translateX(-350px) scale(0.5) rotateY(25deg);
-      }
+    // Clase para activar flip en mobile con tap
+    &.mobile-flipped .flip-card-inner {
+      transform: rotateY(180deg);
     }
 
     .flip-card-back {
