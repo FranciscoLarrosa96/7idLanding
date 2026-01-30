@@ -12,6 +12,22 @@ body {
   min-height: 100vh;
 }
 
+// ========================================
+// Header con Glassmorphism
+// ========================================
+
+.header-glass {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 31, 67, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    border-bottom-color: rgba(255, 31, 67, 0.2);
+    box-shadow: 0 8px 32px rgba(255, 31, 67, 0.1);
+  }
+}
+
 .map-container {
   width: clamp(250px, 40vw, 400px);
 }
@@ -72,10 +88,22 @@ body {
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
   
   @media (max-width: 768px) {
     padding: 2rem 1.5rem;
     border-radius: 16px;
+  }
+  
+  // Asegurar que los botones sean clicables
+  .ctaHero {
+    position: relative;
+    z-index: 100;
+    
+    a {
+      pointer-events: auto;
+      cursor: pointer;
+    }
   }
 }
 
@@ -635,6 +663,179 @@ body {
 }
 
 // ========================================
+// About Cards Modernas - Nosotros Section
+// ========================================
+
+.about-card-modern {
+  position: relative;
+  padding: 2.5rem;
+  background: rgba(24, 24, 27, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(63, 63, 70, 0.3);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  // Efecto de brillo en el fondo
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 31, 67, 0.08) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  // Borde animado
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      transparent,
+      rgba(255, 31, 67, 0.6),
+      transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  &:hover {
+    background: rgba(24, 24, 27, 0.6);
+    border-color: rgba(255, 31, 67, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 
+      0 20px 50px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(255, 31, 67, 0.2);
+    
+    &::before {
+      opacity: 1;
+    }
+    
+    &::after {
+      opacity: 1;
+    }
+    
+    .about-card-icon-wrapper {
+      transform: scale(1.1) rotateY(360deg);
+      box-shadow: 
+        0 0 30px rgba(255, 31, 67, 0.6),
+        0 0 15px rgba(255, 31, 67, 0.4) inset;
+    }
+    
+    .about-card-glow {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+// Glow effect detrás de la card
+.about-card-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 31, 67, 0.15) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+// Contenedor del icono
+.about-card-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 31, 67, 0.2),
+    rgba(255, 31, 67, 0.1)
+  );
+  border: 1px solid rgba(255, 31, 67, 0.3);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 20px rgba(255, 31, 67, 0.15);
+  
+  i {
+    font-size: 1.75rem;
+    color: #ff1f43;
+    transition: transform 0.3s ease;
+  }
+}
+
+// Título de la card
+.about-card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ff1f43;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+// Texto de la card
+.about-card-text {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
+}
+
+// Divisor decorativo
+.about-card-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #ff1f43 0%,
+    rgba(255, 31, 67, 0.3) 100%
+  );
+  border-radius: 2px;
+  margin: 1.5rem 0;
+  transition: width 0.5s ease;
+  
+  .about-card-modern:hover & {
+    width: 100px;
+  }
+}
+
+// ========================================
 // Marquee Infinito - Equipo
 // ========================================
 
@@ -854,6 +1055,8 @@ body {
 .cta-video-bg {
   position: relative;
   background: #0b000a; // Fallback
+  margin: 0;
+  max-width: unset !important;
 }
 
 // Video de fondo para CTA

@@ -1,5 +1,5 @@
 <!-- Header -->
-<header class="bg-background text-white shadow-sm fixed top-0 z-50 w-full">
+<header class="header-glass text-white shadow-sm fixed top-0 z-50 w-full">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-center items-center">
     <!-- Navegación desktop -->
     <nav
@@ -152,7 +152,7 @@
         <span class="text-main glow-text"> Tecnológico </span>
       </h1>
       <p
-        class="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto font-light mb-10"
+        class="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light mb-10"
       >
         Convertimos ideas complejas en software escalable
       </p>
@@ -163,20 +163,18 @@
       >
         <a
           (click)="scrollToSection('contacto')"
-          class="group relative inline-flex items-center gap-3 bg-main hover:bg-hover text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-[0_0_40px_rgba(221,14,124,0.6)] hover:scale-105 overflow-hidden cursor-pointer z-[99999]"
+          class="group relative inline-flex items-center gap-3 bg-main hover:bg-hover text-white font-bold px-10 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-[0_0_40px_rgba(221,14,124,0.6)] hover:scale-105 overflow-hidden cursor-pointer z-[99999] uppercase tracking-wider text-sm"
         >
           <span
             class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
           ></span>
-          <i class="fas fa-rocket relative z-10"></i>
-          <span class="relative z-10">Empezar proyecto</span>
+          <span class="relative z-10">Contacto</span>
         </a>
         <a
-          (click)="scrollToSection('casos')"
-          class="inline-flex items-center gap-3 bg-zinc-900/80 hover:bg-zinc-800 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 border-2 border-zinc-700 hover:border-main hover:shadow-lg cursor-pointer z-[99999]"
+          (click)="scrollToSection('capabilities')"
+          class="inline-flex items-center gap-3 bg-transparent hover:bg-white/5 text-white font-semibold px-10 py-4 rounded-lg transition-all duration-300 border-2 border-white/30 hover:border-white/50 hover:shadow-lg cursor-pointer z-[99999] uppercase tracking-wider text-sm"
         >
-          <i class="fas fa-lightbulb"></i>
-          <span>Ver casos de éxito</span>
+          <span>Ver servicios</span>
         </a>
       </div>
       <div
@@ -221,24 +219,27 @@
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12">
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       <!-- Por qué 7 Ideas -->
       <div
-        class="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700 hover:shadow-xl transition-all duration-300"
-        data-aos="zoom-in"
+        class="about-card-modern group"
+        data-aos="fade-up"
         data-aos-delay="100"
       >
-        <div class="flex items-center gap-4 mb-4">
-          <i class="fas fa-lightbulb text-3xl text-main"></i>
-          <h3 class="text-2xl font-semibold text-main">¿Por qué 7 Ideas?</h3>
+        <div class="about-card-glow"></div>
+        <div class="about-card-icon-wrapper">
+          <i class="fas fa-lightbulb"></i>
         </div>
-        <p class="text-zinc-300 leading-relaxed text-base">
-          Desde nuestros comienzos, en 2004, trabajamos con las últimas
+        <h3 class="about-card-title">¿Por qué 7 Ideas?</h3>
+        <p class="about-card-text">
+          Desde nuestros comienzos, en <span class="text-main font-semibold">2004</span>, trabajamos con las últimas
           tecnologías de desarrollo de software. Las relaciones con nuestros
           clientes son sólidas y duraderas, y somos una parte fundamental de su
           cadena de valor.
-          <br /><br />
-          Adoptamos la metodología ágil Scrum para trabajar de manera eficiente
+        </p>
+        <div class="about-card-divider"></div>
+        <p class="about-card-text">
+          Adoptamos la metodología ágil <span class="text-main font-semibold">Scrum</span> para trabajar de manera eficiente
           y colaborativa. Mediante ciclos iterativos, nos adaptamos rápidamente
           a los cambios y logramos entregar productos de alta calidad en plazos
           ajustados.
@@ -247,22 +248,25 @@
 
       <!-- Nuestra filosofía -->
       <div
-        class="bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700 hover:shadow-xl transition-all duration-300"
-        data-aos="zoom-in"
+        class="about-card-modern group"
+        data-aos="fade-up"
         data-aos-delay="200"
       >
-        <div class="flex items-center gap-4 mb-4">
-          <i class="fas fa-seedling text-3xl text-main"></i>
-          <h3 class="text-2xl font-semibold text-main">Nuestra filosofía</h3>
+        <div class="about-card-glow"></div>
+        <div class="about-card-icon-wrapper">
+          <i class="fas fa-rocket"></i>
         </div>
-        <p class="text-zinc-300 leading-relaxed text-base">
-          En 7 Ideas nos esforzamos por transformar ideas en soluciones de
+        <h3 class="about-card-title">Nuestra filosofía</h3>
+        <p class="about-card-text">
+          En 7 Ideas nos esforzamos por transformar <span class="text-main font-semibold">ideas en soluciones</span> de
           calidad. Nuestra visión es inspirar y transformar, liderando la
           creación de oportunidades y soluciones sostenibles que impulsen un
           cambio positivo en nuestros clientes.
-          <br /><br />
+        </p>
+        <div class="about-card-divider"></div>
+        <p class="about-card-text">
           Trabajamos todos los días para marcar la diferencia y acercarnos a un
-          futuro lleno de posibilidades.
+          futuro lleno de <span class="text-main font-semibold">posibilidades</span>.
         </p>
       </div>
     </div>
@@ -1695,7 +1699,7 @@
             ¿Tenés un <span class="cta-gradient-text">desafío tecnológico</span>?
           </h3>
           
-          <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+          <p class="text-white text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
             Analizamos tu proyecto <span class="text-white font-semibold">sin cargo</span> y te presentamos una propuesta personalizada en <span class="text-main font-semibold">48hs</span>
           </p>
 
