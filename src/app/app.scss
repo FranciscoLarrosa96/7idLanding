@@ -821,15 +821,28 @@ body {
 
 @media (max-width: 768px) {
   .carousel-card {
-    width: 200px;
-    height: 280px;
+    width: 180px;
+    height: 260px;
 
     &.card-center {
       transform: translateX(0) scale(1) translateZ(0);
+      z-index: 10;
     }
 
-    // Ocultar completamente las cards laterales en mobile
-    &.card-side-1,
+    // Mostrar cards laterales pero más pequeñas y translúcidas
+    &.card-side-1 {
+      opacity: 0.4;
+      pointer-events: none;
+      
+      &[data-position="1"] {
+        transform: translateX(140px) scale(0.75) rotateY(-15deg);
+      }
+
+      &[data-position="-1"] {
+        transform: translateX(-140px) scale(0.75) rotateY(15deg);
+      }
+    }
+    
     &.card-side-2 {
       display: none;
     }

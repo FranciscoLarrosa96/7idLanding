@@ -589,12 +589,15 @@ export class App implements OnInit {
     const result = [];
 
     if (isMobile) {
-      // En mobile solo mostrar la card central
-      result.push({
-        member: this.teamMembers[currentIdx],
-        position: 0,
-        index: currentIdx,
-      });
+      // En mobile mostrar 3 cards: izquierda (semi-transparente), centro (principal), derecha (semi-transparente)
+      for (let i = -1; i <= 1; i++) {
+        const index = (currentIdx + i + totalCards) % totalCards;
+        result.push({
+          member: this.teamMembers[index],
+          position: i,
+          index: index,
+        });
+      }
     } else {
       // En desktop mostrar 3 cards (1 izq, centro, 1 der)
       for (let i = -1; i <= 1; i++) {
