@@ -1667,59 +1667,68 @@
         data-aos="fade-up"
       >
         <!-- Efectos de fondo -->
-        <div
-          class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(221,14,124,0.1),transparent_50%)] pointer-events-none"
-        ></div>
-        <div
-          class="absolute -top-24 -right-24 w-48 h-48 bg-main/20 rounded-full blur-3xl"
-        ></div>
-        <div
-          class="absolute -bottom-24 -left-24 w-48 h-48 bg-main/20 rounded-full blur-3xl"
-        ></div>
+        <!-- Grid pattern background -->
+        <div class="cta-modern-grid"></div>
+        
+        <!-- Gradient orbs -->
+        <div class="cta-modern-orb cta-modern-orb-1"></div>
+        <div class="cta-modern-orb cta-modern-orb-2"></div>
+        <div class="cta-modern-orb cta-modern-orb-3"></div>
 
         <div class="relative z-10">
-          <div
-            class="inline-block bg-main/20 text-main text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-wider"
-          >
-            ⚡ Consultoría gratuita
+          <!-- Badge moderno con animación -->
+          <div class="cta-badge-modern mb-6" data-aos="fade-down">
+            <div class="cta-badge-dot"></div>
+            <span class="font-mono text-xs uppercase tracking-widest">Consultoría Gratuita</span>
           </div>
-          <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            ¿Tenés un <span class="text-main">desafío tecnológico</span>?
+          
+          <!-- Título con efecto gradient -->
+          <h3 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight" data-aos="fade-up">
+            ¿Tenés un <span class="cta-gradient-text">desafío tecnológico</span>?
           </h3>
-          <p class="text-zinc-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Analizamos tu proyecto sin cargo y te presentamos una propuesta
-            personalizada en 48hs
+          
+          <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+            Analizamos tu proyecto <span class="text-white font-semibold">sin cargo</span> y te presentamos una propuesta personalizada en <span class="text-main font-semibold">48hs</span>
           </p>
 
-          <!-- Beneficios rápidos -->
-          <div class="flex flex-wrap gap-4 justify-center mb-8 text-sm">
-            <div class="flex items-center gap-2 text-zinc-400">
-              <i class="fas fa-check-circle text-main"></i>
-              <span>Sin compromiso</span>
+          <!-- Beneficios con diseño moderno -->
+          <div class="flex flex-wrap gap-6 justify-center mb-12 text-sm" data-aos="fade-up" data-aos-delay="200">
+            <div class="cta-benefit-card">
+              <div class="cta-benefit-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <span class="font-medium">Sin compromiso</span>
             </div>
-            <div class="flex items-center gap-2 text-zinc-400">
-              <i class="fas fa-check-circle text-main"></i>
-              <span>Respuesta en 24hs</span>
+            <div class="cta-benefit-card">
+              <div class="cta-benefit-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <span class="font-medium">Respuesta en 24hs</span>
             </div>
-            <div class="flex items-center gap-2 text-zinc-400">
-              <i class="fas fa-check-circle text-main"></i>
-              <span>Expertos certificados</span>
+            <div class="cta-benefit-card">
+              <div class="cta-benefit-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <span class="font-medium">Expertos certificados</span>
             </div>
           </div>
 
-          <a
-            href="#contacto"
-            class="group relative inline-flex items-center gap-3 bg-main hover:bg-hover text-white font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(221,14,124,0.4)] hover:shadow-[0_0_50px_rgba(221,14,124,0.8)] hover:scale-105 overflow-hidden"
-          >
-            <span
-              class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
-            ></span>
-            <i class="fas fa-rocket relative z-10"></i>
-            <span class="relative z-10">Comenzar ahora</span>
-            <i
-              class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform"
-            ></i>
-          </a>
+          <!-- CTA Button mejorado -->
+          <div data-aos="zoom-in" data-aos-delay="300" class="cta-button-wrapper">
+            <a
+              href="#contacto"
+              class="cta-button-modern group"
+            >
+              <span class="cta-button-particles"></span>
+              <span class="cta-button-particles"></span>
+              <span class="cta-button-particles"></span>
+              <span class="cta-button-shine"></span>
+              <span class="cta-button-glow"></span>
+              <i class="fas fa-rocket relative z-10 group-hover:rotate-12 group-hover:-translate-y-1 transition-all duration-300"></i>
+              <span class="relative z-10 font-bold">Comenzar ahora</span>
+              <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
