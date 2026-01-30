@@ -704,7 +704,8 @@ body {
   border-radius: 1rem;
 }
 
-.carousel-card:hover .flip-card-inner {
+// Hover flip solo para la card central en desktop
+.carousel-card.card-center:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
