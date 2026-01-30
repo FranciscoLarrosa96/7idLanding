@@ -118,20 +118,25 @@
   <!-- Hero -->
   <section
     id="inicio"
-    class="bg-background relative text-white py-32 px-6 min-h-[100dvh] flex items-center z-[-20] scroll-mt-32"
+    class="hero-video-bg relative text-white py-32 px-6 min-h-[100dvh] flex items-center z-[-20] scroll-mt-32"
   >
-    <!-- Partículas de fondo -->
-    <ng-particles
-      class="absolute top-0 left-0 w-full h-full z-[-1]"
-      style="height: 100%; max-height: 100dvh"
-      #particlesRef
-      [id]="'tsparticles'"
-      [options]="particlesOptionsGlow"
-      [particlesInit]="particlesInit"
-      (particlesLoaded)="onParticlesLoaded($event)"
-    ></ng-particles>
+    <!-- Video de fondo -->
+    <video
+      class="hero-background-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="assets/videos/backgroundVideo-img2.jpg"
+    >
+      <source src="assets/videos/backgroundVideo2.webm" type="video/webm" />
+      <source src="assets/videos/backgroundVideo2.mp4" type="video/mp4" />
+    </video>
+    
+    <!-- Overlay para intensificar el efecto rojo -->
+    <div class="hero-video-overlay"></div>
 
-    <div data-aos="zoom-in" class="max-w-6xl mx-auto text-center">
+    <div data-aos="zoom-in" class="hero-content-glass max-w-6xl mx-auto text-center relative z-10">
       <!-- Logo -->
       <div class="mb-8">
         <img
@@ -1663,9 +1668,25 @@
 
       <!-- CTA Final -->
       <div
-        class="max-w-5xl mx-auto text-center bg-gradient-to-br from-zinc-900 via-zinc-900/95 to-zinc-900 rounded-3xl p-10 md:p-16 border-2 border-main/30 shadow-2xl relative overflow-hidden"
+        class="cta-video-bg max-w-5xl mx-auto text-center rounded-3xl p-10 md:p-16 border-2 border-main/30 shadow-2xl relative overflow-hidden"
         data-aos="fade-up"
       >
+        <!-- Video de fondo -->
+        <video
+          class="cta-background-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          poster="assets/videos/backgroundVideo-img.jpg"
+        >
+          <source src="assets/videos/backgroundVideo.webm" type="video/webm" />
+          <source src="assets/videos/backgroundVideo.mp4" type="video/mp4" />
+        </video>
+        
+        <!-- Overlay rojo -->
+        <div class="cta-video-overlay"></div>
+        
         <!-- Efectos de fondo -->
         <!-- Grid pattern background -->
         <div class="cta-modern-grid"></div>
