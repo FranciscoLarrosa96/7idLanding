@@ -635,138 +635,97 @@ body {
 }
 
 // ========================================
-// Carousel de Equipo con Efecto de Profundidad
+// Marquee Infinito - Equipo
 // ========================================
 
-.carousel-container {
-  position: relative;
+.team-marquee-wrapper {
   width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.carousel-card {
-  position: absolute;
-  width: 350px;
-  height: 500px;
-  cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  transform-style: preserve-3d;
-  user-select: none;
-  -webkit-user-drag: none;
-
-  img {
-    user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none;
-  }
-
-  // Card Central (posición 0)
-  &.card-center {
-    transform: translateX(0) scale(1.1) translateZ(0);
+  overflow: hidden;
+  position: relative;
+  padding: 3rem 0;
+  
+  // Gradientes laterales para efecto fade
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
     z-index: 10;
-    opacity: 1;
-    filter: blur(0);
-
-    .flip-card-inner {
-      box-shadow: 0 20px 60px rgba(221, 14, 124, 0.5);
-    }
-  }
-
-  // Cards laterales nivel 1 (posición -1 y 1)
-  &.card-side-1 {
-    opacity: 0.9;
-    filter: blur(0px);
-    z-index: 5;
-
-    &[data-position="1"] {
-      transform: translateX(360px) scale(0.92) rotateY(-12deg);
-    }
-
-    &[data-position="-1"] {
-      transform: translateX(-360px) scale(0.92) rotateY(12deg);
-    }
-
-    .flip-card-inner {
-      box-shadow: 0 10px 30px rgba(221, 14, 124, 0.3);
-    }
-
-    // Oscurecer ligeramente para dar profundidad
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.05),
-        rgba(0, 0, 0, 0.2)
-      );
-      border-radius: 1rem;
-      pointer-events: none;
-      z-index: 1;
-    }
-  }
-
-  // Cards laterales nivel 2 (posición -2 y 2)
-  &.card-side-2 {
-    opacity: 0.3;
-    filter: blur(2px);
-    z-index: 1;
     pointer-events: none;
-
-    &[data-position="2"] {
-      transform: translateX(580px) scale(0.65) rotateY(-35deg);
-    }
-
-    &[data-position="-2"] {
-      transform: translateX(-580px) scale(0.65) rotateY(35deg);
-    }
-
-    .flip-card-inner {
-      box-shadow: 0 5px 15px rgba(221, 14, 124, 0.1);
-    }
   }
+  
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, #0b000a, transparent);
+  }
+  
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, #0b000a, transparent);
+  }
+}
 
+.team-marquee {
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  
+  // Pausar animación al hover
   &:hover {
-    &.card-center {
-      transform: translateX(0) scale(1.2) translateZ(10px);
+    .team-marquee-content {
+      animation-play-state: paused;
     }
   }
 }
 
-// Efecto Flip 3D para cards de equipo
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  perspective: 1000px;
+.team-marquee-content {
+  display: flex;
+  gap: 2rem;
+  animation: marquee-team 40s linear infinite;
 }
 
-.flip-card-inner {
+@keyframes marquee-team {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// Cards del equipo
+.team-card {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  flex-shrink: 0;
+  perspective: 1000px;
+  cursor: pointer;
+  
+  @media (max-width: 768px) {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+.team-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition:
-    transform 0.8s,
-    box-shadow 0.6s;
+  transition: transform 0.8s;
   transform-style: preserve-3d;
   border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  
+  .team-card:hover & {
+    transform: rotateY(180deg);
+  }
 }
 
-// Hover flip solo para la card central en desktop
-.carousel-card.card-center:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
+.team-card-front,
+.team-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -776,32 +735,56 @@ body {
   overflow: hidden;
 }
 
-.flip-card-front {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-  border: 2px solid #3a3a3a;
-  transition: all 0.3s ease;
-
+.team-card-front {
+  background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+  border: 2px solid rgba(221, 14, 124, 0.3);
+  
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    transition: transform 0.6s ease;
+  }
+  
+  .team-card:hover & img {
+    transform: scale(1.05);
   }
 }
 
-.flip-card-back {
+.team-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(
+    to top,
+    rgba(11, 0, 10, 0.95) 0%,
+    rgba(11, 0, 10, 0.8) 50%,
+    transparent 100%
+  );
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  
+  .team-card:hover & {
+    transform: translateY(0);
+  }
+}
+
+.team-card-back {
   background: linear-gradient(135deg, #0b000a 0%, #1a0011 50%, #dd0e7c 100%);
-  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 2rem;
+  transform: rotateY(180deg);
   border: 2px solid rgba(221, 14, 124, 0.5);
   box-shadow: 0 8px 32px rgba(221, 14, 124, 0.6);
   position: relative;
   overflow: hidden;
-
+  
   // Efecto de brillo sutil
   &::before {
     content: "";
@@ -814,7 +797,7 @@ body {
     );
     pointer-events: none;
   }
-
+  
   h3 {
     font-size: 1.5rem;
     font-weight: 800;
@@ -827,7 +810,7 @@ body {
     position: relative;
     z-index: 1;
   }
-
+  
   p {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.95);
@@ -840,86 +823,24 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-}
-
-// Responsive para tablets y móviles
-@media (max-width: 1024px) {
-  .carousel-card {
-    width: 220px;
-    height: 320px;
-
-    &.card-center {
-      transform: translateX(0) scale(1.1) translateZ(0);
-    }
-
-    &.card-side-1 {
-      &[data-position="1"] {
-        transform: translateX(250px) scale(0.8) rotateY(-20deg);
-      }
-
-      &[data-position="-1"] {
-        transform: translateX(-250px) scale(0.8) rotateY(20deg);
-      }
-    }
-
-    &.card-side-2 {
-      opacity: 0.15;
-
-      &[data-position="2"] {
-        transform: translateX(450px) scale(0.6) rotateY(-30deg);
-      }
-
-      &[data-position="-2"] {
-        transform: translateX(-450px) scale(0.6) rotateY(30deg);
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-card {
-    width: 180px;
-    height: 260px;
-
-    &.card-center {
-      transform: translateX(0) scale(1) translateZ(0);
-      z-index: 10;
-    }
-
-    // Mostrar cards laterales pero más pequeñas y translúcidas
-    &.card-side-1 {
-      opacity: 0.4;
-      pointer-events: none;
-      
-      &[data-position="1"] {
-        transform: translateX(140px) scale(0.75) rotateY(-15deg);
-      }
-
-      &[data-position="-1"] {
-        transform: translateX(-140px) scale(0.75) rotateY(15deg);
-      }
+  
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1rem;
     }
     
-    &.card-side-2 {
-      display: none;
-    }
-
-    // Clase para activar flip en mobile con tap
-    &.mobile-flipped .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-back {
-      h3 {
-        font-size: 1rem;
-      }
-
-      p {
-        font-size: 0.875rem;
-      }
+    p {
+      font-size: 0.875rem;
     }
   }
 }
+
+// Ajustar wrapper para evitar que se corten los bordes
+.team-marquee-wrapper {
+  padding: 3rem 0 4rem 0; // Más padding abajo para evitar corte
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+  
 
 .ctaHero {
   z-index: 999999 !important;

@@ -316,79 +316,66 @@
         </div>
       </div>
 
-      <!-- Carousel Container -->
-      <div
-        #carouselContainer
-        class="relative w-full h-[550px] flex items-center justify-center overflow-visible cursor-grab active:cursor-grabbing select-none py-12"
-        data-aos="fade-up"
-        (mousedown)="onDragStart($event)"
-        (mousemove)="onDragMove($event)"
-        (mouseup)="onDragEnd($event)"
-        (mouseleave)="onDragEnd($event)"
-        (touchstart)="onTouchStart($event)"
-        (touchmove)="onTouchMove($event)"
-        (touchend)="onTouchEnd($event)"
-      >
-        <!-- Cards Carousel -->
-        <div class="carousel-container pointer-events-none">
-          @for (card of getVisibleCards(); track card.index) {
-            <div
-              class="carousel-card pointer-events-auto"
-              [class.card-center]="card.position === 0"
-              [class.card-side-1]="card.position === 1 || card.position === -1"
-              [class.card-side-2]="card.position === 2 || card.position === -2"
-              [class.mobile-flipped]="isCardFlipped(card.index)"
-              [attr.data-position]="card.position"
-              (click)="card.position === 0 ? toggleCardFlip(card.index, $event) : goToSlide(card.index)"
-            >
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img
-                    [src]="card.member.image"
-                    [alt]="card.member.name"
-                    class="w-full h-full object-cover"
-                    draggable="false"
-                  />
-                  <!-- Info overlay que aparece en hover -->
-                  <div
-                    class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full transition-transform duration-400 ease-out group-hover:translate-y-0 z-10"
-                  >
-                    <h3
-                      class="text-lg font-bold text-white mb-1 drop-shadow-lg"
-                    >
-                      {{ card.member.name }}
+      <!-- Marquee Infinito de Equipo -->
+      <div class="team-marquee-wrapper" data-aos="fade-up">
+        <div class="team-marquee">
+          <div class="team-marquee-content">
+            @for (member of teamMembers; track $index) {
+              <div class="team-card">
+                <div class="team-card-inner">
+                  <div class="team-card-front">
+                    <img
+                      [src]="member.image"
+                      [alt]="member.name"
+                      class="w-full h-full object-cover"
+                      draggable="false"
+                    />
+                  </div>
+                  <div class="team-card-back">
+                    <h3 class="text-xl font-bold text-white mb-2">
+                      {{ member.name }}
                     </h3>
-                    <p class="text-sm text-white/90 font-medium drop-shadow-lg">
-                      {{ card.member.role }}
+                    <p class="text-white text-base font-semibold">
+                      {{ member.role }}
                     </p>
                   </div>
                 </div>
-                <div class="flip-card-back">
-                  <h3 class="text-xl font-bold text-white mb-2">
-                    {{ card.member.name }}
-                  </h3>
-                  <p class="text-white text-base font-semibold">
-                    {{ card.member.role }}
-                  </p>
+              </div>
+            }
+          </div>
+          <!-- Duplicar para efecto infinito -->
+          <div class="team-marquee-content" aria-hidden="true">
+            @for (member of teamMembers; track $index) {
+              <div class="team-card">
+                <div class="team-card-inner">
+                  <div class="team-card-front">
+                    <img
+                      [src]="member.image"
+                      [alt]="member.name"
+                      class="w-full h-full object-cover"
+                      draggable="false"
+                    />
+                    <div class="team-card-overlay">
+                      <h3 class="text-lg font-bold text-white mb-1">
+                        {{ member.name }}
+                      </h3>
+                      <p class="text-sm text-white/90 font-medium">
+                        {{ member.role }}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="team-card-back">
+                    <h3 class="text-xl font-bold text-white mb-2">
+                      {{ member.name }}
+                    </h3>
+                    <p class="text-white text-base font-semibold">
+                      {{ member.role }}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          }
-        </div>
-
-        <!-- Indicators -->
-        <div
-          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
-        >
-          @for (member of teamMembers; track $index) {
-            <button
-              (click)="goToSlide($index)"
-              [class.bg-main]="currentIndex() === $index"
-              [class.bg-zinc-500]="currentIndex() !== $index"
-              class="w-2 h-2 rounded-full transition-all hover:scale-125"
-              [attr.aria-label]="'Ir a ' + member.name"
-            ></button>
-          }
+            }
+          </div>
         </div>
       </div>
     </div>
