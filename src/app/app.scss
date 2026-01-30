@@ -24,6 +24,172 @@ body {
 }
 
 // ========================================
+// Infinite Marquee - Tecnologías
+// ========================================
+
+.tech-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  
+  // Gradientes laterales para efecto fade
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, #0b000a, transparent);
+  }
+  
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, #0b000a, transparent);
+  }
+}
+
+.tech-marquee {
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  
+  // Pausar animación al hover
+  &:hover {
+    .tech-marquee-content {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.tech-marquee-content {
+  display: flex;
+  gap: 2rem;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+// Animación hacia la derecha
+.tech-marquee-right .tech-marquee-content {
+  animation: marquee-right 30s linear infinite;
+}
+
+// Animación hacia la izquierda
+.tech-marquee-left .tech-marquee-content {
+  animation: marquee-left 30s linear infinite;
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+  min-width: 160px;
+  background: rgba(24, 24, 27, 0.5);
+  border: 1px solid rgba(63, 63, 70, 0.5);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    background: rgba(24, 24, 27, 0.8);
+    border-color: var(--main-color, #dd0e7c);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 30px rgba(221, 14, 124, 0.4);
+    
+    .tech-logo {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(221, 14, 124, 0.5));
+    }
+    
+    .tech-name {
+      color: white;
+    }
+  }
+}
+
+.tech-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.tech-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(212, 212, 216, 0.9);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .tech-marquee-wrapper {
+    &::before,
+    &::after {
+      width: 50px;
+    }
+  }
+  
+  .tech-marquee,
+  .tech-marquee-content {
+    gap: 1rem;
+  }
+  
+  .tech-card {
+    min-width: 120px;
+    padding: 1rem 1.25rem;
+  }
+  
+  .tech-logo {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .tech-name {
+    font-size: 0.75rem;
+  }
+  
+  // Animación más rápida en mobile
+  .tech-marquee-right .tech-marquee-content {
+    animation-duration: 20s;
+  }
+  
+  .tech-marquee-left .tech-marquee-content {
+    animation-duration: 20s;
+  }
+}
+
+// ========================================
 // Carousel de Equipo con Efecto de Profundidad
 // ========================================
 
