@@ -7,7 +7,7 @@
   position: relative;
   overflow: hidden;
   
-  // Fondo galaxy con gradiente radial
+  // Fondo galaxy con gradiente radial - Solo en desktop
   &::before {
     content: '';
     position: absolute;
@@ -25,9 +25,13 @@
       #0b000a 80%
     );
     z-index: 0;
+    
+    @media (max-width: 950px) {
+      display: none;
+    }
   }
   
-  // Línea horizonte brillante con glow
+  // Línea horizonte brillante con glow - Solo en desktop
   &::after {
     content: '';
     position: absolute;
@@ -49,10 +53,24 @@
       0 0 60px rgba(221, 14, 124, 0.4);
     z-index: 1;
     animation: pulse-horizon 4s ease-in-out infinite;
+    
+    @media (max-width: 950px) {
+      display: none;
+    }
+  }
+  
+  // Fondo simple para mobile
+  @media (max-width: 950px) {
+    background: linear-gradient(
+      135deg,
+      #0b000a 0%,
+      #150010 50%,
+      #0b000a 100%
+    );
   }
 }
 
-// Bordes curvos tipo esfera
+// Bordes curvos tipo esfera - Solo en desktop
 .contacto-modern-bg > div:first-child::after {
   content: '';
   position: absolute;
@@ -66,6 +84,10 @@
     inset 0 0 200px rgba(221, 14, 124, 0.05);
   pointer-events: none;
   z-index: 1;
+  
+  @media (max-width: 950px) {
+    display: none;
+  }
 }
 
 @keyframes pulse-horizon {
@@ -1033,13 +1055,26 @@ body {
   
   &::before {
     left: 0;
-    
+    background: linear-gradient(to right, #0b000a, transparent);
   }
   
   &::after {
     right: 0;
-    
+    background: linear-gradient(to left, #0b000a, transparent);
   }
+}
+
+@media (max-width: 768px) {
+
+  .team-marquee-wrapper {
+    &::before {
+    background: unset;
+  }
+  
+  &::after {
+    background: unset;
+  }
+}
 }
 
 .team-marquee {
