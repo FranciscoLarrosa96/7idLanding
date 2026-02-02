@@ -1,3 +1,85 @@
+// ========================================
+// Sección Contacto con Degradado y Orbes
+// ========================================
+
+.contacto-modern-bg {
+  background: linear-gradient(
+    135deg,
+    #0b000a 0%,
+    #150010 25%,
+    #1f0016 50%,
+    #150010 75%,
+    #0b000a 100%
+  );
+  position: relative;
+}
+
+.contacto-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  animation: float-smooth 28s ease-in-out infinite;
+  z-index: 0;
+}
+
+.contacto-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 31, 67, 0.6) 0%,
+    rgba(255, 31, 67, 0.3) 40%,
+    transparent 70%
+  );
+  top: -15%;
+  right: -5%;
+  animation-delay: 0s;
+}
+
+.contacto-orb-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(
+    circle,
+    rgba(221, 14, 124, 0.5) 0%,
+    rgba(221, 14, 124, 0.25) 40%,
+    transparent 70%
+  );
+  bottom: -10%;
+  left: -10%;
+  animation-delay: 10s;
+}
+
+.contacto-orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 157, 0.45) 0%,
+    rgba(255, 107, 157, 0.2) 40%,
+    transparent 70%
+  );
+  top: 50%;
+  right: 30%;
+  animation-delay: 19s;
+}
+
+@keyframes float-smooth {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+  75% {
+    transform: translate(40px, 40px) scale(1.05);
+  }
+}
+
 // Mejora visual del fondo con degradado sutil
 body {
   background: linear-gradient(
