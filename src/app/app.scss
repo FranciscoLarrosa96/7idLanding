@@ -1,82 +1,87 @@
 // ========================================
-// Sección Contacto con Degradado y Orbes
+// Sección Contacto con Efecto Galaxy/Cosmic
 // ========================================
 
 .contacto-modern-bg {
-  background: linear-gradient(
-    135deg,
-    #0b000a 0%,
-    #150010 25%,
-    #1f0016 50%,
-    #150010 75%,
-    #0b000a 100%
-  );
+  background: #000000;
   position: relative;
-}
-
-.contacto-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.5;
-  animation: float-smooth 28s ease-in-out infinite;
-  z-index: 0;
-}
-
-.contacto-orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 31, 67, 0.6) 0%,
-    rgba(255, 31, 67, 0.3) 40%,
-    transparent 70%
-  );
-  top: -15%;
-  right: -5%;
-  animation-delay: 0s;
-}
-
-.contacto-orb-2 {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(
-    circle,
-    rgba(221, 14, 124, 0.5) 0%,
-    rgba(221, 14, 124, 0.25) 40%,
-    transparent 70%
-  );
-  bottom: -10%;
-  left: -10%;
-  animation-delay: 10s;
-}
-
-.contacto-orb-3 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 107, 157, 0.45) 0%,
-    rgba(255, 107, 157, 0.2) 40%,
-    transparent 70%
-  );
-  top: 50%;
-  right: 30%;
-  animation-delay: 19s;
-}
-
-@keyframes float-smooth {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+  overflow: hidden;
+  
+  // Fondo galaxy con gradiente radial
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 31, 67, 0.3) 0%,
+      rgba(221, 14, 124, 0.25) 20%,
+      rgba(138, 8, 75, 0.2) 40%,
+      rgba(45, 0, 24, 0.3) 60%,
+      #0b000a 80%
+    );
+    z-index: 0;
   }
-  25% {
-    transform: translate(50px, -50px) scale(1.1);
+  
+  // Línea horizonte brillante con glow
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 31, 67, 0.2) 20%,
+      rgba(255, 107, 157, 0.8) 50%,
+      rgba(255, 31, 67, 0.2) 80%,
+      transparent 100%
+    );
+    box-shadow: 
+      0 0 20px rgba(255, 31, 67, 0.8),
+      0 0 40px rgba(255, 107, 157, 0.6),
+      0 0 60px rgba(221, 14, 124, 0.4);
+    z-index: 1;
+    animation: pulse-horizon 4s ease-in-out infinite;
+  }
+}
+
+// Bordes curvos tipo esfera
+.contacto-modern-bg > div:first-child::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-left-color: rgba(255, 31, 67, 0.3);
+  border-right-color: rgba(255, 31, 67, 0.3);
+  box-shadow: 
+    inset 0 0 100px rgba(255, 31, 67, 0.1),
+    inset 0 0 200px rgba(221, 14, 124, 0.05);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes pulse-horizon {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 
+      0 0 20px rgba(255, 31, 67, 0.8),
+      0 0 40px rgba(255, 107, 157, 0.6),
+      0 0 60px rgba(221, 14, 124, 0.4);
   }
   50% {
-    transform: translate(-30px, 30px) scale(0.9);
-  }
-  75% {
-    transform: translate(40px, 40px) scale(1.05);
+    opacity: 1;
+    box-shadow: 
+      0 0 30px rgba(255, 31, 67, 1),
+      0 0 60px rgba(255, 107, 157, 0.8),
+      0 0 90px rgba(221, 14, 124, 0.6);
   }
 }
 
