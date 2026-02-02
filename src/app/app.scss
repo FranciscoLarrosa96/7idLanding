@@ -1028,12 +1028,12 @@ body {
   
   &::before {
     left: 0;
-    background: linear-gradient(to right, #0b000a, transparent);
+    
   }
   
   &::after {
     right: 0;
-    background: linear-gradient(to left, #0b000a, transparent);
+    
   }
 }
 
