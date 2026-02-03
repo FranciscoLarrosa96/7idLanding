@@ -2,10 +2,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Optimización de fuentes */
+@font-face {
+  font-family: "FontAwesome";
+  font-display: swap;
+}
+
 html,
 body {
   height: 100%;
   font-family: "Urbanist", sans-serif;
+  font-display: swap;
 }
 
 html {
