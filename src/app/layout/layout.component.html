@@ -1,0 +1,22 @@
+<!-- Animación de transición con logo -->
+@if (showTransition()) {
+  <div
+    class="fixed inset-0 z-[100] bg-background flex items-center justify-center transition-all duration-500 animate-fade-in"
+  >
+    <div class="animate-pulse-scale">
+      <img
+        src="assets/7id_logo_blanco.svg"
+        alt="7iDeas Logo"
+        class="w-64 md:w-96"
+      />
+    </div>
+  </div>
+}
+
+<app-header />
+
+<main class="scroll-smooth">
+  <router-outlet />
+</main>
+
+<app-footer />

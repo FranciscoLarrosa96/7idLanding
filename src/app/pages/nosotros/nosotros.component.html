@@ -1,0 +1,644 @@
+<!-- Sección Nosotros -->
+<section
+  id="nosotros"
+  class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32"
+>
+  <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-4 text-main">Nosotros</h2>
+    <p class="text-zinc-300 text-lg max-w-3xl mx-auto">
+      Somos un equipo de profesionales que se dedica a desarrollar soluciones
+      tecnológicas personalizadas para organizaciones de todos los tamaños.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    <!-- Por qué 7 Ideas -->
+    <div class="about-card-modern group" data-aos="fade-up" data-aos-delay="100">
+      <div class="about-card-glow"></div>
+      <div class="about-card-icon-wrapper">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <h3 class="about-card-title">¿Por qué 7 Ideas?</h3>
+      <p class="about-card-text">
+        Desde nuestros comienzos, en <span class="text-main font-semibold">2004</span>, trabajamos con las últimas
+        tecnologías de desarrollo de software. Las relaciones con nuestros
+        clientes son sólidas y duraderas, y somos una parte fundamental de su
+        cadena de valor.
+      </p>
+      <div class="about-card-divider"></div>
+      <p class="about-card-text">
+        Adoptamos la metodología ágil <span class="text-main font-semibold">Scrum</span> para trabajar de manera eficiente
+        y colaborativa. Mediante ciclos iterativos, nos adaptamos rápidamente
+        a los cambios y logramos entregar productos de alta calidad en plazos
+        ajustados.
+      </p>
+    </div>
+
+    <!-- Nuestra filosofía -->
+    <div class="about-card-modern group" data-aos="fade-up" data-aos-delay="200">
+      <div class="about-card-glow"></div>
+      <div class="about-card-icon-wrapper">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h3 class="about-card-title">Nuestra filosofía</h3>
+      <p class="about-card-text">
+        En 7 Ideas nos esforzamos por transformar <span class="text-main font-semibold">ideas en soluciones</span> de
+        calidad. Nuestra visión es inspirar y transformar, liderando la
+        creación de oportunidades y soluciones sostenibles que impulsen un
+        cambio positivo en nuestros clientes.
+      </p>
+      <div class="about-card-divider"></div>
+      <p class="about-card-text">
+        Trabajamos todos los días para marcar la diferencia y acercarnos a un
+        futuro lleno de <span class="text-main font-semibold">posibilidades</span>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Equipo -->
+  <div class="max-w-7xl mx-auto mt-24">
+    <h2 class="text-4xl font-bold mb-4 text-main text-center" data-aos="fade-up">
+      Nuestro Equipo
+    </h2>
+    <p
+      class="text-zinc-300 text-lg max-w-3xl mx-auto text-center mb-12"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      Conocé a las personas que hacen posible cada proyecto
+    </p>
+
+    <!-- Foto Grupal -->
+    <div class="relative max-w-5xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+      <div class="absolute inset-0 bg-main/30 blur-[80px] rounded-full scale-95 -z-10"></div>
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+        <img
+          src="assets/img/nosotros_desktop.jpg"
+          alt="Equipo 7iDeas"
+          class="hidden md:block w-full h-auto object-cover"
+        />
+        <img
+          src="assets/img/nosotros_mobile.jpg"
+          alt="Equipo 7iDeas"
+          class="block md:hidden w-full h-auto object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#0b000a]/80 via-transparent to-transparent pointer-events-none"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Marquee Infinito de Equipo -->
+    <div class="team-marquee-wrapper" data-aos="fade-up">
+      <div class="team-marquee">
+        <div class="team-marquee-content">
+          @for (member of teamMembers; track $index) {
+            <div class="team-card">
+              <div class="team-card-inner">
+                <div class="team-card-front">
+                  <img
+                    [src]="member.image"
+                    [alt]="member.name"
+                    class="w-full h-full object-cover"
+                    draggable="false"
+                  />
+                </div>
+                <div class="team-card-back">
+                  <h3 class="text-xl font-bold text-white mb-2">{{ member.name }}</h3>
+                  <p class="text-white text-base font-semibold">{{ member.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+        <!-- Duplicar para efecto infinito -->
+        <div class="team-marquee-content" aria-hidden="true">
+          @for (member of teamMembers; track $index) {
+            <div class="team-card">
+              <div class="team-card-inner">
+                <div class="team-card-front">
+                  <img
+                    [src]="member.image"
+                    [alt]="member.name"
+                    class="w-full h-full object-cover"
+                    draggable="false"
+                  />
+                  <div class="team-card-overlay">
+                    <h3 class="text-lg font-bold text-white mb-1">{{ member.name }}</h3>
+                    <p class="text-sm text-white/90 font-medium">{{ member.role }}</p>
+                  </div>
+                </div>
+                <div class="team-card-back">
+                  <h3 class="text-xl font-bold text-white mb-2">{{ member.name }}</h3>
+                  <p class="text-white text-base font-semibold">{{ member.role }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Línea divisoria animada -->
+<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+<!-- Casos de Éxito -->
+<section
+  id="clientes"
+  class="cases-gradient-bg text-white py-24 px-6 scroll-mt-32 relative overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto text-center mb-16 relative z-10" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+      <span class="text-main">Casos</span> de Éxito
+    </h2>
+    <p class="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto">
+      Resultados tangibles que impulsan el crecimiento de nuestros clientes
+    </p>
+  </div>
+
+  <div class="relative z-10">
+    <!-- Cliente: La Anónima -->
+    <div
+      class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto space-y-6 transition-all duration-300"
+      data-aos="fade-up"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4">
+          <img
+            src="assets/logos/la_anonima_logo.png"
+            alt="Logo de La Anónima - Cliente de 7 Ideas"
+            class="h-16 w-16 object-contain"
+            width="64"
+            height="64"
+          />
+          <h3 class="text-xl font-semibold">La Anónima</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-zinc-400">Desde</p>
+          <p class="text-3xl font-bold text-white">2003</p>
+        </div>
+      </div>
+
+      <div class="mt-8 space-y-6">
+        <h3 class="text-2xl font-semibold">Casos de estudio</h3>
+
+        <!-- Proyecto: Gestión Online -->
+        <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showGestionOnline = !showGestionOnline"
+          >
+            Gestión Online
+            <i [ngClass]="showGestionOnline ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+          </button>
+          <div *ngIf="showGestionOnline" class="p-6 space-y-6" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="relative rounded-xl overflow-hidden group">
+                <img
+                  src="assets/proyectos/la-anonima/gestion-online.png"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  alt="Gestión Online - La Anónima"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-exclamation-triangle text-main"></i>
+                    <h5 class="text-sm font-bold text-main uppercase tracking-wide">Desafío</h5>
+                  </div>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Reducir la carga operativa en sucursales físicas y mejorar la experiencia del usuario con autogestión digital 24/7.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-lightbulb text-cyan-400"></i>
+                    <h5 class="text-sm font-bold text-cyan-400 uppercase tracking-wide">Solución</h5>
+                  </div>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Plataforma web responsive con gestión completa de tarjetas, préstamos, pagos y autogestión de datos, integrada con sistemas legacy.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-chart-line text-main"></i>
+                    <h5 class="text-sm font-bold text-main uppercase tracking-wide">Impacto</h5>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                      <div class="text-2xl font-bold text-main">85%</div>
+                      <div class="text-xs text-zinc-400">Trámites digitalizados</div>
+                    </div>
+                    <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                      <div class="text-2xl font-bold text-main">50K+</div>
+                      <div class="text-xs text-zinc-400">Usuarios activos</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Web App</span>
+                  <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Responsive</span>
+                  <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Autogestión</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto: Back Office App -->
+        <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showBackOffice = !showBackOffice"
+          >
+            Back Office App
+            <i [ngClass]="showBackOffice ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+          </button>
+          <div *ngIf="showBackOffice" class="p-6 space-y-6" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="relative rounded-xl overflow-hidden group">
+                <img
+                  src="assets/proyectos/la-anonima/backoffice.png"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  alt="BackOffice - La Anónima"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-exclamation-triangle text-main"></i>
+                    <h5 class="text-sm font-bold text-main uppercase tracking-wide">Desafío</h5>
+                  </div>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Simplificar procesos internos complejos y reducir tiempo de onboarding de usuarios y productos.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-lightbulb text-cyan-400"></i>
+                    <h5 class="text-sm font-bold text-cyan-400 uppercase tracking-wide">Solución</h5>
+                  </div>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Sistema de backoffice integrado con automatización de workflows, gestión de contratos y scoring predictivo.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-chart-line text-main"></i>
+                    <h5 class="text-sm font-bold text-main uppercase tracking-wide">Impacto</h5>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                      <div class="text-2xl font-bold text-main">70%</div>
+                      <div class="text-xs text-zinc-400">Reducción de tiempo</div>
+                    </div>
+                    <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                      <div class="text-2xl font-bold text-main">100%</div>
+                      <div class="text-xs text-zinc-400">Procesos automatizados</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Backoffice</span>
+                  <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Automatización</span>
+                  <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Scoring</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cliente: Grupo Fava -->
+    <div
+      class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto mt-16 space-y-6 transition-all duration-300"
+      data-aos="fade-up"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4">
+          <img
+            src="assets/logos/fava_logo.png"
+            alt="Logo de Grupo Fava - Cliente de 7 Ideas"
+            class="h-16 w-16 object-contain"
+            width="64"
+            height="64"
+          />
+          <h3 class="text-xl font-semibold">Grupo Fava</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-zinc-400">Desde</p>
+          <p class="text-3xl font-bold text-white">2016</p>
+        </div>
+      </div>
+
+      <div class="mt-8 space-y-6">
+        <h3 class="text-2xl font-semibold">Casos de estudio</h3>
+
+        <!-- Proyecto: Gestionate -->
+        <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showGestionate = !showGestionate"
+          >
+            Gestionate
+            <i [ngClass]="showGestionate ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+          </button>
+          @if (showGestionate) {
+            <div class="p-6 space-y-6" data-aos="fade-up">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="relative rounded-xl overflow-hidden group">
+                  <img
+                    src="assets/proyectos/fava/gestionate.png"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    alt="Gestionate - Grupo Fava"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                </div>
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-exclamation-triangle text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Desafío</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Gestionar RRHH de 500+ empleados con procesos manuales lentos y propensos a errores.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-lightbulb text-cyan-400"></i>
+                      <h5 class="text-sm font-bold text-cyan-400 uppercase tracking-wide">Solución</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Plataforma desktop integrada para gestión de licencias, vacaciones y liquidación de sueldos con información centralizada.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-chart-line text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Impacto</h5>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">500+</div>
+                        <div class="text-xs text-zinc-400">Empleados gestionados</div>
+                      </div>
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">90%</div>
+                        <div class="text-xs text-zinc-400">Tareas automatizadas</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">RRHH</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Desktop</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">500+ Usuarios</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Proyecto: FOL -->
+        <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showFOL = !showFOL"
+          >
+            Favacard Online | FOL
+            <i [ngClass]="showFOL ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+          </button>
+          @if (showFOL) {
+            <div class="p-6 space-y-6" data-aos="fade-up">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="relative rounded-xl overflow-hidden group">
+                  <img
+                    src="assets/proyectos/fava/fol.png"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    alt="FOL - Favacard Online - Grupo Fava"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                </div>
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-exclamation-triangle text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Desafío</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Ofrecer autoservicio financiero 24/7 para tarjetahabientes Favacard y Cabal con experiencia omnicanal.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-lightbulb text-cyan-400"></i>
+                      <h5 class="text-sm font-bold text-cyan-400 uppercase tracking-wide">Solución</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Plataforma responsive (desktop & mobile) con gestión completa de tarjetas, pagos online y solicitud de préstamos.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-chart-line text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Impacto</h5>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">30K+</div>
+                        <div class="text-xs text-zinc-400">Usuarios activos</div>
+                      </div>
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">24/7</div>
+                        <div class="text-xs text-zinc-400">Disponibilidad</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Mobile & Desktop</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Tarjetas</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Préstamos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Cliente: Clínica de Ojos Tandil -->
+    <div
+      class="bg-gradient-to-br from-[#170011] to-[#1a000f] rounded-2xl shadow-xl border border-zinc-800 p-6 md:p-10 max-w-6xl mx-auto mt-16 space-y-6 transition-all duration-300"
+      data-aos="fade-up"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4">
+          <img
+            src="assets/logos/clinica_ojo_logo.svg"
+            alt="Logo de Clínica de Ojos Tandil - Cliente de 7 Ideas"
+            class="h-16 w-16 object-contain"
+            width="64"
+            height="64"
+          />
+          <h3 class="text-xl font-semibold">Clínica de Ojos Tandil</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-zinc-400">Desde</p>
+          <p class="text-3xl font-bold text-white">2024</p>
+        </div>
+      </div>
+
+      <div class="mt-8 space-y-6">
+        <h3 class="text-2xl font-semibold">Casos de estudio</h3>
+
+        <!-- Proyecto: Partner tecnológico -->
+        <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showCOT1 = !showCOT1"
+          >
+            Partner tecnológico de COT
+            <i [ngClass]="showCOT1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+          </button>
+          @if (showCOT1) {
+            <div class="p-6 space-y-6" data-aos="fade-up">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="relative rounded-xl overflow-hidden group">
+                  <img
+                    src="assets/proyectos/cot/cot_1.avif"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    alt="Partner tecnológico de COT - Clínica de Ojos Tandil"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                </div>
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-exclamation-triangle text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Desafío</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Clínica en crecimiento necesita evolución tecnológica continua alineada con estrategia de negocio.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-lightbulb text-cyan-400"></i>
+                      <h5 class="text-sm font-bold text-cyan-400 uppercase tracking-wide">Solución</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Partner tecnológico integral con visión de negocio, traduciéndo lo técnico en impacto operativo y estratégico.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-chart-line text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Impacto</h5>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">100%</div>
+                        <div class="text-xs text-zinc-400">Uptime sistemas</div>
+                      </div>
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">2+</div>
+                        <div class="text-xs text-zinc-400">Años de alianza</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Partner</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Estrategia</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Consultoría</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Proyecto: Nuestro alcance -->
+        <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-700">
+          <button
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center text-white hover:bg-zinc-800 transition"
+            (click)="showCOT2 = !showCOT2"
+          >
+            Nuestro alcance incluye
+            <i [ngClass]="showCOT2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+          </button>
+          @if (showCOT2) {
+            <div class="p-6 space-y-6" data-aos="fade-up">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="relative rounded-xl overflow-hidden group">
+                  <img
+                    src="assets/proyectos/cot/cot_2.avif"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    alt="Nuestro alcance - Clínica de Ojos Tandil"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                </div>
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-exclamation-triangle text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Desafío</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Gestionar sistemas críticos de salud con máxima disponibilidad y equipos médicos especializados.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-lightbulb text-cyan-400"></i>
+                      <h5 class="text-sm font-bold text-cyan-400 uppercase tracking-wide">Solución</h5>
+                    </div>
+                    <p class="text-zinc-300 text-sm leading-relaxed">
+                      Gestión IT 360°: turnos, historias clínicas, infraestructura cloud, soporte 24/7 y metodologías ágiles.
+                    </p>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <i class="fas fa-chart-line text-main"></i>
+                      <h5 class="text-sm font-bold text-main uppercase tracking-wide">Impacto</h5>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">99.9%</div>
+                        <div class="text-xs text-zinc-400">Disponibilidad</div>
+                      </div>
+                      <div class="bg-zinc-800/50 rounded-lg p-3 border border-zinc-700">
+                        <div class="text-2xl font-bold text-main">24/7</div>
+                        <div class="text-xs text-zinc-400">Soporte continuo</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Turnos & HCE</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Cloud</span>
+                    <span class="px-3 py-1 bg-main/20 text-main text-xs rounded-full">Soporte</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Línea divisoria animada -->
+<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>

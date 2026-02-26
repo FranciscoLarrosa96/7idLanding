@@ -50,3 +50,6 @@ html {
 .animate-pulse-scale {
   animation: pulseScale 1s ease-in-out infinite;
 }
+
+/* Import component styles globally so all page components can use them */
+@import './app/app.scss';
