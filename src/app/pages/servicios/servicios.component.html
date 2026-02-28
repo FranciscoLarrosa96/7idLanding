@@ -1,337 +1,85 @@
-<!-- Ecosistema Tecnológico -->
+﻿<!-- Hero Servicios -->
 <section
-  id="tecnologias"
-  class="bg-[#0b000a] text-white py-24 px-6 scroll-mt-32 relative overflow-hidden"
->
-  <div class="absolute inset-0 bg-gradient-to-b from-background via-[#0b000a] to-background opacity-80"></div>
-
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">
-        Ecosistema <span class="text-main">Tecnológico</span>
-      </h2>
-      <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
-        Stack moderno para soluciones escalables y de alto rendimiento
-      </p>
-    </div>
-
-    <!-- Infinite Marquee - Primera Fila (derecha) -->
-    <div class="tech-marquee-wrapper mb-8" data-aos="fade-up">
-      <div class="tech-marquee tech-marquee-right">
-        <div class="tech-marquee-content">
-          <div class="tech-card"><img src="assets/tech/angular.svg" alt="Angular" class="tech-logo" /><span class="tech-name">Angular</span></div>
-          <div class="tech-card"><img src="assets/tech/TypeScript.svg" alt="TypeScript" class="tech-logo" /><span class="tech-name">TypeScript</span></div>
-          <div class="tech-card"><img src="assets/tech/nodejs.svg" alt="Node.js" class="tech-logo" /><span class="tech-name">Node.js</span></div>
-          <div class="tech-card"><img src="assets/tech/nestjs.svg" alt="NestJS" class="tech-logo" /><span class="tech-name">NestJS</span></div>
-          <div class="tech-card"><img src="assets/tech/java.svg" alt="Java" class="tech-logo" /><span class="tech-name">Java</span></div>
-          <div class="tech-card"><img src="assets/tech/spring.svg" alt="Spring" class="tech-logo" /><span class="tech-name">Spring</span></div>
-        </div>
-        <div class="tech-marquee-content" aria-hidden="true">
-          <div class="tech-card"><img src="assets/tech/angular.svg" alt="Angular" class="tech-logo" /><span class="tech-name">Angular</span></div>
-          <div class="tech-card"><img src="assets/tech/TypeScript.svg" alt="TypeScript" class="tech-logo" /><span class="tech-name">TypeScript</span></div>
-          <div class="tech-card"><img src="assets/tech/nodejs.svg" alt="Node.js" class="tech-logo" /><span class="tech-name">Node.js</span></div>
-          <div class="tech-card"><img src="assets/tech/nestjs.svg" alt="NestJS" class="tech-logo" /><span class="tech-name">NestJS</span></div>
-          <div class="tech-card"><img src="assets/tech/java.svg" alt="Java" class="tech-logo" /><span class="tech-name">Java</span></div>
-          <div class="tech-card"><img src="assets/tech/spring.svg" alt="Spring" class="tech-logo" /><span class="tech-name">Spring</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Infinite Marquee - Segunda Fila (izquierda) -->
-    <div class="tech-marquee-wrapper" data-aos="fade-up" data-aos-delay="100">
-      <div class="tech-marquee tech-marquee-left">
-        <div class="tech-marquee-content">
-          <div class="tech-card"><img src="assets/logos/php.svg" alt="PHP" class="tech-logo" /><span class="tech-name">PHP</span></div>
-          <div class="tech-card"><img src="assets/tech/sql.svg" alt="SQL" class="tech-logo" /><span class="tech-name">SQL</span></div>
-          <div class="tech-card"><img src="assets/logos/aws.svg" alt="AWS" class="tech-logo" /><span class="tech-name">AWS</span></div>
-          <div class="tech-card"><img src="assets/tech/docker.svg" alt="Docker" class="tech-logo" /><span class="tech-name">Docker</span></div>
-          <div class="tech-card"><img src="assets/logos/linux.svg" alt="Linux" class="tech-logo" /><span class="tech-name">Linux</span></div>
-          <div class="tech-card"><img src="assets/tech/Jira.svg" alt="Jira" class="tech-logo" /><span class="tech-name">Jira</span></div>
-          <div class="tech-card"><img src="assets/logos/ai.svg" alt="AI" class="tech-logo" /><span class="tech-name">AI</span></div>
-        </div>
-        <div class="tech-marquee-content" aria-hidden="true">
-          <div class="tech-card"><img src="assets/logos/php.svg" alt="PHP" class="tech-logo" /><span class="tech-name">PHP</span></div>
-          <div class="tech-card"><img src="assets/tech/sql.svg" alt="SQL" class="tech-logo" /><span class="tech-name">SQL</span></div>
-          <div class="tech-card"><img src="assets/logos/aws.svg" alt="AWS" class="tech-logo" /><span class="tech-name">AWS</span></div>
-          <div class="tech-card"><img src="assets/tech/docker.svg" alt="Docker" class="tech-logo" /><span class="tech-name">Docker</span></div>
-          <div class="tech-card"><img src="assets/logos/linux.svg" alt="Linux" class="tech-logo" /><span class="tech-name">Linux</span></div>
-          <div class="tech-card"><img src="assets/tech/Jira.svg" alt="Jira" class="tech-logo" /><span class="tech-name">Jira</span></div>
-          <div class="tech-card"><img src="assets/logos/ai.svg" alt="AI" class="tech-logo" /><span class="tech-name">AI</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Línea divisoria animada -->
-<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
-
-<!-- Capabilities -->
-<section
-  class="capabilities-video-bg text-white py-24 px-6 scroll-mt-32 relative overflow-hidden"
   id="servicios"
+  class="capabilities-video-bg relative text-white py-32 px-6 min-h-[60dvh] flex items-center scroll-mt-32"
 >
-  <!-- Video de fondo -->
   <video
-    #capabilitiesVideo
+    #capVideo
     class="capabilities-background-video"
-    autoplay
-    loop
-    muted
-    playsinline
-    preload="auto"
-    disablepictureinpicture
-    disableremoteplayback
-    poster="assets/videos/backgroundVideo-img3.jpg"
+    autoplay loop muted playsinline preload="auto"
+    disablepictureinpicture disableremoteplayback
   >
-    <source src="assets/videos/backgroundVideo3.webm" type="video/webm" />
-    <source src="assets/videos/backgroundVideo3.mp4" type="video/mp4" />
+    <source src="assets/videos/capabilitiesVideo.webm" type="video/webm" />
+    <source src="assets/videos/capabilitiesVideo.mp4" type="video/mp4" />
   </video>
-
-  <!-- Overlay rojo -->
   <div class="capabilities-video-overlay"></div>
 
-  <div data-aos="fade-up" class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">
-        Nuestras <span class="text-main">Capacidades</span>
-      </h2>
-      <p class="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto">
-        Soluciones tecnológicas end-to-end que transforman ideas en productos escalables
-      </p>
+  <div data-aos="fade-up" class="max-w-4xl mx-auto text-center relative z-10">
+    <div class="inline-block bg-main/10 text-main text-sm font-bold px-5 py-2.5 rounded-full mb-6">
+      <i class="fas fa-layer-group mr-2" aria-hidden="true"></i>SERVICIOS
     </div>
-
-    <!-- Grid de Capabilities -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-      <!-- Desarrollo a Medida -->
-      <div class="capability-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="capability-card-inner">
-          <div class="capability-icon-wrapper"><i class="fas fa-code text-3xl text-main"></i></div>
-          <h3 class="capability-title">Desarrollo a Medida</h3>
-          <p class="capability-description">Software factory con metodologías ágiles para crear soluciones web, mobile y cloud nativas.</p>
-          <ul class="capability-list">
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Web & Mobile Apps</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>APIs & Microservicios</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>UX/UI Design</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Cloud & DevOps -->
-      <div class="capability-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="capability-card-inner">
-          <div class="capability-icon-wrapper"><i class="fas fa-cloud text-3xl text-main"></i></div>
-          <h3 class="capability-title">Cloud & DevOps</h3>
-          <p class="capability-description">Infraestructura escalable, CI/CD y automatización para garantizar disponibilidad 24/7.</p>
-          <ul class="capability-list">
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>AWS, Azure, GCP</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>CI/CD Pipelines</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Monitoring & Security</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Data & AI -->
-      <div class="capability-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="capability-card-inner">
-          <div class="capability-icon-wrapper"><i class="fas fa-brain text-3xl text-main"></i></div>
-          <h3 class="capability-title">Data & AI</h3>
-          <p class="capability-description">Integramos IA y automatización para optimizar procesos y potenciar decisiones de negocio.</p>
-          <ul class="capability-list">
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>IA Corporativa</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Automatizaciones Inteligentes</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Analytics & BI</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- IT Management -->
-      <div class="capability-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="capability-card-inner">
-          <div class="capability-icon-wrapper"><i class="fas fa-cogs text-3xl text-main"></i></div>
-          <h3 class="capability-title">IT Management</h3>
-          <p class="capability-description">Gestión estratégica de tecnología alineada con objetivos de negocio.</p>
-          <ul class="capability-list">
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Roadmap Tecnológico</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Gestión de Infraestructura</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Consultoría Estratégica</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Integraciones -->
-      <div class="capability-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="capability-card-inner">
-          <div class="capability-icon-wrapper"><i class="fas fa-plug text-3xl text-main"></i></div>
-          <h3 class="capability-title">Integraciones</h3>
-          <p class="capability-description">Conectamos sistemas, automatizamos flujos y optimizamos la cadena de valor digital.</p>
-          <ul class="capability-list">
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>APIs & Webhooks</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Middleware</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Legacy Modernization</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- QA & Testing -->
-      <div class="capability-card" data-aos="fade-up" data-aos-delay="500">
-        <div class="capability-card-inner">
-          <div class="capability-icon-wrapper"><i class="fas fa-check-double text-3xl text-main"></i></div>
-          <h3 class="capability-title">QA & Testing</h3>
-          <p class="capability-description">Garantizamos calidad con testing automatizado y estrategias de QA continuas.</p>
-          <ul class="capability-list">
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Test Automation</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Performance Testing</span></li>
-            <li class="capability-list-item"><i class="fas fa-arrow-right text-main text-xs"></i><span>Security Testing</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Estadísticas Divertidas -->
-    <div id="estadisticas" class="mt-24 mb-24" data-aos="fade-up">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">
-          Números que nos <span class="text-main">definen</span>
-        </h2>
-        <p class="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto">
-          Algunas métricas (y otras no tan serias) de nuestro día a día
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-code text-3xl text-main"></i></div>
-            <div class="stats-number">{{ linesOfCode() }}M+</div>
-            <p class="stats-label">Líneas de código</p>
-          </div>
-        </div>
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-project-diagram text-3xl text-main"></i></div>
-            <div class="stats-number">{{ projectsCompleted() }}+</div>
-            <p class="stats-label">Proyectos completados</p>
-          </div>
-        </div>
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-calendar-check text-3xl text-main"></i></div>
-            <div class="stats-number">{{ yearsOfExperience() }}+</div>
-            <p class="stats-label">Años de experiencia</p>
-          </div>
-        </div>
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-handshake text-3xl text-main"></i></div>
-            <div class="stats-number">{{ happyClients() }}+</div>
-            <p class="stats-label">Clientes satisfechos</p>
-          </div>
-        </div>
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-mug-hot text-3xl text-main"></i></div>
-            <div class="stats-number">{{ coffeeCups() }}K+</div>
-            <p class="stats-label">Cafés servidos</p>
-          </div>
-        </div>
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-bug text-3xl text-main"></i></div>
-            <div class="stats-number">{{ bugsFixed() }}K+</div>
-            <p class="stats-label">Bugs resueltos</p>
-          </div>
-        </div>
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-rocket text-3xl text-main"></i></div>
-            <div class="stats-number">{{ deployments() }}K+</div>
-            <p class="stats-label">Deploys exitosos</p>
-          </div>
-        </div>
-        <div class="stats-card" data-aos="fade-up" data-aos-delay="700">
-          <div class="stats-card-inner">
-            <div class="stats-icon-wrapper"><i class="fas fa-pizza-slice text-3xl text-main"></i></div>
-            <div class="stats-number">{{ pizzaSlices() }}K+</div>
-            <p class="stats-label">Porciones de pizza</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA Final -->
-    <div
-      class="cta-video-bg max-w-5xl mx-auto text-center rounded-3xl p-10 md:p-16 border-2 border-main/30 shadow-2xl relative overflow-hidden"
-      data-aos="fade-up"
-    >
-      <!-- Video de fondo -->
-      <video
-        #ctaVideo
-        class="cta-background-video"
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="auto"
-        disablepictureinpicture
-        disableremoteplayback
-        poster="assets/videos/backgroundVideo-img.jpg"
-      >
-        <source src="assets/videos/backgroundVideo.webm" type="video/webm" />
-        <source src="assets/videos/backgroundVideo.mp4" type="video/mp4" />
-      </video>
-
-      <!-- Overlay rojo -->
-      <div class="cta-video-overlay"></div>
-
-      <!-- Grid pattern background -->
-      <div class="cta-modern-grid"></div>
-
-      <div class="relative z-10">
-        <div class="cta-badge-modern mb-6" data-aos="fade-down">
-          <div class="cta-badge-dot"></div>
-          <span class="font-mono text-xs uppercase tracking-widest">Consultoría Gratuita</span>
-        </div>
-
-        <h3 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight" data-aos="fade-up">
-          ¿Tenés un <span class="cta-gradient-text">desafío tecnológico</span>?
-        </h3>
-
-        <p class="cta-subtitle text-white text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-          Analizamos tu proyecto <span class="text-white font-semibold">sin cargo</span> y te presentamos una propuesta personalizada en <span class="text-main font-semibold">48hs</span>
-        </p>
-
-        <div class="flex flex-wrap gap-6 justify-center mb-12 text-sm" data-aos="fade-up" data-aos-delay="200">
-          <div class="cta-benefit-card">
-            <div class="cta-benefit-icon"><i class="fas fa-handshake"></i></div>
-            <span class="font-medium">Sin compromiso</span>
-          </div>
-          <div class="cta-benefit-card">
-            <div class="cta-benefit-icon"><i class="fas fa-bolt"></i></div>
-            <span class="font-medium">Respuesta en 24hs</span>
-          </div>
-          <div class="cta-benefit-card">
-            <div class="cta-benefit-icon"><i class="fas fa-award"></i></div>
-            <span class="font-medium">Expertos certificados</span>
-          </div>
-        </div>
-
-        <div data-aos="zoom-in" data-aos-delay="300" class="cta-button-wrapper">
-          <a [routerLink]="['/contacto']" class="cta-button-modern group">
-            <span class="cta-button-particles"></span>
-            <span class="cta-button-particles"></span>
-            <span class="cta-button-particles"></span>
-            <span class="cta-button-shine"></span>
-            <span class="cta-button-glow"></span>
-            <i class="fas fa-rocket relative z-10 group-hover:rotate-12 group-hover:-translate-y-1 transition-all duration-300"></i>
-            <span class="relative z-10 font-bold">Comenzar ahora</span>
-            <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-2 transition-transform duration-300"></i>
-          </a>
-        </div>
-      </div>
-    </div>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+      Servicios tecnológicos<br />
+      con <span class="text-main">liderazgo y responsabilidad.</span>
+    </h1>
+    <p class="text-zinc-300 text-xl max-w-2xl mx-auto">
+      Cada empresa atraviesa una situación distinta.<br />
+      No vendemos paquetes estándar. Entendemos el problema y asumimos responsabilidad sobre el resultado.
+    </p>
   </div>
 </section>
 
-<!-- Línea divisoria animada -->
+<!-- Línea divisoria -->
 <div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+<!-- Cards de servicios -->
+<section class="bg-[#0b000a] text-white py-24 px-6">
+  <div class="max-w-6xl mx-auto space-y-8">
+    @for (servicio of servicios; track $index) {
+      <div
+        class="capability-card group"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="$index * 100"
+      >
+        <div class="capability-card-glow"></div>
+        <div class="capability-card-content">
+          <div class="capability-icon-wrapper">
+            <i class="fas {{ servicio.icon }}"></i>
+          </div>
+          <div>
+            <h3 class="capability-card-title">{{ servicio.titulo }}</h3>
+            <p class="capability-card-text mb-3">{{ servicio.descripcion }}</p>
+            <p class="capability-card-text text-zinc-400 text-sm">{{ servicio.detalle }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Línea divisoria -->
+<div class="h-1 bg-gradient-to-r from-main via-hover to-main animate-pulse opacity-70"></div>
+
+<!-- CTA WhatsApp -->
+<section class="bg-[#0b000a] text-white py-20 px-6">
+  <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+      Reconocés alguna de estas situaciones<br />
+      <span class="text-main">en tu empresa?</span>
+    </h2>
+    <p class="text-zinc-400 text-lg mb-8">
+      Primera conversación estratégica sin compromiso.<br />
+      Contanos qué está pasando y vemos cómo ayudarte.
+    </p>
+    <a
+      href="https://wa.me/542494387687?text=Hola%2C%20quiero%20coordinar%20una%20conversaci%C3%B3n%20estrat%C3%A9gica"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-3 bg-main hover:bg-hover text-white text-lg font-bold px-8 py-4 rounded-full transition-all shadow-[0_0_20px_#ff1f43] hover:shadow-[0_0_30px_#ff4757]"
+      aria-label="Iniciar conversación por WhatsApp"
+    >
+      <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+      Hablemos por WhatsApp
+    </a>
+  </div>
+</section>

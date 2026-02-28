@@ -1,4 +1,4 @@
-<!-- Header -->
+﻿<!-- Header -->
 <header class="header-glass text-white shadow-sm fixed top-0 z-50 w-full">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-center items-center">
     <!-- Navegación desktop -->
@@ -11,32 +11,28 @@
         routerLink="/inicio"
         routerLinkActive="text-main font-bold"
         class="hover:text-main transition"
-        aria-label="Ir a la sección de inicio"
-      >
-        <i class="fas fa-home mr-1" aria-hidden="true"></i>Inicio
-      </a>
-      <a
-        routerLink="/nosotros"
-        routerLinkActive="text-main font-bold"
-        class="hover:text-main transition"
-        aria-label="Ir a la sección nosotros"
-      >
-        <i class="fas fa-users mr-1" aria-hidden="true"></i>Nosotros
-      </a>
+        aria-label="Inicio"
+      >Inicio</a>
       <a
         routerLink="/servicios"
         routerLinkActive="text-main font-bold"
         class="hover:text-main transition"
-        aria-label="Ir a la sección de capacidades"
-      >
-        <i class="fas fa-rocket mr-1" aria-hidden="true"></i>Servicios
-      </a>
+        aria-label="Servicios"
+      >Servicios</a>
       <a
-        routerLink="/contacto"
-        class="bg-main hover:bg-hover text-white px-4 py-2 rounded-full transition-all"
-        aria-label="Ir a la sección de contacto"
+        routerLink="/nosotros"
+        routerLinkActive="text-main font-bold"
+        class="hover:text-main transition"
+        aria-label="Nosotros"
+      >Nosotros</a>
+      <a
+        href="https://wa.me/542494387687?text=Hola%2C%20quiero%20coordinar%20una%20conversaci%C3%B3n%20estrat%C3%A9gica"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-main hover:bg-hover text-white px-4 py-2 rounded-full transition-all flex items-center gap-2"
+        aria-label="Contactar por WhatsApp"
       >
-        <i class="fas fa-envelope mr-2" aria-hidden="true"></i>Contacto
+        <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i>Contacto
       </a>
     </nav>
 
@@ -63,31 +59,27 @@
         routerLinkActive="text-main font-bold"
         class="flex items-center gap-2 hover:text-main"
         (click)="closeMenu()"
-      >
-        <i class="fas fa-home"></i>Inicio
-      </a>
-      <a
-        routerLink="/nosotros"
-        routerLinkActive="text-main font-bold"
-        class="flex items-center gap-2 hover:text-main"
-        (click)="closeMenu()"
-      >
-        <i class="fas fa-users"></i>Nosotros
-      </a>
+      >Inicio</a>
       <a
         routerLink="/servicios"
         routerLinkActive="text-main font-bold"
         class="flex items-center gap-2 hover:text-main"
         (click)="closeMenu()"
-      >
-        <i class="fas fa-rocket"></i>Servicios
-      </a>
+      >Servicios</a>
       <a
-        routerLink="/contacto"
+        routerLink="/nosotros"
+        routerLinkActive="text-main font-bold"
+        class="flex items-center gap-2 hover:text-main"
+        (click)="closeMenu()"
+      >Nosotros</a>
+      <a
+        href="https://wa.me/542494387687?text=Hola%2C%20quiero%20coordinar%20una%20conversaci%C3%B3n%20estrat%C3%A9gica"
+        target="_blank"
+        rel="noopener noreferrer"
         class="flex items-center justify-center gap-2 bg-main hover:bg-hover text-white px-4 py-2 rounded-full w-full sm:w-fit mt-2 shadow-[0_0_10px_#ff1f43] hover:shadow-[0_0_15px_#ff4757] transition-all"
         (click)="closeMenu()"
       >
-        <i class="fas fa-envelope"></i> Contacto
+        <i class="fab fa-whatsapp text-lg"></i>Contacto
       </a>
     </div>
   }

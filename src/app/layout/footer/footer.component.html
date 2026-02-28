@@ -1,96 +1,88 @@
-<footer class="bg-[#0b000c] text-white px-6 py-10 min-h-[336px]">
-  <div
-    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center lg:text-left"
-  >
-    <!-- Logo + link -->
-    <div
-      class="flex flex-col items-center"
-      data-aos-anchor-placement="top-bottom"
-      data-aos-delay="0"
-      data-aos-duration="1000"
-      data-aos="zoom-in"
-    >
+﻿<footer class="bg-[#0b000c] text-white border-t border-zinc-800">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Columna 1: Legal -->
+    <div data-aos="fade-up" data-aos-delay="0">
+      <h3 class="text-main font-bold text-sm uppercase tracking-widest mb-4">Siete Ideas</h3>
+      <ul class="space-y-2 text-sm text-zinc-400">
+        <li>Siete Ideas Software S.A.S.</li>
+        <li>Constitución 424, Tandil, Buenos Aires</li>
+        <li>
+          <a href="tel:+542494387687" class="hover:text-main transition">(0249) 438-7687</a>
+        </li>
+        <li>
+          <a href="mailto:info@sieteideas.com.ar" class="hover:text-main transition">info&#64;sieteideas.com.ar</a>
+        </li>
+        <li class="pt-2">
+          <a
+            href="https://www.linkedin.com/company/siete-ideas/posts/?feedView=all"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 hover:text-main transition"
+            aria-label="LinkedIn de Siete Ideas"
+          >
+            <i class="fab fa-linkedin text-main" aria-hidden="true"></i>Siete Ideas en LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Columna 2: Navegación -->
+    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-start">
+      <h3 class="text-main font-bold text-sm uppercase tracking-widest mb-4">Navegación</h3>
+      <nav class="flex flex-col gap-2 text-sm text-zinc-400 mb-6" aria-label="Footer navigation">
+        <a routerLink="/inicio" class="hover:text-main transition">Inicio</a>
+        <a routerLink="/servicios" class="hover:text-main transition">Servicios</a>
+        <a routerLink="/nosotros" class="hover:text-main transition">Nosotros</a>
+      </nav>
       <a
-        href="assets/7id_SOFTWARE_S.A.S_9001.pdf"
+        href="https://wa.me/542494387687?text=Hola%2C%20quiero%20coordinar%20una%20conversaci%C3%B3n%20estrat%C3%A9gica"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex flex-col items-center justify-center"
-        aria-label="Ver certificación IRAM ISO 9001 de 7 Ideas"
+        class="inline-flex items-center gap-2 bg-main hover:bg-hover text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all"
+        aria-label="Contactar por WhatsApp"
       >
-        <img
-          src="assets/iram_logo.svg"
-          alt="Certificación IRAM ISO 9001 - 7 Ideas Software"
-          class="w-64 mx-auto"
-          width="256"
-          height="100"
-        />
-      </a>
-      <a
-        href="https://docs.google.com/document/d/1lev_oaMELhonwblxj5Y7dU2HasNjYz5DLEuualgAp_c/edit?tab=t.hbe78fa4i76l"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Leer política ambiental de 7 Ideas"
-      >
-        <p class="text-lg mt-2">Siete Ideas Environmental Policy</p>
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>Hablemos por WhatsApp
       </a>
     </div>
 
-    <!-- Info de contacto -->
-    <div
-      data-aos-anchor-placement="top-bottom"
-      data-aos-delay="0"
-      data-aos-duration="1000"
-      data-aos="zoom-in"
-      class="flex flex-col items-center lg:items-start justify-center gap-4 text-sm md:text-xl"
-    >
-      <div class="flex items-center gap-3">
-        <i class="fas fa-map-marker-alt text-main"></i>
-        <span>Constitución 424, Tandil</span>
-      </div>
-      <div class="flex items-center gap-3">
-        <i class="fas fa-phone-alt text-main"></i>
-        <a href="tel:+542494387687" class="hover:underline">(0249) 438-7687</a>
-      </div>
-      <div class="flex items-center gap-3">
-        <i class="fas fa-envelope text-main"></i>
-        <a href="mailto:info@sieteideas.com.ar" class="hover:underline">{{
-          "info@sieteideas.com.ar"
-        }}</a>
-      </div>
-      <!-- Linkedin -->
-      <div class="flex items-center gap-3">
-        <i class="fab fa-linkedin text-main" aria-hidden="true"></i>
-        <a
-          href="https://www.linkedin.com/company/siete-ideas/posts/?feedView=all"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:underline"
-          aria-label="Visitar perfil de LinkedIn de 7 Ideas"
-          >Siete Ideas</a
-        >
-      </div>
+    <!-- Columna 3: Confianza -->
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-main font-bold text-sm uppercase tracking-widest mb-4">Por qué elegirnos</h3>
+      <ul class="space-y-3 text-sm text-zinc-400">
+        <li class="flex items-start gap-2">
+          <i class="fas fa-certificate text-main mt-0.5" aria-hidden="true"></i>
+          <a
+            href="assets/7id_SOFTWARE_S.A.S_9001.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-main transition"
+          >Certificación ISO 9001  IRAM</a>
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="fas fa-calendar-check text-main mt-0.5" aria-hidden="true"></i>
+          <span>Más de 20 años acompañando empresas desde 2004</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="fas fa-map-marker-alt text-main mt-0.5" aria-hidden="true"></i>
+          <span>Argentina  Tandil, Buenos Aires</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="fas fa-leaf text-main mt-0.5" aria-hidden="true"></i>
+          <a
+            href="https://docs.google.com/document/d/1lev_oaMELhonwblxj5Y7dU2HasNjYz5DLEuualgAp_c/edit?tab=t.hbe78fa4i76l"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-main transition"
+          >Política Ambiental</a>
+        </li>
+      </ul>
     </div>
 
-    <!-- Mapa -->
-    <div
-      data-aos-anchor-placement="top-bottom"
-      data-aos-delay="0"
-      data-aos-duration="1000"
-      data-aos="zoom-in"
-      class="w-full h-64 rounded overflow-hidden shadow-md"
-    >
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.394131210715!2d-59.135459100000006!3d-37.33317679999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911fbda19f307d%3A0xced88161234568a3!2sConstituci%C3%B3n%20424%2C%20B7000%20Tandil%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1751635773959!5m2!1ses-419!2sar"
-        width="100%"
-        height="100%"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        class="w-full h-full"
-        title="Ubicación de Siete Ideas"
-      >
-      </iframe>
-    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <div class="border-t border-zinc-800 py-4 text-center text-xs text-zinc-600">
+     {{ currentYear }} Siete Ideas Software S.A.S. Todos los derechos reservados.
   </div>
 </footer>
