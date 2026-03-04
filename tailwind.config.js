@@ -1,4 +1,4 @@
-module.exports = {
+﻿module.exports = {
   darkMode: 'class', // Enable dark mode
   content: [
     "./src/**/*.{html,ts}",
@@ -6,12 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: '#ff1f43',       // Rojo brillante
-        secondary: '#e50914',  // Rojo fuerte tipo Netflix
-        background: '#0b000c', // Fondo oscuro total
+        main: '#ff0000',       // Rojo brillante
+        secondary: '#FFC400',  // Rojo fuerte tipo Netflix
+        background: '#000000', // Fondo oscuro total
         text: '#ffffff',       // Blanco puro
-        border: '#8f001c',     // Rojo oscuro para bordes
-        hover: '#ff4757',      // Rojo claro para hover
+        border: '#2B2B2B',     // Rojo oscuro para bordes
+        hover: '#cc0000',      // Rojo claro para hover
       },
       fontFamily: {
         sans: ['Urbanist', 'sans-serif'],
