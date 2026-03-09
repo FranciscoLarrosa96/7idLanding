@@ -1,0 +1,74 @@
+<header
+  class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between py-4">
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center gap-3 group" (click)="closeMobileMenu()">
+      <div
+        class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-white shadow-md shadow-primary/30 group-hover:scale-105 transition-transform"
+      >
+        <span class="material-symbols-outlined text-lg">rocket_launch</span>
+      </div>
+      <span class="text-xl font-black tracking-tight text-slate-900 uppercase">7iDeas</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="text-primary font-bold"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors relative group"
+        >
+          {{ link.label }}
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+      }
+    </nav>
+
+    <!-- CTA + hamburger -->
+    <div class="flex items-center gap-4">
+      <a
+        routerLink="/contacto"
+        class="hidden sm:flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md shadow-primary/20 hover:bg-primary/90 hover:-translate-y-0.5 transition-all"
+        (click)="closeMobileMenu()"
+      >
+        Contactanos
+      </a>
+      <button
+        class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors"
+        (click)="toggleMobileMenu()"
+        aria-label="Toggle menu"
+      >
+        <span class="material-symbols-outlined">{{ mobileMenuOpen() ? 'close' : 'menu' }}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (mobileMenuOpen()) {
+    <div class="md:hidden border-t border-slate-100 bg-white px-6 py-4 flex flex-col gap-1">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="text-primary bg-primary/5"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          class="py-3 px-4 text-sm font-semibold text-slate-700 hover:text-primary hover:bg-primary/5 rounded-xl transition-colors block"
+          (click)="closeMobileMenu()"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <a
+        routerLink="/contacto"
+        class="mt-2 text-center bg-primary text-white py-3 px-4 rounded-xl text-sm font-bold"
+        (click)="closeMobileMenu()"
+      >
+        Contactanos
+      </a>
+    </div>
+  }
+</header>

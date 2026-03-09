@@ -1,24 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #FF0000;
+  --accent: #FFC400;
+  --bg-light: #f8f6f6;
+  --bg-dark: #221610;
+}
+
 html,
 body {
   height: 100%;
-  font-family: "Urbanist", sans-serif;
+  font-family: 'Inter', 'Public Sans', sans-serif;
+  background-color: #f8f6f6;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-:root {
-  --main-color: #ff1f43; /* Rojo brillante como el fondo animado */
-  --secondary-color: #e50914; /* Rojo fuerte tipo Netflix para detalles */
-  --background-color: #0b000c; /* Fondo oscuro total */
-  --text-color: #ffffff; /* Blanco puro para contraste */
-  --border-color: #8f001c; /* Bordes más apagados en rojo oscuro */
-  --hover-color: #ff4757; /* Un rojo claro brillante para hover */
+.geo-shape {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* Animaciones para la transición */
@@ -51,5 +75,4 @@ html {
   animation: pulseScale 1s ease-in-out infinite;
 }
 
-/* Import component styles globally so all page components can use them */
-@import './app/app.scss';
+

@@ -1,0 +1,127 @@
+<!-- Decorative background blobs -->
+<div class="absolute top-0 right-0 -z-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-40 left-10 -z-10 text-primary/20 opacity-40 pointer-events-none">
+  <span class="material-symbols-outlined text-6xl">add</span>
+</div>
+
+<!-- ======= HEADER ======= -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-10">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div class="max-w-2xl">
+      <h1 class="text-5xl md:text-6xl font-black text-slate-900 mb-4 leading-tight">
+        Artículos
+        <span class="text-primary italic"> Recientes</span>
+      </h1>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Explorá las últimas tendencias, tutoriales y consejos sobre desarrollo de software,
+        diseño digital y estrategias tecnológicas para potenciar tu negocio.
+      </p>
+    </div>
+    <div class="flex items-center gap-2 pb-2">
+      <div class="w-12 h-1 bg-primary rounded-full"></div>
+      <span class="text-xs font-bold uppercase tracking-widest text-primary">
+        Innovación constante
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FEATURED POST ======= -->
+@if (featuredPost; as post) {
+  <section class="max-w-7xl mx-auto px-6 lg:px-10 mb-20">
+    <div
+      class="relative group cursor-pointer overflow-hidden rounded-[2rem] bg-accent p-1 md:p-2 shadow-2xl transition-transform hover:-translate-y-1"
+    >
+      <div
+        class="flex flex-col lg:flex-row bg-white rounded-[1.8rem] overflow-hidden"
+      >
+        <!-- Visual -->
+        <div
+          class="lg:w-3/5 h-[280px] lg:h-[460px] relative overflow-hidden bg-gradient-to-br from-slate-900 via-red-950 to-slate-900"
+        >
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-12">
+              <span class="material-symbols-outlined text-accent text-8xl mb-4 block">
+                smart_toy
+              </span>
+              <p class="text-white/60 text-lg font-semibold">Inteligencia Artificial</p>
+            </div>
+          </div>
+          <!-- Geometric decorations -->
+          <div
+            class="absolute top-8 right-8 w-16 h-16 border-4 border-accent/30 rounded-full"
+          ></div>
+          <div
+            class="absolute bottom-12 left-12 w-8 h-8 bg-accent/20 rotate-45"
+          ></div>
+          <div
+            class="absolute top-6 left-6 px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-full uppercase tracking-tighter"
+          >
+            Destacado
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center relative">
+          <div
+            class="absolute -right-10 -top-10 w-40 h-40 border-[20px] border-primary/5 rounded-full pointer-events-none"
+          ></div>
+          <span class="text-sm font-bold text-primary mb-4 block">{{ post.date }}</span>
+          <span
+            class="inline-block mb-4 text-xs font-black uppercase tracking-widest text-primary px-3 py-1 bg-primary/10 rounded-full"
+          >
+            {{ post.category }}
+          </span>
+          <h2 class="text-2xl lg:text-3xl font-black text-slate-900 mb-5 leading-tight">
+            {{ post.title }}
+          </h2>
+          <p class="text-slate-600 mb-8 leading-relaxed line-clamp-3">
+            {{ post.excerpt }}
+          </p>
+          <div class="flex items-center gap-4">
+            <a
+              [routerLink]="['/blog', post.slug]"
+              class="px-8 py-3 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-primary transition-colors flex items-center gap-2"
+            >
+              Leer artículo
+              <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </a>
+            <span class="text-slate-400 text-xs font-medium">{{ post.readTime }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- ======= MORE POSTS / NEWSLETTER ======= -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 pb-24">
+  <div class="flex items-center justify-between mb-10">
+    <h3 class="text-2xl font-black text-slate-900">Más publicaciones</h3>
+    <p class="text-sm text-slate-500 italic">Próximamente...</p>
+  </div>
+
+  <!-- Newsletter subscribe card -->
+  <div
+    class="max-w-lg mx-auto flex flex-col items-center justify-center p-10 bg-primary/5 rounded-2xl border-2 border-dashed border-primary/20 text-center"
+  >
+    <span class="material-symbols-outlined text-4xl text-primary mb-4">mail</span>
+    <h4 class="text-xl font-bold text-slate-900 mb-2">¿Querés estar al día?</h4>
+    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+      Suscribite a nuestra newsletter para recibir contenido exclusivo sobre tecnología,
+      estrategia digital y más.
+    </p>
+    <div class="w-full flex gap-3">
+      <input
+        type="email"
+        placeholder="tu&#64;email.com"
+        class="flex-1 rounded-xl border border-slate-200 px-4 py-3 text-sm focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
+      />
+      <button
+        class="px-5 py-3 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary/90 transition-colors whitespace-nowrap"
+      >
+        Suscribirme
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,168 @@
+<!-- Decorative geometric shapes -->
+<div class="geo-shape top-24 left-8 text-primary">
+  <svg width="120" height="120" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="2" />
+  </svg>
+</div>
+<div class="geo-shape top-60 right-12 text-accent">
+  <svg width="80" height="80" viewBox="0 0 80 80">
+    <rect x="10" y="10" width="60" height="60" fill="currentColor" />
+  </svg>
+</div>
+<div class="geo-shape bottom-40 left-1/3 text-primary text-5xl font-black leading-none select-none">+</div>
+
+<!-- ======= HERO ======= -->
+<section class="relative max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-28 overflow-hidden">
+  <div class="flex flex-col md:flex-row items-center gap-12">
+    <!-- Text -->
+    <div class="flex flex-col gap-8 md:w-1/2">
+      <div class="flex flex-col gap-4">
+        <div class="w-14 h-1 bg-accent rounded-full"></div>
+        <h1 class="text-slate-900 text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
+          Tu empresa necesita
+          <span class="text-primary"> liderazgo tecnológico.</span>
+          No solo más herramientas.
+        </h1>
+        <p class="text-slate-600 text-lg md:text-xl font-normal max-w-lg leading-relaxed">
+          Estrategia y visión profesional para transformar tu negocio con tecnología de
+          vanguardia y soluciones a medida.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a
+          routerLink="/servicios"
+          class="flex min-w-[180px] items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold shadow-xl shadow-primary/30 hover:-translate-y-1 transition-all"
+        >
+          Descubre cómo
+        </a>
+        <a
+          routerLink="/nosotros"
+          class="flex min-w-[180px] items-center justify-center rounded-xl h-14 px-8 border-2 border-slate-200 bg-white text-slate-900 text-base font-bold hover:bg-slate-50 transition-all"
+        >
+          Quiénes somos
+        </a>
+      </div>
+    </div>
+
+    <!-- Visual -->
+    <div class="w-full md:w-1/2 relative">
+      <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full -z-10"></div>
+      <div
+        class="w-full aspect-video rounded-2xl shadow-2xl overflow-hidden border-8 border-white bg-gradient-to-br from-slate-900 via-red-950 to-slate-900 flex items-center justify-center"
+      >
+        <div class="text-center p-8">
+          <span class="material-symbols-outlined text-primary text-6xl mb-4 block">rocket_launch</span>
+          <p class="text-white text-xl font-bold">Transformamos Ideas en Impacto</p>
+        </div>
+      </div>
+      <!-- Stat badge -->
+      <div
+        class="absolute -bottom-6 -left-6 bg-white p-5 rounded-xl shadow-xl border border-slate-100 hidden lg:flex items-center gap-4"
+      >
+        <div class="p-3 bg-accent rounded-lg">
+          <span class="material-symbols-outlined text-white">trending_up</span>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Impacto Real</p>
+          <p class="text-xl font-black text-slate-900">+40% Eficiencia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= DESAFÍOS ======= -->
+<section class="bg-white py-20 border-y border-slate-100 relative overflow-hidden">
+  <div class="geo-shape bottom-0 right-0 text-slate-100 scale-150">
+    <svg width="240" height="240" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="55" fill="currentColor" />
+    </svg>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center mb-16">
+      <span class="text-primary font-bold tracking-widest uppercase text-sm">El Problema</span>
+      <h2 class="text-slate-900 text-3xl md:text-4xl font-bold mt-2">
+        Desafíos Actuales de la Industria
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for (c of challenges; track c.title) {
+        <div
+          class="group flex flex-col gap-6 rounded-2xl border border-slate-100 bg-background-light p-8 hover:border-accent hover:shadow-xl transition-all"
+        >
+          <div
+            class="w-14 h-14 flex items-center justify-center rounded-xl bg-white text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors"
+          >
+            <span class="material-symbols-outlined text-3xl">{{ c.icon }}</span>
+          </div>
+          <div class="flex flex-col gap-3">
+            <h3 class="text-slate-900 text-xl font-bold">{{ c.title }}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{{ c.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ======= SERVICES SUMMARY ======= -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+  <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+    <div class="max-w-xl">
+      <span class="text-accent font-bold tracking-widest uppercase text-sm">Nuestra Solución</span>
+      <h2 class="text-slate-900 text-3xl md:text-4xl font-bold mt-2">Nuestros Servicios</h2>
+      <p class="text-slate-600 mt-4 leading-relaxed">
+        Proporcionamos el acompañamiento necesario para asegurar que cada pieza de tecnología
+        esté alineada con tus objetivos de negocio.
+      </p>
+    </div>
+    <a
+      routerLink="/servicios"
+      class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all whitespace-nowrap"
+    >
+      Ver todos los servicios
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    @for (s of services; track s.title) {
+      <div
+        class="bg-white p-6 rounded-xl border border-slate-100 hover:shadow-md hover:border-primary/30 transition-all"
+      >
+        <h4 class="font-bold text-slate-900 mb-2">{{ s.title }}</h4>
+        <p class="text-sm text-slate-500 leading-relaxed">{{ s.desc }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ======= WHATSAPP CTA ======= -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 pb-24">
+  <div
+    class="relative rounded-[2rem] bg-slate-900 overflow-hidden p-10 md:p-16 text-center text-white"
+  >
+    <div class="absolute -top-10 -left-10 w-48 h-48 rounded-full bg-primary/20 blur-3xl"></div>
+    <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-accent/20 rotate-12 blur-3xl"></div>
+    <div class="relative z-10 flex flex-col items-center gap-8">
+      <h2 class="text-3xl md:text-5xl font-black max-w-2xl leading-tight">
+        ¿Listo para elevar el nivel tecnológico de tu empresa?
+      </h2>
+      <p class="text-slate-400 text-lg max-w-xl leading-relaxed">
+        Hablemos hoy mismo por WhatsApp y obtén una evaluación inicial sin compromiso.
+      </p>
+      <a
+        href="https://wa.me/5491112345678"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl shadow-green-500/20 transition-all hover:scale-105"
+      >
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.516.893 3.004 1.399 4.946 1.4 5.408 0 9.809-4.4 9.812-9.808.001-2.618-1.02-5.08-2.876-6.937-1.856-1.857-4.319-2.879-6.933-2.88-5.41 0-9.812 4.401-9.815 9.813-.001 1.938.56 3.327 1.488 4.76l-.985 3.595 3.693-.968zM17.473 14.382c-.301-.151-1.782-.88-2.057-.98-.275-.1-.475-.151-.675.15s-.775.98-.95 1.18c-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.463.13-.612.134-.134.301-.351.451-.526.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.589-.491-.51-.675-.519-.174-.01-.374-.012-.574-.012s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.116 3.231 5.125 4.532.715.311 1.275.496 1.71.635.717.227 1.369.195 1.885.118.575-.085 1.782-.728 2.032-1.43.25-.702.25-1.305.175-1.43-.075-.125-.275-.2-.575-.35z"
+          />
+        </svg>
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
