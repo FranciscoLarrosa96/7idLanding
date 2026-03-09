@@ -1,10 +1,7 @@
-# robots.txt for 7 Ideas Landing Page
+# robots.txt — 7iDeas
 User-agent: *
 Allow: /
+Disallow: /assets/linkedin/
 
-# Sitemap location
-Sitemap: https://franciscolarrosa96.github.io/7idLanding/sitemap.xml
-
-# Disallow admin or private directories if any
-# User-agent: *
-# Disallow: /admin/
+# Sitemap
+Sitemap: https://sieteideas.com/sitemap.xml
