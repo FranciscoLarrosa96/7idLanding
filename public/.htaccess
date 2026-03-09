@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /v2/
+
+  # No reescribir archivos o carpetas existentes
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Todo lo demás → index.html (Angular router se encarga)
+  RewriteRule ^ index.html [L]
+</IfModule>

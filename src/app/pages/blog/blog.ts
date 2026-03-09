@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 interface BlogPost {
   slug: string;
@@ -17,6 +18,12 @@ interface BlogPost {
   templateUrl: './blog.html',
 })
 export class Blog {
+  private document = inject(DOCUMENT);
+
+  getPostUrl(slug: string): string {
+    const base = this.document.baseURI.replace(/\/$/, '');
+    return `${base}/blog/${slug}`;
+  }
   posts: BlogPost[] = [
     {
       slug: 'marketing-ia',
