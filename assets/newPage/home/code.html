@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>7iDeas - Liderazgo Tecnológico Estratégico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Public+Sans:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF0000", // Brand Red
+                        "accent": "#FFC400",  // Brand Yellow
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .geo-shape { position: absolute; z-index: -1; opacity: 0.1; }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 font-display overflow-x-hidden">
+<!-- Geometric Decorative Elements -->
+<div class="geo-shape top-20 left-10 text-primary">
+<svg height="100" viewbox="0 0 100 100" width="100"><circle cx="50" cy="50" fill="currentColor" r="40"></circle></svg>
+</div>
+<div class="geo-shape top-60 right-20 text-accent">
+<svg height="80" viewbox="0 0 80 80" width="80"><rect fill="currentColor" height="60" width="60" x="10" y="10"></rect></svg>
+</div>
+<div class="geo-shape bottom-40 left-1/4 text-primary text-4xl font-bold">+</div>
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 px-6 md:px-20 py-4 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<img alt="Logo 7iDeas" class="h-10 w-auto" data-alt="7iDeas corporate logo showing abstract geometric shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMcobcdGCwC2pbwspZIPfzWc6owLvvo-8K5QJAJoFPy8yR2PpPtnVBX-10q3douEuTLvyU-LHgEkGS8Td6RWuj72ygkKBQUcsqdsv_DWFa2vHZNNz-wlo12PZLA-ZNWAVdwu-RmaI0nf_OsiolCQON5XflOTSk_1J9udRORQWd4SEfUDBonAlQPEhSmuBN48I1XW3aomssRSjrt1KtDqo1hWZAor_FUisMWD5r42ebkwhRORRxXS0bnW5QvB2UFS4UMSBZ8P1aVpM"/>
+<h2 class="text-slate-900 text-xl font-extrabold leading-tight tracking-tight">7iDeas</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">Inicio</a>
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">Servicios</a>
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">Portfolio</a>
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">Contacto</a>
+</nav>
+<button class="hidden sm:flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        Consultoría Gratis
+                    </button>
+<div class="bg-slate-200 rounded-full size-10 border-2 border-accent flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600">person</span>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="max-w-[1200px] mx-auto px-6 py-12 md:py-24">
+<div class="flex flex-col gap-10 md:flex-row items-center">
+<div class="flex flex-col gap-8 md:w-1/2">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-1 bg-accent"></div>
+<h1 class="text-slate-900 text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
+                                    Tu empresa necesita <span class="text-primary">liderazgo tecnológico.</span> No solo más herramientas.
+                                </h1>
+<p class="text-slate-600 text-lg md:text-xl font-normal max-w-lg">
+                                    Estrategia y visión profesional para transformar tu negocio con tecnología de vanguardia y soluciones a medida.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold shadow-xl shadow-primary/30 hover:-translate-y-1 transition-all">
+                                    Descubre cómo
+                                </button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 border-2 border-slate-200 bg-white text-slate-900 text-base font-bold hover:bg-slate-50 transition-all">
+                                    Ver Casos de Éxito
+                                </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full -z-10"></div>
+<div class="w-full bg-slate-200 aspect-video rounded-2xl shadow-2xl overflow-hidden border-8 border-white" data-alt="Modern office setup with diverse team collaborating on technology strategy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmILMRiynjTrc-EgXD3Sotu8phQFDpyh2gZu0FGE5PqNYAEpjBeBjgzvspRgzLfzNw5XKXjdE0UJqIOzZa-d9q1Ec7pbiR1mZlGYF-8O3v3Ot7IByU05iFxTKd6ME10_JdZnQ3UVB41d_DNGXl2fiBtplj4N7aJ9aUOzK3AWf_FklCbFEgX2O4R5QePyOu3mpECuX3kE8rwbxAB8ftDALMhrH1BDy3TV-4DsIL6hv7e4UxbrWhbGdr7o3JIlQgGVONYxKGAmdxJI4"); background-size: cover;'></div>
+<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 hidden lg:block">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-accent rounded-lg text-white">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Impacto Real</p>
+<p class="text-xl font-black text-slate-900">+40% Eficiencia</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Desafíos Section -->
+<section class="bg-white py-20 border-y border-slate-100 relative overflow-hidden">
+<div class="geo-shape bottom-10 right-10 text-slate-100 scale-150">
+<svg height="200" viewbox="0 0 100 100" width="200"><circle cx="50" cy="50" fill="currentColor" r="40"></circle></svg>
+</div>
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="text-center mb-16">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">El Problema</span>
+<h2 class="text-slate-900 text-3xl md:text-4xl font-bold mt-2">Desafíos Actuales de la Industria</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-100 bg-background-light p-8 hover:border-accent hover:shadow-xl transition-all">
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-white text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">strategy</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-slate-900 text-xl font-bold">Falta de Estrategia</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Sin un rumbo claro, la tecnología es un gasto recurrente que no genera retorno, en lugar de ser una inversión clave.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-100 bg-background-light p-8 hover:border-accent hover:shadow-xl transition-all">
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-white text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">warning</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-slate-900 text-xl font-bold">Herramientas Obsoletas</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Sistemas legados que frenan el crecimiento operativo y la innovación, volviendo a la empresa menos competitiva.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-100 bg-background-light p-8 hover:border-accent hover:shadow-xl transition-all">
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-white text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">hub</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-slate-900 text-xl font-bold">Silos de Información</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Datos desconectados entre departamentos que impiden una visión global y la toma de decisiones basada en datos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Summary -->
+<section class="max-w-[1200px] mx-auto px-6 py-20">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<span class="text-accent font-bold tracking-widest uppercase text-sm">Nuestra Solución</span>
+<h2 class="text-slate-900 text-3xl md:text-4xl font-bold mt-2">Nuestros Servicios</h2>
+<p class="text-slate-600 mt-4">Proporcionamos el acompañamiento necesario para asegurar que cada pieza de tecnología esté alineada con tus objetivos de negocio.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                            Ver todos los servicios <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+<h4 class="font-bold text-slate-900 mb-2">CTO as a Service</h4>
+<p class="text-sm text-slate-500">Liderazgo técnico estratégico sin los costos de una contratación a tiempo completo.</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+<h4 class="font-bold text-slate-900 mb-2">Auditoría IT</h4>
+<p class="text-sm text-slate-500">Evaluación profunda de tus sistemas actuales para identificar riesgos y oportunidades.</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+<h4 class="font-bold text-slate-900 mb-2">Transformación Digital</h4>
+<p class="text-sm text-slate-500">Roadmap personalizado para digitalizar procesos y mejorar la experiencia del cliente.</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+<h4 class="font-bold text-slate-900 mb-2">Ciberseguridad</h4>
+<p class="text-sm text-slate-500">Protección integral de los activos digitales y datos sensibles de tu organización.</p>
+</div>
+</div>
+</section>
+<!-- WhatsApp CTA -->
+<section class="max-w-[1200px] mx-auto px-6 pb-20">
+<div class="relative rounded-[2rem] bg-slate-900 overflow-hidden p-8 md:p-16 text-center text-white">
+<!-- Red circle decorative -->
+<div class="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-primary/20 blur-2xl"></div>
+<!-- Yellow square decorative -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-accent/20 rotate-12 blur-2xl"></div>
+<div class="relative z-10 flex flex-col items-center gap-8">
+<h2 class="text-3xl md:text-5xl font-black max-w-2xl leading-tight">
+                                ¿Listo para elevar el nivel tecnológico de tu empresa?
+                            </h2>
+<p class="text-slate-400 text-lg max-w-xl">
+                                Hablemos hoy mismo por WhatsApp y obtén una evaluación inicial sin compromiso.
+                            </p>
+<a class="flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl shadow-green-500/20 transition-all scale-100 hover:scale-105" href="https://wa.me/#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.516.893 3.004 1.399 4.946 1.4 5.408 0 9.809-4.4 9.812-9.808.001-2.618-1.02-5.08-2.876-6.937-1.856-1.857-4.319-2.879-6.933-2.88-5.41 0-9.812 4.401-9.815 9.813-.001 1.938.56 3.327 1.488 4.76l-.985 3.595 3.693-.968zM17.473 14.382c-.301-.151-1.782-.88-2.057-.98-.275-.1-.475-.151-.675.15s-.775.98-.95 1.18c-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.463.13-.612.134-.134.301-.351.451-.526.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.589-.491-.51-.675-.519-.174-.01-.374-.012-.574-.012s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.116 3.231 5.125 4.532.715.311 1.275.496 1.71.635.717.227 1.369.195 1.885.118.575-.085 1.782-.728 2.032-1.43.25-.702.25-1.305.175-1.43-.075-.125-.275-.2-.575-.35z"></path></svg>
+                                Contactar por WhatsApp
+                            </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-slate-100 pt-16 pb-8">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<img alt="7iDeas" class="h-8 w-auto" data-alt="Small 7iDeas logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClXcAuXgeALOMGSrkBnkW_Yar6fbRSde-vK_YHfWRpoSCnle_fGYhg0O1mPKG5ZN2D69g50NNbcvB4kQz3T2lf3td0wqHmj78Q2-xfl6h4bkESJFNbGwfX7YfXv0ZRgM19OgZegME78rNAVs8YMMqCkDFuBQeZaxo072JKl1EgNXJWEHMthRfpEx_3v_Kn70fWJHpoF8vABC4b2HDyr4lTEj52tzPyr8IbPrTwnxQidIz5RIdT4Ru5yZyO8QS0ltM0PMPFeA3BasE"/>
+<h2 class="text-slate-900 text-lg font-bold">7iDeas</h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                            Transformando empresas mediante consultoría tecnológica estratégica y liderazgo fraccionado de alto nivel.
+                        </p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-6">Empresa</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Nuestra Visión</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Carreras</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-6">Legal</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Términos de Servicio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-6">Newsletter</h4>
+<p class="text-xs text-slate-500 mb-4">Recibe consejos sobre estrategia tecnológica cada mes.</p>
+<div class="flex gap-2">
+<input class="bg-background-light border-slate-200 rounded-lg text-sm flex-1 focus:ring-primary focus:border-primary" placeholder="Email" type="email"/>
+<button class="bg-accent text-slate-900 px-4 py-2 rounded-lg font-bold text-sm">OK</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-6 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2024 7iDeas. Todos los derechos reservados.</p>
+<div class="flex gap-6 text-slate-400">
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
