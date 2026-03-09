@@ -32,20 +32,20 @@ export class Nosotros {
     },
   ];
 
-  team = [
-    { name: 'Christian', role: 'Director General', img: 'assets/img/colaboradores/christian.avif' },
-    { name: 'Francisco', role: 'Full Stack Developer', img: 'assets/img/colaboradores/fran.avif' },
-    { name: 'Juan', role: 'Backend Engineer', img: 'assets/img/colaboradores/juan.avif' },
-    { name: 'Juan Sebastián', role: 'Frontend Developer', img: 'assets/img/colaboradores/juanse.avif' },
-    { name: 'Kevin', role: 'UX / UI Designer', img: 'assets/img/colaboradores/kevin.avif' },
-    { name: 'Luca', role: 'Mobile Developer', img: 'assets/img/colaboradores/luca.avif' },
-    { name: 'Lucía', role: 'Diseñadora', img: 'assets/img/colaboradores/lucia.avif' },
-    { name: 'Emilia', role: 'Marketing Digital', img: 'assets/img/colaboradores/emilia.avif' },
-    { name: 'Joaquín', role: 'DevOps Engineer', img: 'assets/img/colaboradores/joaquin.avif' },
-    { name: 'Bernardino', role: 'Data Engineer', img: 'assets/img/colaboradores/bernardino.avif' },
-    { name: 'Eliseo', role: 'QA Engineer', img: 'assets/img/colaboradores/eliseo.avif' },
-    { name: 'Ludmila', role: 'Project Manager', img: 'assets/img/colaboradores/ludmila.avif' },
-    { name: 'Santi', role: 'Cloud Architect', img: 'assets/img/colaboradores/santi.avif' },
-    { name: 'Santiago', role: 'Cybersecurity', img: 'assets/img/colaboradores/santiago.avif' },
+  teamMembers = [
+    { name: 'Christian Roig',        role: 'CEO & Founder',               image: 'assets/img/colaboradores/christian.avif' },
+    { name: 'Lucia Lopez Cerecedo',  role: 'Responsable de Talento',      image: 'assets/img/colaboradores/lucia.avif' },
+    { name: 'Kevin Martinez',        role: 'Fullstack Developer',         image: 'assets/img/colaboradores/kevin.avif' },
+    { name: 'Maria Emilia Tunesi',   role: 'QA & Requirements Analyst',   image: 'assets/img/colaboradores/emilia.avif' },
+    { name: 'Juan Segundo Aramburu', role: 'QA Tester',                   image: 'assets/img/colaboradores/juanse.avif' },
+    { name: 'Santiago Tapia',        role: 'Requirements Analyst',        image: 'assets/img/colaboradores/santi.avif' },
+    { name: 'Santiago Diaz Pace',    role: 'Project Manager',             image: 'assets/img/colaboradores/santiago.avif' },
+    { name: 'Francisco Larrosa',     role: 'Front End Developer',         image: 'assets/img/colaboradores/fran.avif' },
+    { name: 'Eliseo Villa',          role: 'Backend Developer',           image: 'assets/img/colaboradores/eliseo.avif' },
+    { name: 'Bernardino Bonisconti', role: 'Project Manager',             image: 'assets/img/colaboradores/bernardino.avif' },
+    { name: 'Joaquin Barbieri',      role: 'Backend Developer',           image: 'assets/img/colaboradores/joaquin.avif' },
+    { name: 'Ludmila Alvares',       role: 'Administrative & Comercial',  image: 'assets/img/colaboradores/ludmila.avif' },
+    { name: 'Juan Diego Grela',      role: 'Backend Developer',           image: 'assets/img/colaboradores/juan.avif' },
+    { name: 'Luca Mendoza',          role: 'Frontend Developer',          image: 'assets/img/colaboradores/luca.avif' },
   ];
 }
