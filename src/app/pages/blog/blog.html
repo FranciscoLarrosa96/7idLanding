@@ -37,16 +37,13 @@
       >
         <!-- Visual -->
         <div
-          class="lg:w-3/5 h-[280px] lg:h-[460px] relative overflow-hidden bg-gradient-to-br from-slate-900 via-red-950 to-slate-900"
+          class="lg:w-3/5 h-[280px] lg:h-[460px] relative overflow-hidden"
         >
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center p-12">
-              <span class="material-symbols-outlined text-accent text-8xl mb-4 block">
-                smart_toy
-              </span>
-              <p class="text-white/60 text-lg font-semibold">Inteligencia Artificial</p>
-            </div>
-          </div>
+          <img
+            src="assets/blogs/marketing-ia.avif"
+            alt="Marketing con Inteligencia Artificial"
+            class="w-full h-full object-cover"
+          />
           <!-- Geometric decorations -->
           <div
             class="absolute top-8 right-8 w-16 h-16 border-4 border-accent/30 rounded-full"
@@ -80,11 +77,13 @@
           </p>
           <div class="flex items-center gap-4">
             <a
-              [routerLink]="['/blog', post.slug]"
+              [href]="'/blog/' + post.slug"
+              target="_blank"
+              rel="noopener noreferrer"
               class="px-8 py-3 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-primary transition-colors flex items-center gap-2"
             >
               Leer artículo
-              <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              <span class="material-symbols-outlined text-lg">open_in_new</span>
             </a>
             <span class="text-slate-400 text-xs font-medium">{{ post.readTime }}</span>
           </div>

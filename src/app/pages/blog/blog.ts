@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 interface BlogPost {
   slug: string;
@@ -14,7 +13,7 @@ interface BlogPost {
 
 @Component({
   selector: 'app-blog',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './blog.html',
 })
 export class Blog {
