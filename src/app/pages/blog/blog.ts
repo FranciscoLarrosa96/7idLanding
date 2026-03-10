@@ -20,6 +20,11 @@ interface BlogPost {
 export class Blog {
   private document = inject(DOCUMENT);
 
+  /**
+   *  Genera la URL completa para un post dado su slug, utilizando la base URI del documento.
+   * @param slug
+   * @returns La URL completa del post.
+   */
   getPostUrl(slug: string): string {
     const base = this.document.baseURI.replace(/\/$/, '');
     return `${base}/blog/${slug}`;
@@ -27,18 +32,23 @@ export class Blog {
   posts: BlogPost[] = [
     {
       slug: 'marketing-ia',
-      title: 'Marketing para IA: Cómo las marcas líderes están conquistando la era de la inteligencia artificial',
+      title:
+        'Marketing para IA: Cómo las marcas líderes están conquistando la era de la inteligencia artificial',
       excerpt:
         'Descubrí las estrategias que las empresas más innovadoras utilizan para posicionarse en la era de la IA. Desde el branding hasta los canales emergentes.',
       category: 'Inteligencia Artificial',
       date: '9 de Marzo, 2026',
-      readTime: '10 min de lectura',
+      readTime: '5 min de lectura',
       featured: true,
       gradient: 'from-slate-900 via-red-950 to-slate-900',
     },
   ];
 
+  /**
+   * Obtiene el post destacado de la lista de posts. Si no hay ningún post marcado como destacado, devuelve undefined.
+   * @returns El post destacado o undefined si no hay ninguno.
+   */
   get featuredPost(): BlogPost | undefined {
-    return this.posts.find(p => p.featured);
+    return this.posts.find((p) => p.featured);
   }
 }

@@ -1,5 +1,10 @@
 import { Component, signal, inject } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-contacto',
@@ -38,9 +43,13 @@ export class Contacto {
   }
 
   contactInfo = [
-    { icon: 'mail', label: 'Email', value: 'hola@7ideas.tech' },
-    { icon: 'call', label: 'Teléfono', value: '+54 9 11 1234-5678' },
-    { icon: 'location_on', label: 'Ubicación', value: 'Buenos Aires, Argentina' },
+    { icon: 'mail', label: 'Email', value: 'contacto@sieteideas.com.ar' },
+    { icon: 'call', label: 'Teléfono', value: '+54 9 2494 28-9033' },
+    {
+      icon: 'location_on',
+      label: 'Ubicación',
+      value: 'Tandil, Buenos Aires, Argentina',
+    },
     { icon: 'schedule', label: 'Horario', value: 'Lun – Vie, 9:00 – 18:00' },
   ];
 }
