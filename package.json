@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-prod": "ng build --configuration production --base-href \"/7idLanding/\"",
-    "build-v2": "ng build --configuration production --base-href \"/v2/\"",
+    "v2": "ng build --configuration production --base-href \"/v2/\"",
     "deploy": "npx angular-cli-ghpages --dir=dist/7idLandingPage/browser"
   },
   "prettier": {
