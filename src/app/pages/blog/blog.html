@@ -1,27 +1,30 @@
-<!-- Decorative background blobs -->
-<div class="absolute top-0 right-0 -z-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute top-40 left-10 -z-10 text-primary/20 opacity-40 pointer-events-none">
-  <span class="material-symbols-outlined text-6xl">add</span>
-</div>
-
 <!-- ======= HEADER ======= -->
-<section class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-10">
-  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-    <div class="max-w-2xl scroll-anim">
-      <h1 class="text-5xl md:text-6xl font-black text-slate-900 mb-4 leading-tight">
-        Artículos
-        <span class="text-primary italic"> Recientes</span>
-      </h1>
-      <p class="text-lg text-slate-600 leading-relaxed">
-        Explorá las últimas tendencias, tutoriales y consejos sobre desarrollo de software,
-        diseño digital y estrategias tecnológicas para potenciar tu negocio.
-      </p>
-    </div>
-    <div class="flex items-center gap-2 pb-2">
-      <div class="w-12 h-1 bg-primary rounded-full"></div>
-      <span class="text-xs font-bold uppercase tracking-widest text-primary">
-        Innovación constante
-      </span>
+<section class="relative w-full min-h-[45vh] flex items-center overflow-hidden">
+  <!-- Background image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('assets/img/background-7id-4.png')"
+  ></div>
+  <!-- Subtle overlay for readability -->
+  <div class="absolute inset-0 bg-white/30"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="max-w-2xl flex flex-col gap-4 scroll-anim">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-[2px] bg-primary"></div>
+          <span class="text-primary font-bold tracking-widest uppercase text-xs">Innovación constante</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-black text-slate-900 leading-tight">
+          Artículos
+          <span class="text-primary italic"> Recientes</span>
+        </h1>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          Explorá las últimas tendencias, tutoriales y consejos sobre desarrollo de software,
+          diseño digital y estrategias tecnológicas para potenciar tu negocio.
+        </p>
+      </div>
     </div>
   </div>
 </section>
