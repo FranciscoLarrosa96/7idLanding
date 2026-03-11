@@ -867,7 +867,6 @@ CUIT: XX-XXXXXXXX-X
 Dirección legal: \[Dirección completa\]  
 Tandil, Buenos Aires, Argentina  
 Teléfono: \+54 249 XXXXXXX  
-Email: contacto@sieteideas.com.ar
 
 ⚠ Esto es clave para:
 

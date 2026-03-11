@@ -43,7 +43,6 @@ export class Contacto {
   }
 
   contactInfo = [
-    { icon: 'mail', label: 'Email', value: 'contacto@sieteideas.com.ar' },
     { icon: 'call', label: 'Teléfono', value: '+54 9 2494 28-9033' },
     {
       icon: 'location_on',
